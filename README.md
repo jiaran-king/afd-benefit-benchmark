@@ -17,6 +17,7 @@
 ## 从哪里开始
 
 - **看结论**：[五组正式报告 Markdown](results/2026-10-12-ep16/REPORT.zh-CN.md)、[PDF](results/2026-10-12-ep16/REPORT.zh-CN.pdf)、[完整指标](results/2026-10-12-ep16/metrics.csv)、[EP16 复核与证据](results/2026-10-12-ep16/README.md)；[原四组报告](results/2026-10-11/REPORT.zh-CN.md)独立保留。
+- **看演示稿**：[AFD 收益 PPT v18](presentations/2026-10-12-afd-benefit/AFD-Plugin-TTFT-comparison-v18.pptx)、[内容与版本说明](presentations/2026-10-12-afd-benefit/README.md)。共 45 页，本轮实验分析位于第 39–45 页。
 - **复核数值**：直接运行下面的离线命令，不需要 NPU、模型或原始会话正文。
 - **获取数据**：[原始会话与正式冻结负载](datasets/README.md)、[数据集 Release](https://github.com/jiaran-king/afd-benefit-benchmark/releases/tag/datasets-20261012-v1)。两份文件分开发布，提供下载、校验和导入命令。
 - **复现实验**：[测试方法](docs/methodology.md)、[bench 并发与调度](docs/bench-method.md) → [环境与补丁](environment/README.md) → [执行步骤](docs/reproduction.md)、[EP16 入口](experiments/2026-10-12-ep16/README.md)。
@@ -42,6 +43,7 @@ python3 scripts/benchmark.py plan \
 | scripts | 可移植入口、原 AgentInfer 执行器及离线统计工具 |
 | datasets | raw 与 frozen-256 分层说明、下载清单、9,078 请求索引、冻结优先级和路由；正文见 Release |
 | results | 最新正式结果与可重算的逐请求、准入事件、容量数据 |
+| presentations | 对外演示稿及版本说明，关联对应的正式报告 |
 | diagnostics | 明确标注范围的机制诊断，独立于正式性能结果 |
 | archive | 旧结果及其限制，不参与最新主表 |
 
