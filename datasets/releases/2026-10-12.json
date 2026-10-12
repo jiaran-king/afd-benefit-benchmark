@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "repository": "jiaran-king/afd-benefit-benchmark",
+  "tag": "datasets-20261012-v1",
+  "release_url": "https://github.com/jiaran-king/afd-benefit-benchmark/releases/tag/datasets-20261012-v1",
+  "compression": "gzip; byte-identical after decompression; no text or token rewriting",
+  "datasets": {
+    "raw": {
+      "filename": "codex_swebenchpro.json.gz",
+      "bytes": 29250521,
+      "sha256": "d408223f811d160b63a9bd8d74040ade42147ed218b793dc72c8124f23898f2d",
+      "uncompressed": {
+        "path": "raw/codex_swebenchpro.json",
+        "bytes": 218648292,
+        "sha256": "670f1ae8325fd70aac6ae6bdf4b03bbbd740d6ac8f2b49d8a02daaee3193fbc3"
+      },
+      "url": "https://github.com/jiaran-king/afd-benefit-benchmark/releases/download/datasets-20261012-v1/codex_swebenchpro.json.gz"
+    },
+    "frozen": {
+      "filename": "frozen-256-requests.jsonl.gz",
+      "bytes": 437440297,
+      "sha256": "50f12516e1cd5823fd8762839c484958b86c30c79c96512a8a9d2e2f367b94aa",
+      "uncompressed": {
+        "path": "frozen-256/requests.jsonl",
+        "bytes": 3634051974,
+        "sha256": "d41cca12002e1b35d5fb801876b87439c070e1307a52d469245686802751c48a"
+      },
+      "url": "https://github.com/jiaran-king/afd-benefit-benchmark/releases/download/datasets-20261012-v1/frozen-256-requests.jsonl.gz"
+    }
+  }
+}

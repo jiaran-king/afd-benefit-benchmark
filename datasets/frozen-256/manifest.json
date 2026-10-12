@@ -50,8 +50,7 @@
   "max_prompt_tokens": 235936,
   "source_filename": "codex_swebenchpro.json",
   "raw_inputs_in_git": false,
-  "original_payload_access": "supplied separately by the data custodian",
-  "exclusion_reason": "original conversation source contains private-key markers; exact token payloads are not automatically public",
+  "original_payload_access": "https://github.com/jiaran-king/afd-benefit-benchmark/releases/tag/datasets-20261012-v1",
   "seed_definition": "20260928: frozen interleaved priority; generation seed is 7",
   "source_sessions": 610,
   "source_requests": 20230,
@@ -314,5 +313,8 @@
     254,
     255,
     256
-  ]
+  ],
+  "release_manifest": "../releases/2026-10-12.json",
+  "request_bytes": 3634051974,
+  "payload_in_release": true
 }

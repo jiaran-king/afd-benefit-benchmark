@@ -7,21 +7,24 @@ python3 scripts/recompute_results.py --output /tmp/afd-recomputed.csv
 python3 -m unittest discover -s tests -v
 ~~~
 
-只使用仓库内数值证据，不需要设备、私有原始数据或模型。保留输出与当前 Git commit。
+只使用仓库内数值证据，不需要设备、下载原始数据或模型。保留输出与当前 Git commit。
 
 ## 准备设备回放环境
 
 需要独占 16 DIE 的同类 Ascend 910C 环境。先完成 [环境步骤](../environment/README.md)，确认模型、tokenizer、源码和 native 身份。回放客户端依赖见 environment/requirements-client.txt；该文件是兼容依赖约束，原实验未保留完整 pip lock。新 run 必须记录实际安装版本。
 
-从数据保管方取得原冻结 requests.jsonl，或其 609 会话父集。不要用原始 conversation JSON 代替 token 文件，不重新分词。
+从本仓库固定版本的 Release 下载正式冻结 requests.jsonl。下载和导入只需 Python 标准库，建议预留至少 10 GB；完整设备回放仍使用前述匹配环境。原始会话和正式负载的区别及单独获取方法见 [数据集说明](../datasets/README.md)。
 
 ~~~bash
+python3 scripts/download_datasets.py \
+  --dataset frozen --output-dir /path/to/afd-data
+
 python3 scripts/import_dataset.py \
-  --source /path/to/frozen/requests.jsonl \
+  --source /path/to/afd-data/frozen-256/requests.jsonl \
   --workspace /path/to/afd-work
 ~~~
 
-若输入是冻结父集，加 --parent。工具校验每轮 prompt SHA、长度、优先级、完整会话和最终文件字节；结果必须匹配 d41cca12…751c48a。失败会清理本次临时导入，保留源文件。
+下载器校验压缩包及解压文件的大小和 SHA256。导入器校验每轮 prompt SHA、长度、优先级、完整会话和最终文件字节；结果必须匹配 d41cca12…751c48a。失败会清理本次临时导入，保留源文件。若自行持有精确 609 会话冻结父集，导入时加 --parent；正式复现无需下载原始 conversation JSON 或重新分词。
 
 ## 配置与预览
 
@@ -65,7 +68,7 @@ replay 内部执行全部唯一端点冷 reset、逐域基线记录，再调用�
 
 ## 完成与归档
 
-至少检查：formal-http/summary.json complete、formal-audit.json passed、9,078 请求/256 会话、零未解释失败；输入 SHA、域路由、就绪优先级、C16 全部一致。AFD additionally 要有压力前后 graph 状态，FULL 的 4 个 F worker replay 计数递增。
+至少检查：formal-http/summary.json complete、formal-audit.json passed、9,078 请求/256 会话、零未解释失败；输入 SHA、域路由、就绪优先级、C16 全部一致。AFD 还要有压力前后 graph 状态，FULL 的 4 个 F worker replay 计数递增。
 
 保留 manifest、configuration、device 快照、all-endpoint-metrics、逐域日志、formal-start、formal-http、formal-audit、stop-owned。机器环境和完整日志留在私有证据存储；公开结果采用字段白名单，不能直接上传整个 run。
 

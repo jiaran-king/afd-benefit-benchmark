@@ -9,6 +9,10 @@ scratch/
 runs/
 private/
 requests.jsonl
+codex_swebenchpro.json
+frozen-256-requests.jsonl
+codex_swebenchpro.json.gz
+frozen-256-requests.jsonl.gz
 *.log
 *.so
 *.o

@@ -1038,8 +1038,8 @@
       "source_file": "manifest.json",
       "source_sha256": "6bc3496e004525274ed88db6cdedee791d114bce59d4481668ccb5a668047b1c",
       "published_path": "datasets/frozen-256/manifest.json",
-      "published_sha256": "ae703ee8cd1a42fc0ccc192c144e5e12b9228b5fa7a63d16150795e90ebcea5d",
-      "transformation": "selected fields; removed inherited parent distribution and paths; explicit subset statistics"
+      "published_sha256": "c26401eb5ec6fddf811621dc127e61bd49233633cbb04cde78cb160f56461bee",
+      "transformation": "selected fields; removed inherited parent distribution and paths; explicit subset statistics; 2026-10-12 added versioned public Release access and exact request byte count"
     },
     {
       "source_collection": "experiment-closeout-host-fixed-1011",

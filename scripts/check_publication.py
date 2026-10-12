@@ -1,4 +1,5 @@
 """Check curated public artifacts, source hashes, local links and high-risk byte patterns."""
+import csv
 import gzip
 import hashlib
 import json
@@ -45,6 +46,33 @@ def check():
         p=ROOT/row["published_path"]
         if not p.exists() or hashlib.sha256(p.read_bytes()).hexdigest()!=row["published_sha256"]:
             failures.append((row["published_path"],"source map output hash differs"))
+    frozen=json.loads((ROOT/"datasets/frozen-256/manifest.json").read_text())
+    raw=json.loads((ROOT/"datasets/raw/manifest.json").read_text())
+    release=json.loads((ROOT/"datasets/releases/2026-10-12.json").read_text())
+    for name,identity in (("raw",raw),("frozen",{
+            "sha256":frozen["request_sha256"],"bytes":frozen["request_bytes"]})):
+        asset=release["datasets"][name]
+        for key in ("sha256","bytes"):
+            if asset["uncompressed"][key]!=identity[key]:
+                failures.append((name,"Release/original identity mismatch: "+key))
+        expected="https://github.com/"+release["repository"]+"/releases/download/"+release["tag"]+"/"+asset["filename"]
+        if asset["url"]!=expected:
+            failures.append((name,"Release URL differs from pinned repository/tag"))
+    if raw["sha256"]!=frozen["source_sha256"]:
+        failures.append(("raw","source identity differs from formal frozen manifest"))
+    priorities_path=ROOT/"datasets/frozen-256/priorities.json"
+    if hashlib.sha256(priorities_path.read_bytes()).hexdigest()!=frozen["priorities_sha256"]:
+        failures.append(("priorities.json","frozen file hash differs"))
+    priorities=json.loads(priorities_path.read_text())
+    with gzip.open(ROOT/"datasets/frozen-256/request-index.csv.gz","rt") as f:
+        positions={row["id"]:float(row["priority"]) for row in csv.DictReader(f)}
+    if priorities["positions"]!=positions or priorities["seed"]!=frozen["seed"]:
+        failures.append(("priorities.json","priorities differ from formal request catalog"))
+    provenance=json.loads((ROOT/"datasets/provenance.json").read_text())
+    for row in provenance.values():
+        expected=row.get("published_sha256",row.get("sha256"))
+        if hashlib.sha256((ROOT/row["published_path"]).read_bytes()).hexdigest()!=expected:
+            failures.append((row["published_path"],"dataset provenance hash differs"))
     if failures:
         print(json.dumps({"status":"failed","findings":failures},indent=2))
         return 1

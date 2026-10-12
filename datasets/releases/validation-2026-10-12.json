@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-12",
+  "scope": "dataset publication; no new device experiments",
+  "local_release_assets": {
+    "raw_compressed_and_original_identity": "passed",
+    "frozen_compressed_and_original_identity": "passed"
+  },
+  "full_frozen_import": {
+    "requests": 9078,
+    "sessions": 256,
+    "prompt_tokens": 748751397,
+    "request_sha256": "d41cca12002e1b35d5fb801876b87439c070e1307a52d469245686802751c48a",
+    "exact_bytes": true
+  },
+  "priorities": "9078 values and seed match formal request catalog; original file hash matches",
+  "raw_structure": {
+    "sessions": 610,
+    "rounds": 20230,
+    "messages": 40460,
+    "alternating_human_gpt": "passed"
+  },
+  "offline_tests": 10,
+  "formal_numerical_evidence_requests": 36312,
+  "tokenizer_regeneration": "not rerun; exact retained frozen payload published",
+  "device_runs": 0
+}

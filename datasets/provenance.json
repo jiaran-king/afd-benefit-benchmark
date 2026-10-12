@@ -1,0 +1,17 @@
+{
+  "prepare_raw_dataset": {
+    "source_collection": "three-arm-256k-1010",
+    "source_file": "client/prepare_dataset.py",
+    "source_sha256": "e1f7134a9946613bd16d77f9048d258292547ae1aa0de9667bbf1b4e74bfe1c5",
+    "published_path": "scripts/prepare_raw_dataset.py",
+    "published_sha256": "48fb1f57efb6d3c75fe8530786eb702dc4031cf0a85481692782b9b3981c050b",
+    "adaptation": "Require an explicit model path instead of the original machine default; freezing algorithm unchanged.",
+    "validation": "Syntax checked; tokenizer regeneration not rerun during publication."
+  },
+  "priorities": {
+    "source_file": "prepared256k-256sessions-v24/priorities.json",
+    "published_path": "datasets/frozen-256/priorities.json",
+    "sha256": "f4cedb63838a75b0130fa90aa8a199bd2dd12a2d2824763650199b4d9181ffce",
+    "transformation": "byte-identical"
+  }
+}

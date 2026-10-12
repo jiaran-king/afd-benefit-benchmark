@@ -1,0 +1,14 @@
+{
+  "filename": "codex_swebenchpro.json",
+  "sha256": "670f1ae8325fd70aac6ae6bdf4b03bbbd740d6ac8f2b49d8a02daaee3193fbc3",
+  "bytes": 218648292,
+  "sessions": 610,
+  "rounds": 20230,
+  "messages": 40460,
+  "format": "JSON array; each entry has conversations containing alternating human/gpt messages with value strings",
+  "source_ids": "zero-based array indices",
+  "release_manifest": "../releases/2026-10-12.json",
+  "publication": "exact original bytes in the versioned GitHub Release, compressed without content changes",
+  "reviewed_private_key_occurrences": 7,
+  "provenance": "User-provided experimental conversation source; filename alone does not identify an official upstream SWE-bench dataset release."
+}
