@@ -1,0 +1,680 @@
+diff --git a/csrc/attention/compressor/op_host/arch32/compressor_tiling.cpp b/csrc/attention/compressor/op_host/arch32/compressor_tiling.cpp
+index 35db93c43..5617749d4 100644
+--- a/csrc/attention/compressor/op_host/arch32/compressor_tiling.cpp
++++ b/csrc/attention/compressor/op_host/arch32/compressor_tiling.cpp
+@@ -240,6 +240,12 @@ ge::graphStatus CompressorTiling::CalcWorkSpace()
+     workspaceSize_ += workspaceParams_->mm1ScoreResSize * maxGroupNum * MM1_RES_ELEM_SIZE * workspaceParams_->dbWorkspaceRatio;
+     workspaceSize_ += workspaceParams_->vec1TailCacheSize * MM1_RES_ELEM_SIZE * workspaceParams_->dbWorkspaceRatio * 2;   // 2 kv和score
+     workspaceSize_ += workspaceParams_->vec1ResSize * maxGroupNum * V1_RES_ELEM_SIZE * workspaceParams_->dbWorkspaceRatio;
++    if (static_cast<uint8_t>(*context_->cacheMode) == static_cast<uint8_t>(CACHE_MODE::CYCLE)) {
++        // Immutable per-request input history; SaveState continues to update the
++        // original pages while every ReadState reads this invocation's snapshot.
++        workspaceSize_ += static_cast<uint64_t>(baseParams_->batchSize) * coff * baseParams_->cmpRatio *
++                          2 * coff * baseParams_->headDim * MM1_RES_ELEM_SIZE;
++    }
+ 
+     if (context_->workSpaces) {
+         context_->workSpaces[0] = workspaceSize_;
+diff --git a/csrc/attention/compressor/op_kernel/arch32/compressor_block_vec_perf.h b/csrc/attention/compressor/op_kernel/arch32/compressor_block_vec_perf.h
+index a8461b47f..168fb638d 100644
+--- a/csrc/attention/compressor/op_kernel/arch32/compressor_block_vec_perf.h
++++ b/csrc/attention/compressor/op_kernel/arch32/compressor_block_vec_perf.h
+@@ -106,6 +106,8 @@ public:
+                                                 GlobalTensor<T> kvCacheTcGm, GlobalTensor<T> scoreCacheTcGm,
+                                                 GlobalTensor<T> vec1ResGm, GlobalTensor<T> vec2InputGm);
+     __aicore__ inline void ComputeVec2(const Vec2RunInfo &info);
++    __aicore__ inline void InitHistoryWorkspace(__gm__ uint8_t *workspace);
++    __aicore__ inline void SnapshotHistory();
+ 
+ protected:
+     GlobalTensor<T> vec1ResGm_;
+@@ -240,6 +242,7 @@ private:
+     GlobalTensor<int32_t> sequsedGm_;
+     GlobalTensor<int32_t> stateBlockTableGm_;
+     GlobalTensor<T> stateCacheGm_;
++    GlobalTensor<T> historyStateGm_;
+     GlobalTensor<T> apeGm_;
+     GlobalTensor<X_T> normWeightGm_;
+     GlobalTensor<ROPE_T> ropeSinGm_;
+@@ -339,6 +342,45 @@ __aicore__ inline void CompressorBlockVectorPerf<COMP>::InitBuffers(TPipe *pipe)
+     PipeBarrier<PIPE_V>();
+ }
+ 
++template <typename COMP>
++__aicore__ inline void CompressorBlockVectorPerf<COMP>::InitHistoryWorkspace(__gm__ uint8_t *workspace)
++{
++    historyStateGm_.SetGlobalBuffer((__gm__ T *)workspace);
++}
++
++template <typename COMP>
++__aicore__ inline void CompressorBlockVectorPerf<COMP>::SnapshotHistory()
++{
++    if constexpr (COMP::cacheMode == CACHE_MODE::CYCLE) {
++        const uint32_t ringTokens = coff_ * constInfo_.cmpRatio;
++        const uint32_t rowElements = 2 * coff_ * constInfo_.headDim;
++        const uint32_t vectorCoreNum = 2 * GetBlockNum();
++        // Each AIV owns disjoint complete rows, independent of TC assignment.
++        // Keep the old ring separate from the state pages updated by SaveState.
++        for (uint32_t row = GetBlockIdx(); row < constInfo_.batchSize * ringTokens; row += vectorCoreNum) {
++            const uint32_t batchIdx = row / ringTokens;
++            if (GetSeqLength(batchIdx) == 0 || GetStartPos(batchIdx) == 0) {
++                continue;
++            }
++            const uint32_t slot = row % ringTokens;
++            const uint64_t tableOffset = static_cast<uint64_t>(batchIdx) * constInfo_.maxBlockNumPerBatch;
++            const uint64_t page = stateBlockTableGm_.GetValue(tableOffset + slot / constInfo_.blockSize);
++            const uint64_t stateOffset = page * constInfo_.stateCacheStrideDim0 +
++                                         (slot % constInfo_.blockSize) * rowElements;
++            LocalTensor<T> inputUb = inputQue1.AllocTensor<T>();
++            DataCopy(inputUb, stateCacheGm_[stateOffset], rowElements);
++            inputQue1.EnQue(inputUb);
++            inputQue1.DeQue<T>();
++            DataCopyWithOutputQue(historyStateGm_[static_cast<uint64_t>(row) * rowElements], inputUb,
++                                  1, rowElements, rowElements, rowElements);
++            inputQue1.FreeTensor(inputUb);
++        }
++        // Complete all DMA writes before any AIV can overwrite an old state slot.
++        PipeBarrier<PIPE_ALL>();
++        SyncAll();
++    }
++}
++
+ template <typename COMP>
+ __aicore__ inline void CompressorBlockVectorPerf<COMP>::AllocEventID()
+ {
+@@ -828,8 +870,16 @@ __aicore__ inline void CompressorBlockVectorPerf<COMP>::ReadFromCacheState(
+                                 remainRowCnt * 2 * coff_ * constInfo_.headDim +
+                                 stateIdx * coff_ * constInfo_.headDim + dStartIdx;
+ 
+-        DataCopyAlignGmToUb(output[copyFinishRowCnt * coff_ * dDealSize], state[stateOffset], copyRowCount,
+-                                dDealSize, coff_ * constInfo_.headDim * 2, coff_ * dDealSize);
++        if constexpr (COMP::cacheMode == CACHE_MODE::CYCLE) {
++            const uint64_t historyOffset =
++                (static_cast<uint64_t>(batchIdx) * ringTokenCount + cacheSeqIdx) * 2 * coff_ * constInfo_.headDim +
++                stateIdx * coff_ * constInfo_.headDim + dStartIdx;
++            DataCopyAlignGmToUb(output[copyFinishRowCnt * coff_ * dDealSize], historyStateGm_[historyOffset],
++                               copyRowCount, dDealSize, coff_ * constInfo_.headDim * 2, coff_ * dDealSize);
++        } else {
++            DataCopyAlignGmToUb(output[copyFinishRowCnt * coff_ * dDealSize], state[stateOffset], copyRowCount,
++                               dDealSize, coff_ * constInfo_.headDim * 2, coff_ * dDealSize);
++        }
+         copyFinishRowCnt += copyRowCount;
+         curSeqIdx += copyRowCount;
+     }
+diff --git a/csrc/attention/compressor/op_kernel/arch32/compressor_kernel_perf.h b/csrc/attention/compressor/op_kernel/arch32/compressor_kernel_perf.h
+index 3beb71e10..3b9a1fdcf 100644
+--- a/csrc/attention/compressor/op_kernel/arch32/compressor_kernel_perf.h
++++ b/csrc/attention/compressor/op_kernel/arch32/compressor_kernel_perf.h
+@@ -521,6 +521,9 @@ __aicore__ inline void CompressorKernelPerf<COMP>::InitWorkspace(__gm__ uint8_t
+     // vec2Input
+     vec2InputGm.SetGlobalBuffer(
+         (__gm__ VEC1_OUT_T *)(workspace + beforeVecOffset));
++    if constexpr (COMP::cacheMode == CACHE_MODE::CYCLE) {
++        blockVec_.InitHistoryWorkspace(workspace + offset);
++    }
+ }
+ 
+ template <typename COMP>
+@@ -661,6 +664,10 @@ __aicore__ inline void CompressorKernelPerf<COMP>::Process()
+     }
+     AllocEventID();
+ 
++    if ASCEND_IS_AIV {
++        blockVec_.SnapshotHistory();
++    }
++
+     BatchInfo batchInfo{};
+ 
+     RunInfo extraInfo[1];
+diff --git a/tests/e2e/nightly/single_node/ops/singlecard_ops/test_compressor_cycle_history.py b/tests/e2e/nightly/single_node/ops/singlecard_ops/test_compressor_cycle_history.py
+new file mode 100644
+index 000000000..b485bb63e
+--- /dev/null
++++ b/tests/e2e/nightly/single_node/ops/singlecard_ops/test_compressor_cycle_history.py
+@@ -0,0 +1,109 @@
++# SPDX-License-Identifier: Apache-2.0
++"""CYCLE must read immutable old history while other cores write the new tail.
++
++The 261-token continuation reproduces overlapping old reads and tail writes.
++Compare every valid compressed element and retained state with disjoint
++CONTINUOUS pages, including partial groups and empty batch entries.
++"""
++
++from itertools import accumulate
++
++import pytest
++import torch
++import torch_npu  # noqa: F401
++
++from vllm_ascend.utils import enable_custom_op
++
++CASES = [([0], [1]), ([0], [261]), ([256], [261])]
++CASES += [([start], [length]) for start in (256, 257) for length in (1, 2, 5, 257, 258)]
++CASES += [([256, 259], [261, 258]), ([256, 259, 256], [261, 0, 2])]
++
++
++@pytest.mark.parametrize("ratio,coff,head", [(4, 2, 128), (4, 2, 512), (128, 1, 512)])
++@pytest.mark.parametrize("starts,lengths", CASES)
++def test_cycle_history_matches_continuous(ratio, coff, head, starts, lengths):
++    assert enable_custom_op()
++    torch.npu.set_device(0)
++    torch.manual_seed(7)
++    batch = len(starts)
++    ring = coff * ratio
++    width = 2 * coff * head
++    bs = 32
++    device = "npu:0"
++    x = torch.randn(sum(lengths), 4096, dtype=torch.bfloat16).to(device)
++    wkv = (torch.randn(coff * head, 4096) * 0.02).to(dtype=torch.bfloat16, device=device)
++    wgate = (torch.randn(coff * head, 4096) * 0.02).to(dtype=torch.bfloat16, device=device)
++    ape = (torch.randn(ratio, coff * head) * 0.01).to(device)
++    norm = torch.ones(head, dtype=torch.bfloat16, device=device)
++    counts = [(s + n) // ratio - s // ratio for s, n in zip(starts, lengths)]
++    groups = sum(counts)
++    capacity = min(sum(lengths), sum(lengths) // ratio + batch)
++    sin = torch.zeros(capacity, 64, dtype=torch.float32, device=device)
++    cos = torch.ones_like(sin)
++    cu = torch.tensor([0] + list(accumulate(lengths)), dtype=torch.int32, device=device)
++    positions = torch.tensor(starts, dtype=torch.int32, device=device)
++    ring_pages = (ring + bs - 1) // bs
++    linear_pages = (max(s + n for s, n in zip(starts, lengths)) + bs - 1) // bs
++    compact = torch.zeros(1 + batch * ring_pages, bs, width, dtype=torch.float32, device=device)
++    continuous = torch.zeros(1 + batch * linear_pages, bs, width, dtype=torch.float32, device=device)
++    ct = torch.arange(1, 1 + batch * ring_pages, dtype=torch.int32, device=device).view(batch, ring_pages)
++    lt = torch.arange(1, 1 + batch * linear_pages, dtype=torch.int32, device=device).view(batch, linear_pages)
++    for b, start in enumerate(starts):
++        old = torch.randn(ring, width, device=device)
++        for logical in range(max(0, start - ring), start):
++            slot = logical % ring
++            compact[1 + b * ring_pages + slot // bs, slot % bs] = old[slot]
++            continuous[1 + b * linear_pages + logical // bs, logical % bs] = old[slot]
++    initial = compact.clone()
++
++    def invoke(cache, table, mode):
++        return torch.ops._C_ascend.compressor(
++            x,
++            wkv,
++            wgate,
++            cache,
++            ape,
++            norm,
++            sin,
++            cos,
++            state_block_table=table,
++            cu_seqlens=cu,
++            seqused=None,
++            start_pos=positions,
++            rope_head_dim=64,
++            cmp_ratio=ratio,
++            coff=coff,
++            norm_eps=1e-6,
++            rotary_mode=1,
++            cache_mode=mode,
++        )
++
++    expected = invoke(continuous, lt, 1)
++    assert expected.ndim == 2 and expected.shape == (capacity, head), expected.shape
++    outputs = []
++    repeat = 3 if ratio == 4 and head == 128 and starts == [256] and lengths == [261] else 1
++    for i in range(repeat):
++        compact.copy_(initial)
++        actual = invoke(compact, ct, 2)
++        torch.npu.synchronize()
++        assert actual.ndim == 2 and actual.shape == (capacity, head), actual.shape
++        a = actual[:groups].cpu()
++        e = expected[:groups].cpu()
++        assert torch.isfinite(a).all() and torch.equal(a, e), (
++            ratio,
++            head,
++            starts,
++            lengths,
++            "output",
++            (a.float() - e.float()).abs().max().item() if groups else None,
++        )
++        outputs.append(a)
++        for b, (start, length) in enumerate(zip(starts, lengths)):
++            end = start + length
++            tail_start = max(0, (end // ratio) * ratio - (coff - 1) * ratio)
++            for logical in range(tail_start, end):
++                slot = logical % ring
++                a = compact[1 + b * ring_pages + slot // bs, slot % bs]
++                e = continuous[1 + b * linear_pages + logical // bs, logical % bs]
++                assert torch.equal(a, e), (ratio, head, starts, lengths, "tail", logical)
++    assert all(torch.equal(outputs[0], a) for a in outputs[1:])
+diff --git a/tests/ut/core/test_compressor_checkpoint_async.py b/tests/ut/core/test_compressor_checkpoint_async.py
+new file mode 100644
+index 000000000..60b4090bf
+--- /dev/null
++++ b/tests/ut/core/test_compressor_checkpoint_async.py
+@@ -0,0 +1,175 @@
++"""Real scheduler/allocator regressions with multiple outstanding worker steps."""
++
++import importlib.util
++import pickle
++from pathlib import Path
++from types import SimpleNamespace
++from unittest.mock import patch
++
++import pytest
++from vllm.v1.core.sched.async_scheduler import AsyncScheduler
++from vllm.v1.outputs import ModelRunnerOutput
++from vllm.v1.request import RequestStatus
++
++from vllm_ascend.ascend_config import (
++    DSV4_ASYNC_CHECKPOINT_SCHEDULER,
++    DSV4_CHECKPOINT_SCHEDULER,
++    get_dsv4_shared_compressor_workspace_fallback_reasons,
++)
++
++spec = importlib.util.spec_from_file_location(
++    "async_checkpoint_fixtures",
++    Path(__file__).with_name("test_compressor_checkpoint_integration.py"),
++)
++fixtures = importlib.util.module_from_spec(spec)
++spec.loader.exec_module(fixtures)
++
++
++@pytest.fixture
++def scheduler(tmp_path, monkeypatch):
++    fixtures.coordinator.__wrapped__()
++    return fixtures.scheduler.__wrapped__(
++        tmp_path, None, monkeypatch, SimpleNamespace(param={"async_scheduling": True})
++    )
++
++
++def complete(scheduler, output, tokens=None):
++    req_ids = list(output.num_scheduled_tokens)
++    return scheduler.update_from_output(
++        output,
++        ModelRunnerOutput(
++            req_ids=req_ids,
++            req_id_to_index={rid: index for index, rid in enumerate(req_ids)},
++            sampled_token_ids=[(tokens or {}).get(rid, []) for rid in req_ids],
++            logprobs=None,
++            prompt_logprobs_dict={},
++            pooler_output=[],
++        ),
++    )
++
++
++def test_completed_range_never_publishes_later_scheduled_chunk(scheduler):
++    req = fixtures.request("source", length=12289)
++    scheduler.add_request(req)
++    first = pickle.loads(pickle.dumps(scheduler.schedule()))
++    second = scheduler.schedule()
++    assert isinstance(scheduler, AsyncScheduler)
++    assert req.num_computed_tokens == 8192
++    coordinator = scheduler.checkpoint_coordinator
++    assert coordinator.find_longest_cache_hit(req.block_hashes, 8192)[1] == 0
++    with patch.object(coordinator, "cache_completed_blocks", wraps=coordinator.cache_completed_blocks) as cache:
++        complete(scheduler, first)
++        assert cache.call_args.args[1] == 4096
++        assert coordinator.find_longest_cache_hit(req.block_hashes, 8192)[1] == 4096
++        complete(scheduler, second)
++        assert cache.call_args.args[1] == 8192
++        assert coordinator.find_longest_cache_hit(req.block_hashes, 8192)[1] == 8192
++
++
++def test_native_async_placeholders_and_single_cache_publication(scheduler):
++    req = fixtures.request("source", length=4097)
++    scheduler.add_request(req)
++    first = scheduler.schedule()
++    second = scheduler.schedule()
++    third = scheduler.schedule()
++    assert req.num_output_placeholders == 2
++    assert third.num_scheduled_tokens == {"source": 1}
++    complete(scheduler, first)
++    coordinator = scheduler.checkpoint_coordinator
++    with patch.object(coordinator, "cache_completed_blocks", wraps=coordinator.cache_completed_blocks) as cache:
++        complete(scheduler, second, {"source": [20]})
++        assert req.num_output_placeholders == 1
++        assert cache.call_count == 1
++        assert cache.call_args.args[1] == 4097
++    complete(scheduler, third, {"source": [21]})
++    assert req.num_output_placeholders == 0
++    assert req.is_finished()
++
++
++def test_two_inflight_saves_cancel_and_reset_drain_once(scheduler):
++    req = fixtures.request("source", length=12289)
++    scheduler.add_request(req)
++    first, second = scheduler.schedule(), scheduler.schedule()
++    scheduler.finish_requests("source", RequestStatus.FINISHED_ABORTED)
++    blocks = scheduler.kv_cache_manager.block_pool
++    rings = [operation.source for operation in first.compressor_saves[0].copies]
++    assert all(blocks.blocks[index].ref_cnt > 0 for index in rings)
++    assert not scheduler.reset_prefix_cache(reset_running_requests=True)
++    complete(scheduler, first)
++    assert all(blocks.blocks[index].ref_cnt > 0 for index in rings)
++    assert not scheduler.reset_prefix_cache()
++    complete(scheduler, second)
++    assert scheduler.reset_prefix_cache()
++    assert blocks.get_num_free_blocks() == blocks.num_gpu_blocks - 1
++
++
++def test_preempted_output_cannot_publish_new_request_pages(scheduler):
++    req = fixtures.request("source", length=12289)
++    scheduler.add_request(req)
++    first = scheduler.schedule()
++    old_ids = first.compressor_completed_ranges["source"].tail_block_ids
++    scheduler.running.remove(req)
++    scheduler._preempt_request(req, 0.0)
++    second = scheduler.schedule()
++    assert second.compressor_completed_ranges["source"].tail_block_ids != old_ids
++    coordinator = scheduler.checkpoint_coordinator
++    with patch.object(coordinator, "cache_completed_blocks", wraps=coordinator.cache_completed_blocks) as cache:
++        complete(scheduler, first)
++        cache.assert_not_called()
++        assert coordinator.find_longest_cache_hit(req.block_hashes, 4096)[1] == 0
++        complete(scheduler, second)
++        assert cache.call_count == 1
++
++
++def test_inflight_restore_and_destination_survive_cancel(scheduler):
++    source = fixtures.request("source", length=4097)
++    scheduler.add_request(source)
++    complete(scheduler, scheduler.schedule())
++    scheduler.finish_requests("source", RequestStatus.FINISHED_ABORTED)
++    borrower = fixtures.request("borrower", length=8193, suffix=2)
++    scheduler.add_request(borrower)
++    first, second = scheduler.schedule(), scheduler.schedule()
++    (restore,) = first.compressor_restores
++    assert restore.position == 4096
++    scheduler.finish_requests("borrower", RequestStatus.FINISHED_ABORTED)
++    pool = scheduler.checkpoint_coordinator.checkpoints
++    blocks = scheduler.kv_cache_manager.block_pool
++    pool.reclaim(blocks.num_gpu_blocks)
++    assert pool._entries[restore.handle].readers == 1
++    assert all(blocks.blocks[copy.destination].ref_cnt > 0 for copy in restore.copies)
++    complete(scheduler, first)
++    assert pool._entries[restore.handle].readers == 0
++    assert all(blocks.blocks[copy.destination].ref_cnt > 0 for copy in restore.copies)
++    complete(scheduler, second)
++    assert scheduler.reset_prefix_cache()
++    assert blocks.get_num_free_blocks() == blocks.num_gpu_blocks - 1
++
++
++@pytest.mark.parametrize(
++    "async_mode,selected",
++    [(False, DSV4_CHECKPOINT_SCHEDULER), (True, DSV4_ASYNC_CHECKPOINT_SCHEDULER)],
++)
++def test_gate_accepts_matching_scheduler_and_internal_tail_layout(async_mode, selected):
++    config = SimpleNamespace(
++        model_config=SimpleNamespace(hf_text_config=SimpleNamespace(model_type="deepseek_v4"), enforce_eager=True),
++        cache_config=SimpleNamespace(enable_prefix_caching=True, block_size=2),
++        scheduler_config=SimpleNamespace(async_scheduling=async_mode, scheduler_cls=selected),
++        parallel_config=SimpleNamespace(
++            pipeline_parallel_size=1,
++            decode_context_parallel_size=1,
++            prefill_context_parallel_size=1,
++        ),
++        use_v2_model_runner=False,
++        kv_events_config=None,
++        kv_transfer_config=None,
++        speculative_config=None,
++    )
++    assert (
++        get_dsv4_shared_compressor_workspace_fallback_reasons(config, is_a3=True, multistream_dsv4_dsa_overlap=False)
++        == []
++    )
++    config.scheduler_config.scheduler_cls = DSV4_CHECKPOINT_SCHEDULER if async_mode else DSV4_ASYNC_CHECKPOINT_SCHEDULER
++    assert (
++        "compressor checkpoints require the checkpoint scheduler"
++        in get_dsv4_shared_compressor_workspace_fallback_reasons(config, is_a3=True, multistream_dsv4_dsa_overlap=False)
++    )
+diff --git a/tests/ut/core/test_compressor_checkpoint_integration.py b/tests/ut/core/test_compressor_checkpoint_integration.py
+index 88f01f4d9..2a7ad4c6e 100644
+--- a/tests/ut/core/test_compressor_checkpoint_integration.py
++++ b/tests/ut/core/test_compressor_checkpoint_integration.py
+@@ -272,7 +272,10 @@ def scheduler(tmp_path, coordinator, monkeypatch, request):
+     from vllm.config import CacheConfig, DeviceConfig, ModelConfig, ParallelConfig, SchedulerConfig, VllmConfig
+     from vllm.v1.structured_output import StructuredOutputManager
+ 
+-    from vllm_ascend.core.compressor_checkpoint_scheduler import CompressorCheckpointScheduler
++    from vllm_ascend.core.compressor_checkpoint_scheduler import (
++        CompressorCheckpointAsyncScheduler,
++        CompressorCheckpointScheduler,
++    )
+ 
+     monkeypatch.setenv("VLLM_CACHE_ROOT", str(tmp_path / "cache"))
+ 
+@@ -310,7 +313,7 @@ def scheduler(tmp_path, coordinator, monkeypatch, request):
+             max_num_batched_tokens=options.get("token_budget", 6000),
+             max_model_len=max_model_len,
+             enable_chunked_prefill=True,
+-            async_scheduling=False,
++            async_scheduling=options.get("async_scheduling", False),
+             watermark=0,
+             is_encoder_decoder=False,
+         ),
+@@ -318,7 +321,10 @@ def scheduler(tmp_path, coordinator, monkeypatch, request):
+     )
+     kv = cache_config(options.get("num_blocks", 4096))
+     config.cache_config.num_gpu_blocks = kv.num_blocks
+-    return CompressorCheckpointScheduler(
++    scheduler_cls = (
++        CompressorCheckpointAsyncScheduler if options.get("async_scheduling", False) else CompressorCheckpointScheduler
++    )
++    return scheduler_cls(
+         vllm_config=config,
+         kv_cache_config=kv,
+         block_size=32,
+diff --git a/tests/ut/core/test_compressor_tail_manager.py b/tests/ut/core/test_compressor_tail_manager.py
+index 35af36213..9b2c5ea69 100644
+--- a/tests/ut/core/test_compressor_tail_manager.py
++++ b/tests/ut/core/test_compressor_tail_manager.py
+@@ -358,11 +358,11 @@ def test_prefix_gate_distinguishes_user_blocks_from_internal_tail_pages(block_si
+     ("config", "is_a3", "multistream", "expected_reason"),
+     [
+         pytest.param(
+-            _stage1_config(cache_config__enable_prefix_caching=True, scheduler_config__async_scheduling=True),
++            _stage1_config(cache_config__enable_prefix_caching=True, scheduler_config__async_scheduling=None),
+             True,
+             False,
+-            "compressor checkpoints require explicit synchronous scheduling",
+-            id="prefix-cache-async",
++            "compressor checkpoints require an explicit scheduling mode",
++            id="prefix-cache-unspecified-mode",
+         ),
+         pytest.param(
+             _stage1_config(cache_config__enable_prefix_caching=True, cache_config__block_size=128),
+diff --git a/tools/check_forbidden_imports.py b/tools/check_forbidden_imports.py
+index 836d6a5a2..9c44b4c34 100644
+--- a/tools/check_forbidden_imports.py
++++ b/tools/check_forbidden_imports.py
+@@ -46,6 +46,7 @@ CHECK_IMPORTS = {
+             # Round-trip a locally constructed scheduler output using the
+             # serialization employed by the upstream worker message queue.
+             "tests/ut/core/test_compressor_checkpoint_integration.py",
++            "tests/ut/core/test_compressor_checkpoint_async.py",
+         },
+     ),
+     "re": ForbiddenImport(
+diff --git a/vllm_ascend/ascend_config.py b/vllm_ascend/ascend_config.py
+index 261d579f0..79ebac7c1 100644
+--- a/vllm_ascend/ascend_config.py
++++ b/vllm_ascend/ascend_config.py
+@@ -24,6 +24,7 @@ if TYPE_CHECKING:
+     from vllm.config import VllmConfig
+ 
+ DSV4_CHECKPOINT_SCHEDULER = "vllm_ascend.core.compressor_checkpoint_scheduler.CompressorCheckpointScheduler"
++DSV4_ASYNC_CHECKPOINT_SCHEDULER = "vllm_ascend.core.compressor_checkpoint_scheduler.CompressorCheckpointAsyncScheduler"
+ DSV4_CHECKPOINT_BLOCK_SIZE = 32
+ DSV4_CHECKPOINT_TAIL_BLOCK_SIZES = (2, 8)
+ 
+@@ -51,14 +52,17 @@ def get_dsv4_shared_compressor_workspace_fallback_reasons(
+         reasons.append("multistream_dsv4_dsa_overlap is enabled")
+     if vllm_config.cache_config.enable_prefix_caching:
+         scheduler = vllm_config.scheduler_config
+-        if scheduler.async_scheduling is not False:
+-            reasons.append("compressor checkpoints require explicit synchronous scheduling")
++        if scheduler.async_scheduling is None:
++            reasons.append("compressor checkpoints require an explicit scheduling mode")
+         block_size = vllm_config.cache_config.block_size
+         # Older EngineCore versions replace the validated block_size=32 with
+         # the smallest private tail page after profiling. The already-selected
+         # checkpoint scheduler identifies this internal layout; bootstrap must
+         # still validate the user-facing block size before selecting it.
+-        checkpoint_layout_selected = scheduler.scheduler_cls == DSV4_CHECKPOINT_SCHEDULER
++        checkpoint_layout_selected = scheduler.scheduler_cls in (
++            DSV4_CHECKPOINT_SCHEDULER,
++            DSV4_ASYNC_CHECKPOINT_SCHEDULER,
++        )
+         is_internal_tail_block_size = checkpoint_layout_selected and block_size in DSV4_CHECKPOINT_TAIL_BLOCK_SIZES
+         if block_size != DSV4_CHECKPOINT_BLOCK_SIZE and not is_internal_tail_block_size:
+             reasons.append("compressor checkpoints currently require block_size=32")
+@@ -70,7 +74,10 @@ def get_dsv4_shared_compressor_workspace_fallback_reasons(
+             reasons.append("compressor checkpoints require the v1 model runner")
+         if vllm_config.kv_events_config is not None and vllm_config.kv_events_config.enable_kv_cache_events:
+             reasons.append("compressor checkpoint KV events are not supported")
+-        if scheduler.scheduler_cls not in (None, DSV4_CHECKPOINT_SCHEDULER):
++        expected_scheduler = (
++            DSV4_ASYNC_CHECKPOINT_SCHEDULER if scheduler.async_scheduling else DSV4_CHECKPOINT_SCHEDULER
++        )
++        if scheduler.scheduler_cls not in (None, expected_scheduler):
+             reasons.append("compressor checkpoints require the checkpoint scheduler")
+     if vllm_config.kv_transfer_config is not None:
+         reasons.append("KV transfer/P-D is enabled")
+diff --git a/vllm_ascend/core/compressor_checkpoint_scheduler.py b/vllm_ascend/core/compressor_checkpoint_scheduler.py
+index d546d7697..93649ca66 100644
+--- a/vllm_ascend/core/compressor_checkpoint_scheduler.py
++++ b/vllm_ascend/core/compressor_checkpoint_scheduler.py
+@@ -1,10 +1,11 @@
+ # SPDX-License-Identifier: Apache-2.0
+ # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
+-"""Synchronous prefill checkpoint scheduling for private compressor rings."""
++"""Checkpoint scheduling for private compressor rings in either scheduling mode."""
+ 
+-from dataclasses import dataclass, fields
++from dataclasses import dataclass, field, fields
+ 
+ from vllm.v1.core.kv_cache_manager import KVCacheManager
++from vllm.v1.core.sched.async_scheduler import AsyncScheduler
+ from vllm.v1.core.sched.output import SchedulerOutput
+ from vllm.v1.core.sched.scheduler import Scheduler
+ from vllm.v1.request import RequestStatus
+@@ -13,10 +14,19 @@ from vllm_ascend.core.compressor_checkpoint import TailCheckpointKey, TailRestor
+ from vllm_ascend.core.compressor_checkpoint_coordinator import CompressorCheckpointCoordinator
+ 
+ 
++@dataclass
++class CompressorCompletedRange:
++    # Captured after upstream scheduling, consumed only with that step's output.
++    endpoint: int
++    num_preemptions: int
++    tail_block_ids: tuple[tuple[int, ...], ...]
++
++
+ @dataclass
+ class CompressorSchedulerOutput(SchedulerOutput):
+     compressor_saves: tuple[TailSavePlan, ...] = ()
+     compressor_restores: tuple[TailRestorePlan, ...] = ()
++    compressor_completed_ranges: dict[str, CompressorCompletedRange] = field(default_factory=dict)
+ 
+ 
+ class CompressorCheckpointScheduler(Scheduler):
+@@ -25,10 +35,12 @@ class CompressorCheckpointScheduler(Scheduler):
+         coordinator = self.kv_cache_manager.coordinator
+         if not isinstance(coordinator, CompressorCheckpointCoordinator):
+             raise ValueError("CompressorCheckpointScheduler requires ring + prefix caching")
+-        if self.scheduler_config.async_scheduling or self.parallel_config.pipeline_parallel_size != 1:
+-            raise ValueError("Compressor checkpoints require synchronous scheduling and PP=1")
++        if bool(self.scheduler_config.async_scheduling) != isinstance(self, AsyncScheduler):
++            raise ValueError("Compressor checkpoint scheduler must match the configured scheduling mode")
++        if self.parallel_config.pipeline_parallel_size != 1:
++            raise ValueError("Compressor checkpoints require PP=1")
+         self.checkpoint_coordinator = coordinator
+-        # Scope the allocation hook to this synchronous scheduler instance;
++        # Scope the allocation hook to this checkpoint scheduler instance;
+         # keep upstream admission, accounting and allocation unchanged.
+         self.kv_cache_manager.allocate_slots = self._allocate_slots
+         # Reuse the upstream pre-allocation boundary hook rather than copying
+@@ -81,18 +93,24 @@ class CompressorCheckpointScheduler(Scheduler):
+         return num_new_tokens
+ 
+     def schedule(self, throttle_prefills=False):
+-        if self.sched_step_seq != self.processed_step_seq:
++        if not self.scheduler_config.async_scheduling and self.sched_step_seq != self.processed_step_seq:
+             raise RuntimeError("Compressor checkpoint scheduling must wait for the previous worker step")
+         output = super().schedule(throttle_prefills)
+         coordinator = self.checkpoint_coordinator
+         pool = coordinator.checkpoints
+         restores = []
+         saves = []
++        completed_ranges = {}
+         for request_id, count in output.num_scheduled_tokens.items():
+             request = self.requests[request_id]
+             private_rings = {
+                 group_id: manager.req_to_blocks[request_id] for group_id, manager in coordinator.tail_managers.items()
+             }
++            completed_ranges[request_id] = CompressorCompletedRange(
++                request.num_computed_tokens,
++                request.num_preemptions,
++                tuple(tuple(block.block_id for block in blocks) for blocks in private_rings.values()),
++            )
+             if (handle := coordinator.pending_restores.pop(request_id, None)) is not None:
+                 restores.append(pool.restore_plan(handle, private_rings))
+             # super().schedule has already advanced the optimistic endpoint.
+@@ -108,16 +126,23 @@ class CompressorCheckpointScheduler(Scheduler):
+             **{field.name: getattr(output, field.name) for field in fields(SchedulerOutput)},
+             compressor_saves=tuple(saves),
+             compressor_restores=tuple(restores),
++            compressor_completed_ranges=completed_ranges,
+         )
+ 
+     def update_from_output(self, scheduler_output, model_runner_output):
+         coordinator = self.checkpoint_coordinator
+         # Worker completion includes all tail copies and a TP completion fence.
+         # Cache ordinary groups only now, so they cannot be read before forward.
+-        for request_id in scheduler_output.num_scheduled_tokens:
++        for request_id, completed in scheduler_output.compressor_completed_ranges.items():
+             request = self.requests.get(request_id)
+-            if request is not None and not request.is_finished():
+-                coordinator.cache_completed_blocks(request, request.num_computed_tokens)
++            if request is None or request.is_finished() or request.num_preemptions != completed.num_preemptions:
++                continue
++            current_rings = tuple(
++                tuple(block.block_id for block in manager.req_to_blocks.get(request_id, ()))
++                for manager in coordinator.tail_managers.values()
++            )
++            if current_rings == completed.tail_block_ids:
++                coordinator.cache_completed_blocks(request, completed.endpoint)
+         for save in scheduler_output.compressor_saves:
+             coordinator.checkpoints.complete_save(save.handle)
+         for restore in scheduler_output.compressor_restores:
+@@ -133,3 +158,11 @@ class CompressorCheckpointScheduler(Scheduler):
+             return False
+         pool.reset()
+         return super().reset_prefix_cache(reset_running_requests, reset_connector)
++
++
++class CompressorCheckpointAsyncScheduler(CompressorCheckpointScheduler, AsyncScheduler):
++    """Reuse native async output placeholders/accounting with checkpoint hooks.
++
++    Cooperative super() calls enter AsyncScheduler before Scheduler; checkpoint
++    publication remains exclusively in the matching worker completion callback.
++    """
+diff --git a/vllm_ascend/platform.py b/vllm_ascend/platform.py
+index db0ec6eae..ee2987e0e 100644
+--- a/vllm_ascend/platform.py
++++ b/vllm_ascend/platform.py
+@@ -33,7 +33,7 @@ os.environ["VLLM_DISABLE_SHARED_EXPERTS_STREAM"] = "1"
+ 
+ from vllm.v1.attention.backends.registry import AttentionBackendEnum
+ 
+-from vllm_ascend.ascend_config import init_ascend_config
++from vllm_ascend.ascend_config import DSV4_ASYNC_CHECKPOINT_SCHEDULER, DSV4_CHECKPOINT_SCHEDULER, init_ascend_config
+ 
+ # isort: off
+ from vllm_ascend.utils import (
+@@ -706,7 +706,9 @@ class NPUPlatform(Platform):
+ 
+         if ascend_config.enable_dsv4_shared_compressor_workspace and cache_config.enable_prefix_caching:
+             vllm_config.scheduler_config.scheduler_cls = (
+-                "vllm_ascend.core.compressor_checkpoint_scheduler.CompressorCheckpointScheduler"
++                DSV4_ASYNC_CHECKPOINT_SCHEDULER
++                if vllm_config.scheduler_config.async_scheduling
++                else DSV4_CHECKPOINT_SCHEDULER
+             )
+ 
+         cp_size = parallel_config.prefill_context_parallel_size * parallel_config.decode_context_parallel_size

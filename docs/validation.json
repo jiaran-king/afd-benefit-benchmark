@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "model_services_compared": [
+    "non_ep4/nonafd-0",
+    "non_ep4/nonafd-1",
+    "non_ep4/nonafd-2",
+    "non_ep4/nonafd-3",
+    "non_ep8/nonafd-0",
+    "non_ep8/nonafd-1",
+    "afd_eager/ffn-0",
+    "afd_eager/attention-0",
+    "afd_fgraph/ffn-0",
+    "afd_fgraph/attention-0"
+  ],
+  "changes_allowed": [
+    "python/model/run paths",
+    "local communication address",
+    "process evidence and dependency checks"
+  ],
+  "original_performance_argv_environment": "unchanged",
+  "offline_request_audit": 36312,
+  "offline_admission_events": 72624,
+  "unit_tests": 6,
+  "new_device_runs": 0,
+  "full_client_dependency_environment": "not installed locally; pydantic unavailable from package index",
+  "original_replay_modules": "preserved byte-identical, with separate portable orchestration"
+}

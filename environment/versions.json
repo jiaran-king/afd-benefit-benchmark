@@ -1,0 +1,39 @@
+{
+  "python": "3.12.13",
+  "python_packages": {"torch": "2.10.0+cpu", "torch-npu": "2.10.0.post4"},
+  "cann": "9.1.0",
+  "driver": "25.5.1.1",
+  "hardware": "Ascend 910C, 8 physical NPUs / 16 DIE, 64 GiB per DIE",
+  "sources": {
+    "vllm": {
+      "repository": "https://github.com/jiaran-king/vllm",
+      "accepted_commits": ["d02df748bf9efd99022f1a062597dc3cb3808485"],
+      "patches": []
+    },
+    "ascend": {
+      "repository": "https://github.com/jiaran-king/vllm-ascend",
+      "accepted_commits": ["52411eb0dec8b3b3d05e8bdf5a9adb7698fb80c5", "5cfb1697cf570b3bae2e30f9cc76d9e4e8bb5f46"],
+      "patches": ["prefixcache-async-pr4.patch", "ascend-local-modifications.patch"]
+    },
+    "afd": {
+      "repository": "https://github.com/jiaran-king/afd-plugin",
+      "accepted_commits": ["cda849a5e0a54576472096c0073f00c7095726f5"],
+      "patches": ["afd-asymmetric-startup.patch"]
+    }
+  },
+  "native": {
+    "compressor_host": "2e0fa08edea5cb0cc1bdbd076cf06f4bf2b0bbc7feb380dcc740f444e571d612",
+    "compressor_api": "8b555cd6188876b15a8243456fcd17e05a69dd678765db97135809534bfb8dc2",
+    "compressor_kernel": "ac96a866542d1230e1a212453048deb77231e1c0acb6e6fa3d8c8c15d9fb7927",
+    "unused_ffn_compressor_host": "6c791b96f6f1508c84ef105d0401bb63f0a9c16bb6b7e12ed442561baf3f5978",
+    "afd_host": "b5ce0b3823b96ed84c226fc21738fd11726eec6f2bdd1ec1e979c1726788f1a2",
+    "afd_api": "10cca03cf60a9296062371e65d8cb401abcc673762f0156ab8973cec8b18caea"
+  },
+  "agentinfer": {
+    "version_identity": "vendored source hashes in results/2026-10-11/sources.json",
+    "upstream_commit": null,
+    "license": "Apache-2.0 source notices",
+    "note": "Upstream commit metadata was not captured in the original experiment; do not substitute an arbitrary current release."
+  },
+  "original_materials_sha256": "bef89ebbbd8450d27f94116f84c853f315114af8c35e9e2350864dc41f6e693c"
+}

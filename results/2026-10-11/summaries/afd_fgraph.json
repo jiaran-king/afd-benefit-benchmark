@@ -1,0 +1,161 @@
+{
+  "group": "afd_fgraph",
+  "run_id": "afd_fgraph-host-fixed-closeout-256sessions-v1",
+  "metrics": {
+    "group": "afd_fgraph",
+    "sessions": 256,
+    "requests": 9078,
+    "prompt_tokens": 748751397,
+    "cached_tokens": 654667776,
+    "actual_prefill_tokens": 94083621,
+    "preemptions": 0,
+    "hit_rate": 0.8743459826893651,
+    "duration_seconds": 3809.308701579459,
+    "requests_per_second": 2.3831095642723774,
+    "restores": 8160,
+    "ttft_mean": 6.61833091494021,
+    "ttft_p50": 3.848808015231043,
+    "ttft_p95": 24.393125647539257,
+    "ttft_p99": 50.56607396593316,
+    "e2e_mean": 6.621821149312063,
+    "e2e_p50": 3.8533785943873227,
+    "e2e_p95": 24.394954538205624,
+    "e2e_p99": 50.568306401064596,
+    "continuation_zero_cached": 662,
+    "total_actual_unique_kv_gib": 515.7672297954559
+  },
+  "audit_status": "complete",
+  "execution_audit": {
+    "status": "passed",
+    "peak_inflight_requests": 16,
+    "request_limit": 16,
+    "dependency_order_and_ready_priority": "passed"
+  },
+  "native_totals": {
+    "requests": 9078,
+    "prompt_tokens": 748751397,
+    "cached_tokens": 654667776,
+    "actual_prefill_tokens": 94083621,
+    "preemptions": 0,
+    "hit_rate": 0.8743459826893651
+  },
+  "domains": [
+    {
+      "domain": 0,
+      "totals": {
+        "requests": 3007,
+        "prompt_tokens": 241461621,
+        "cached_tokens": 206360576,
+        "actual_prefill_tokens": 35101045,
+        "preemptions": 0,
+        "hit_rate": 0.8546309560308966
+      },
+      "miss_evidence": {
+        "checkpoint_limited_requests": 26,
+        "checkpoint_limited_snapshot_budget": 26,
+        "continuation_zero_cached": 276,
+        "ready_checkpoint_but_ordinary_miss": 222
+      },
+      "checkpoint_evictions": {
+        "snapshot_budget": 4950
+      },
+      "formal_counters": {
+        "ordinary_cached_block_evictions": 247321,
+        "checkpoint_created": 5663,
+        "restore_plans": 2646,
+        "admission_allocation_failed_attempts": 0,
+        "lookup_observation_microseconds": 3344033
+      }
+    },
+    {
+      "domain": 1,
+      "totals": {
+        "requests": 2999,
+        "prompt_tokens": 249176519,
+        "cached_tokens": 215580672,
+        "actual_prefill_tokens": 33595847,
+        "preemptions": 0,
+        "hit_rate": 0.8651725004634164
+      },
+      "miss_evidence": {
+        "checkpoint_limited_requests": 26,
+        "checkpoint_limited_snapshot_budget": 26,
+        "continuation_zero_cached": 236,
+        "ready_checkpoint_but_ordinary_miss": 206
+      },
+      "checkpoint_evictions": {
+        "snapshot_budget": 4685
+      },
+      "formal_counters": {
+        "ordinary_cached_block_evictions": 231965,
+        "checkpoint_created": 5398,
+        "restore_plans": 2677,
+        "admission_allocation_failed_attempts": 0,
+        "lookup_observation_microseconds": 3633974
+      }
+    },
+    {
+      "domain": 2,
+      "totals": {
+        "requests": 3072,
+        "prompt_tokens": 258113257,
+        "cached_tokens": 232726528,
+        "actual_prefill_tokens": 25386729,
+        "preemptions": 0,
+        "hit_rate": 0.9016450015196236
+      },
+      "miss_evidence": {
+        "checkpoint_limited_requests": 5,
+        "checkpoint_limited_snapshot_budget": 5,
+        "continuation_zero_cached": 150,
+        "ready_checkpoint_but_ordinary_miss": 125
+      },
+      "checkpoint_evictions": {
+        "snapshot_budget": 3233
+      },
+      "formal_counters": {
+        "ordinary_cached_block_evictions": 148513,
+        "checkpoint_created": 3946,
+        "restore_plans": 2837,
+        "admission_allocation_failed_attempts": 0,
+        "lookup_observation_microseconds": 3505388
+      }
+    }
+  ],
+  "graph": {
+    "captures": {},
+    "logged_replay_counts": {},
+    "release_replay_counts": {},
+    "dedicated_graph_bytes": null,
+    "formal_observation_state": {
+      "status": "passed",
+      "policy": "same read-only recorder before and after pressure for both AFD modes",
+      "before_recorded_at_ns": 1791718668806474439,
+      "formal_start_ns": 1.79171874697143e+18,
+      "formal_end_metrics_ns": 1.791722583571351e+18,
+      "after_started_ns": 1791722596744372113,
+      "unique_state_samples": 2,
+      "samples_during_pressure": 0
+    },
+    "runtime_state_evidence": "retained-artifact:native-graph-live-state.json",
+    "runtime_state_earlier_evidence": [
+      "retained-artifact:native-graph-live-state-1791722596751997089.json"
+    ],
+    "runtime_state_recorded_at_ns": 1791722596751997089,
+    "retained_graph_objects_per_rank": {
+      "13": 1,
+      "12": 1,
+      "15": 1,
+      "14": 1
+    },
+    "live_replay_counts": {
+      "13": 835404,
+      "12": 835404,
+      "15": 835404,
+      "14": 835404
+    },
+    "same_graph_replay_counts_increased_during_formal_run": true,
+    "recording_note": "AFD logger default WARNING filters INFO capture/replay lines; actual graph objects and positive native runner counters were read without attaching, pausing or executing in workers. Counters sampled before and after formal pressure; neither mode sampled in the pressure interval."
+  },
+  "actual_host_opmaster_sha256": "2e0fa08edea5cb0cc1bdbd076cf06f4bf2b0bbc7feb380dcc740f444e571d612"
+}

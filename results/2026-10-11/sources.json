@@ -1,0 +1,1213 @@
+{
+  "scope": "curated sources only; raw data retained outside public Git",
+  "artifacts": [
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "agentinfer_frozen_replay.py",
+      "source_sha256": "db314678df094710b38bd3c6e9e366b5789c4278f4c46ae1c8f83cd68e45156a",
+      "published_path": "scripts/runner/agentinfer_frozen_replay.py",
+      "published_sha256": "db314678df094710b38bd3c6e9e366b5789c4278f4c46ae1c8f83cd68e45156a",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "deterministic_runtime.py",
+      "source_sha256": "f95423d475ba3c3577c24f77c1d4919bf0a50b915b19a1092559b17550541f51",
+      "published_path": "scripts/runner/deterministic_runtime.py",
+      "published_sha256": "f95423d475ba3c3577c24f77c1d4919bf0a50b915b19a1092559b17550541f51",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "random_priority_admission.py",
+      "source_sha256": "07ff74d911e0f7158d1e17587b87b7b65c33f7b108991568dbe4775c84c7a2a3",
+      "published_path": "scripts/runner/random_priority_admission.py",
+      "published_sha256": "07ff74d911e0f7158d1e17587b87b7b65c33f7b108991568dbe4775c84c7a2a3",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "replay_sse.py",
+      "source_sha256": "a54a550734941442a9b29fe1d613bc7219580d7cb13c8177f80685c2733609bd",
+      "published_path": "scripts/runner/replay_sse.py",
+      "published_sha256": "a54a550734941442a9b29fe1d613bc7219580d7cb13c8177f80685c2733609bd",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "checkpoint_observer.py",
+      "source_sha256": "fa47c28f708b6d6571fd243236a503bb46f3a031b4803f26a67fa9cc5e00b236",
+      "published_path": "scripts/runner/checkpoint_observer.py",
+      "published_sha256": "fa47c28f708b6d6571fd243236a503bb46f3a031b4803f26a67fa9cc5e00b236",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "layout_identity.py",
+      "source_sha256": "0dccbf97e874ebca89c7206887ab44fabadbe26b63e9f0fc52f8e8529bc9adc1",
+      "published_path": "scripts/runner/layout_identity.py",
+      "published_sha256": "0dccbf97e874ebca89c7206887ab44fabadbe26b63e9f0fc52f8e8529bc9adc1",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "91af3e50c232d2caf3443cf18ec4079e38838f4dd4bfd91c4cbf29901e65de63",
+      "published_path": "scripts/runner/vendor/agentinfer/__init__.py",
+      "published_sha256": "91af3e50c232d2caf3443cf18ec4079e38838f4dd4bfd91c4cbf29901e65de63",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "053e41b634de64a75998dfd485308d8e9f096384e1935bed5b947f964f149c9d",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/__init__.py",
+      "published_sha256": "053e41b634de64a75998dfd485308d8e9f096384e1935bed5b947f964f149c9d",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "dc4613f67e798990970e1708230f129b6e941376c688c62ae8c1f15b7d61934e",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/__init__.py",
+      "published_sha256": "dc4613f67e798990970e1708230f129b6e941376c688c62ae8c1f15b7d61934e",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "98c1daf407da394c9e109934dfab7c9df8b557bbe71fce40b56d1186c7964a88",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/claude/__init__.py",
+      "published_sha256": "98c1daf407da394c9e109934dfab7c9df8b557bbe71fce40b56d1186c7964a88",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "fence.py",
+      "source_sha256": "175f97d8dfface4abd5511d8a9c1f472efa1ea7f73da2cdba26618fe53f05010",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/claude/fence.py",
+      "published_sha256": "175f97d8dfface4abd5511d8a9c1f472efa1ea7f73da2cdba26618fe53f05010",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "interaction.py",
+      "source_sha256": "bc90fa5f2da4644d8bec6b5891822a88b6f2d9b30bd3a7e0e2e974de2267dfc1",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/claude/interaction.py",
+      "published_sha256": "bc90fa5f2da4644d8bec6b5891822a88b6f2d9b30bd3a7e0e2e974de2267dfc1",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "profiles.py",
+      "source_sha256": "cacc22dc016a83e25b2f5e23c2f7f21f401cc0e4c0d635beaac1306bc8edf888",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/claude/profiles.py",
+      "published_sha256": "cacc22dc016a83e25b2f5e23c2f7f21f401cc0e4c0d635beaac1306bc8edf888",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "runner.py",
+      "source_sha256": "561662766840c4e9aaec6dd6a9f4ebea4110a73c81f2bdabeaf64ee19b406ae8",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/claude/runner.py",
+      "published_sha256": "561662766840c4e9aaec6dd6a9f4ebea4110a73c81f2bdabeaf64ee19b406ae8",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "runtime.py",
+      "source_sha256": "37d0843881ddbfb4847af83a96fb9b1278266fe237aa5bf6440885466596a11b",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/claude/runtime.py",
+      "published_sha256": "37d0843881ddbfb4847af83a96fb9b1278266fe237aa5bf6440885466596a11b",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "settings.py",
+      "source_sha256": "6ef435c72f31a6f27449594890527c7a7e539cef93396c4a94f08f1e02117eae",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/claude/settings.py",
+      "published_sha256": "6ef435c72f31a6f27449594890527c7a7e539cef93396c4a94f08f1e02117eae",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "tmux.py",
+      "source_sha256": "8fba47a155f282abd405059835397b423e7ff70d1f77c5b68f248271145ed19c",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/claude/tmux.py",
+      "published_sha256": "8fba47a155f282abd405059835397b423e7ff70d1f77c5b68f248271145ed19c",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "transcript.py",
+      "source_sha256": "c4b3e462bd3b6b80f1509049d8b4b6ea91704636e87c7daa1aa39d22194c7ac7",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/claude/transcript.py",
+      "published_sha256": "c4b3e462bd3b6b80f1509049d8b4b6ea91704636e87c7daa1aa39d22194c7ac7",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "contracts.py",
+      "source_sha256": "52c5f95b39df6a50b57adc9ec818239dfa19f5d072cd94c364f48df09de7f277",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/contracts.py",
+      "published_sha256": "52c5f95b39df6a50b57adc9ec818239dfa19f5d072cd94c364f48df09de7f277",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "dispatch.py",
+      "source_sha256": "715081934cbfcf999b01ce32df1052e2a889253438ae829c5babfb17e6da236b",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/dispatch.py",
+      "published_sha256": "715081934cbfcf999b01ce32df1052e2a889253438ae829c5babfb17e6da236b",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "d5cb26eb51ce822cef4cb1484ae1c7d79f0f2d43890756ed858e0f11173b54eb",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/dsh/__init__.py",
+      "published_sha256": "d5cb26eb51ce822cef4cb1484ae1c7d79f0f2d43890756ed858e0f11173b54eb",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "bridge.py",
+      "source_sha256": "05d415915677bff69cd1d92c9ff25c797728cc296d0d879240cf4f9b7bbbaade",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/dsh/bridge.py",
+      "published_sha256": "05d415915677bff69cd1d92c9ff25c797728cc296d0d879240cf4f9b7bbbaade",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "instance.py",
+      "source_sha256": "9e9b6f68b8f8f6bed789d16247ca6717a6a971bf68882263bf78ce639ccc121c",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/dsh/instance.py",
+      "published_sha256": "9e9b6f68b8f8f6bed789d16247ca6717a6a971bf68882263bf78ce639ccc121c",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "profiles.py",
+      "source_sha256": "7ff5984eacdf2172be3365bde4b57b1714ebf6b9e9cb433cc086fa08fa549fb5",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/dsh/profiles.py",
+      "published_sha256": "7ff5984eacdf2172be3365bde4b57b1714ebf6b9e9cb433cc086fa08fa549fb5",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "runner.py",
+      "source_sha256": "1fafb7beac5b80d4b09d0ea94045930b1ade1ed1838fca26e16aa0ac2dbfc354",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/dsh/runner.py",
+      "published_sha256": "1fafb7beac5b80d4b09d0ea94045930b1ade1ed1838fca26e16aa0ac2dbfc354",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "runtime.py",
+      "source_sha256": "58370c0147ca0e9188d511940e186d6f4c4c2907aba3b1cb7b5574e6ff80c748",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/dsh/runtime.py",
+      "published_sha256": "58370c0147ca0e9188d511940e186d6f4c4c2907aba3b1cb7b5574e6ff80c748",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "transcript.py",
+      "source_sha256": "4fe606729bbf3a5f5ab5f10101df4a7be8d067c4302ade9af034208cd108da8c",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/dsh/transcript.py",
+      "published_sha256": "4fe606729bbf3a5f5ab5f10101df4a7be8d067c4302ade9af034208cd108da8c",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "cafae76901f76e1c372c1f57ce382fd1aab0601de6a02d16bc54a644669ec15f",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/jiuwenswarm/__init__.py",
+      "published_sha256": "cafae76901f76e1c372c1f57ce382fd1aab0601de6a02d16bc54a644669ec15f",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "extension.py",
+      "source_sha256": "77f4afb4b238e25ee18bc0ad9fbddfe71fd8322f624c4f4c9b9306010464e53e",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/jiuwenswarm/extension.py",
+      "published_sha256": "77f4afb4b238e25ee18bc0ad9fbddfe71fd8322f624c4f4c9b9306010464e53e",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "instance.py",
+      "source_sha256": "229972afc552293b8aeef420547a7f2f88acc6f100e9e2615188ae7e020d457f",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/jiuwenswarm/instance.py",
+      "published_sha256": "229972afc552293b8aeef420547a7f2f88acc6f100e9e2615188ae7e020d457f",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "profiles.py",
+      "source_sha256": "bdf793ffc5784e2f79a9e53809efe90ac6daf93ab2d54c49b64f9900d75b33db",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/jiuwenswarm/profiles.py",
+      "published_sha256": "bdf793ffc5784e2f79a9e53809efe90ac6daf93ab2d54c49b64f9900d75b33db",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "runner.py",
+      "source_sha256": "a8cfd2472d57778a9e10fcd9ac3983d869a0dd4ff977e7eee29b7219649b3738",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/jiuwenswarm/runner.py",
+      "published_sha256": "a8cfd2472d57778a9e10fcd9ac3983d869a0dd4ff977e7eee29b7219649b3738",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "runtime.py",
+      "source_sha256": "f8c7ec17feace1059dbb5920e9fcdde0c91cc57aa94ab7ecd26364e4f0435abd",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/jiuwenswarm/runtime.py",
+      "published_sha256": "f8c7ec17feace1059dbb5920e9fcdde0c91cc57aa94ab7ecd26364e4f0435abd",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "preflight.py",
+      "source_sha256": "6ab0e9d30640002ab529146a7bc238146eeb7e5a572b23937f7e979bcfcd88f0",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/preflight.py",
+      "published_sha256": "6ab0e9d30640002ab529146a7bc238146eeb7e5a572b23937f7e979bcfcd88f0",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "registry.py",
+      "source_sha256": "6538662f3de17d6a5ea55da0a3e76c89eefb230183b8792846a7b9a825d6127a",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/registry.py",
+      "published_sha256": "6538662f3de17d6a5ea55da0a3e76c89eefb230183b8792846a7b9a825d6127a",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "runtime.py",
+      "source_sha256": "4fcb80ad1e1d4606f4ac6a16369becb47577510f80dc1bdda17a1c378d1fc0f6",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/agents/runtime.py",
+      "published_sha256": "4fcb80ad1e1d4606f4ac6a16369becb47577510f80dc1bdda17a1c378d1fc0f6",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "5531999f2b908cb36c8ee7c1752b3a4fca69c7a6bc4bc6250bae4be51d31b83d",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/__init__.py",
+      "published_sha256": "5531999f2b908cb36c8ee7c1752b3a4fca69c7a6bc4bc6250bae4be51d31b83d",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "ef89bb608e0e83aeb327edad1e6b1bbc718e212a5a379b653f3e0eafb348b9b2",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/artifacts/__init__.py",
+      "published_sha256": "ef89bb608e0e83aeb327edad1e6b1bbc718e212a5a379b653f3e0eafb348b9b2",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "finalizer.py",
+      "source_sha256": "22456c20a9123f6157c38f46a15a52f4a0f0c4449386cc70ddc1006ce889c0d9",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/artifacts/finalizer.py",
+      "published_sha256": "22456c20a9123f6157c38f46a15a52f4a0f0c4449386cc70ddc1006ce889c0d9",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "manifest.py",
+      "source_sha256": "04116eff9b62d10b43d32fc4065a066f75292799f8a5ba29610029d2554c1c57",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/artifacts/manifest.py",
+      "published_sha256": "04116eff9b62d10b43d32fc4065a066f75292799f8a5ba29610029d2554c1c57",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "summary.py",
+      "source_sha256": "d22ffd3c84cfd5539727eed05d2d85191a123c57e8c8155094ad5c0596ce7d7d",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/artifacts/summary.py",
+      "published_sha256": "d22ffd3c84cfd5539727eed05d2d85191a123c57e8c8155094ad5c0596ce7d7d",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "task_index.py",
+      "source_sha256": "f65a67d86304b9689aebbf7d3677e62e359f7cb790759d45b18aef8db680b6ee",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/artifacts/task_index.py",
+      "published_sha256": "f65a67d86304b9689aebbf7d3677e62e359f7cb790759d45b18aef8db680b6ee",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "task_result.py",
+      "source_sha256": "56ea94d87db6cb23bbce86496fe86272a2a4fa1c6cbde40f0c0123a72a021b42",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/artifacts/task_result.py",
+      "published_sha256": "56ea94d87db6cb23bbce86496fe86272a2a4fa1c6cbde40f0c0123a72a021b42",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "cli.py",
+      "source_sha256": "a2278d74d28cc9afff1d5efa9197ca42a8764df81be2bfceac2463a89fe6c84f",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/cli.py",
+      "published_sha256": "a2278d74d28cc9afff1d5efa9197ca42a8764df81be2bfceac2463a89fe6c84f",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "bd82902dde2da73414568f90fccceeeffbf182a610e628d025f26716a3905b21",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/collectors/__init__.py",
+      "published_sha256": "bd82902dde2da73414568f90fccceeeffbf182a610e628d025f26716a3905b21",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "correctness.py",
+      "source_sha256": "94974a5850bd51219634448c0276d58d44deeb479ee67c89967f3bd0a5be5fc7",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/collectors/correctness.py",
+      "published_sha256": "94974a5850bd51219634448c0276d58d44deeb479ee67c89967f3bd0a5be5fc7",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "environment.py",
+      "source_sha256": "4a102b08396b7ff5fc6065cec2651378dc2eda67fb6a5fe98fadc218cf9de329",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/collectors/environment.py",
+      "published_sha256": "4a102b08396b7ff5fc6065cec2651378dc2eda67fb6a5fe98fadc218cf9de329",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "source_control.py",
+      "source_sha256": "c56f23e9a29800420de7b311c2742a581eecbfb4f626600b04d749101baa8f0c",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/collectors/source_control.py",
+      "published_sha256": "c56f23e9a29800420de7b311c2742a581eecbfb4f626600b04d749101baa8f0c",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "vllm.py",
+      "source_sha256": "692bc3571965d86576a650b2bca2b6ddbd8b819543b013bf9f077d6250313f75",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/collectors/vllm.py",
+      "published_sha256": "692bc3571965d86576a650b2bca2b6ddbd8b819543b013bf9f077d6250313f75",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "common.py",
+      "source_sha256": "2e5a6f778c4b7ffc1b26cf2e68b3986637b5c7120d70299ad7e4e986fbe07f32",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/common.py",
+      "published_sha256": "2e5a6f778c4b7ffc1b26cf2e68b3986637b5c7120d70299ad7e4e986fbe07f32",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "compare.py",
+      "source_sha256": "b8287f6fd00dc18dfa79df07024ea4944ac591dd770de135f77763a21e7a6efc",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/compare.py",
+      "published_sha256": "b8287f6fd00dc18dfa79df07024ea4944ac591dd770de135f77763a21e7a6efc",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "config.py",
+      "source_sha256": "60c9bd9bef7036ef6a5c760a107f191a0200f9bd0e5d46cf423177f8f9b030fc",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/config.py",
+      "published_sha256": "60c9bd9bef7036ef6a5c760a107f191a0200f9bd0e5d46cf423177f8f9b030fc",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "dataset.py",
+      "source_sha256": "279c7b88d3f3d3e3ed0e28673bae9dbac69d22ad982165d990e13c7c90442c0a",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/dataset.py",
+      "published_sha256": "279c7b88d3f3d3e3ed0e28673bae9dbac69d22ad982165d990e13c7c90442c0a",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "distribution_plot.py",
+      "source_sha256": "80be7af905e118a14e75ac2c84adf75441580cf1af3d0852ed724cc6c1146b31",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/distribution_plot.py",
+      "published_sha256": "80be7af905e118a14e75ac2c84adf75441580cf1af3d0852ed724cc6c1146b31",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "b27c767a8e27460d22608a58fec6e745bec8a6a3080077a53e2b9b2d0989c074",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/metrics/__init__.py",
+      "published_sha256": "b27c767a8e27460d22608a58fec6e745bec8a6a3080077a53e2b9b2d0989c074",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "request.py",
+      "source_sha256": "f944317ac5c86697657f61335b3e3b69070d762581df703ae00c1576368ca365",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/metrics/request.py",
+      "published_sha256": "f944317ac5c86697657f61335b3e3b69070d762581df703ae00c1576368ca365",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "schema.py",
+      "source_sha256": "27a38e2f49c78e18935df612f03863d9ad4706ae4d1023449e7a2b6ccf2f4385",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/metrics/schema.py",
+      "published_sha256": "27a38e2f49c78e18935df612f03863d9ad4706ae4d1023449e7a2b6ccf2f4385",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "source_health.py",
+      "source_sha256": "a99e9c449a7db22844694a322d9161e7df7d9598d9259ed77c87f92bd2b2ad50",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/metrics/source_health.py",
+      "published_sha256": "a99e9c449a7db22844694a322d9161e7df7d9598d9259ed77c87f92bd2b2ad50",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "task.py",
+      "source_sha256": "01a552880ad0dce3ff9c602084b599138e5d246bc765d873451dff8a294d0e28",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/metrics/task.py",
+      "published_sha256": "01a552880ad0dce3ff9c602084b599138e5d246bc765d873451dff8a294d0e28",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "vllm.py",
+      "source_sha256": "1de21538e57e914087c6845c11697842fd40f39ee142041b87d50626efb0e37b",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/metrics/vllm.py",
+      "published_sha256": "1de21538e57e914087c6845c11697842fd40f39ee142041b87d50626efb0e37b",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "runner.py",
+      "source_sha256": "42059662a81cba87193ebd0756949c95a71e737a7668c98576139b79a41e926c",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/runner.py",
+      "published_sha256": "42059662a81cba87193ebd0756949c95a71e737a7668c98576139b79a41e926c",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "session_analysis.py",
+      "source_sha256": "bb4a1eb2fc33d8acece816299fa78dcccd86f8379514a3618afe1894fa1c0344",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/session_analysis.py",
+      "published_sha256": "bb4a1eb2fc33d8acece816299fa78dcccd86f8379514a3618afe1894fa1c0344",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "summarize.py",
+      "source_sha256": "bb2a562932341bf86e84fbeeeb274cc9539aea7970907ee3bad8d5db955bc073",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/summarize.py",
+      "published_sha256": "bb2a562932341bf86e84fbeeeb274cc9539aea7970907ee3bad8d5db955bc073",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "workspace.py",
+      "source_sha256": "1cd8777ce906afff4ebb9a10a906522298677636b17878707c257ea2f285c525",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/benchkit/workspace.py",
+      "published_sha256": "1cd8777ce906afff4ebb9a10a906522298677636b17878707c257ea2f285c525",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "94e0074c8e4c985b7f294d663c5101bc6b96ef38f81a549862ca081062b0eefd",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/replay/__init__.py",
+      "published_sha256": "94e0074c8e4c985b7f294d663c5101bc6b96ef38f81a549862ca081062b0eefd",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "analyzer.py",
+      "source_sha256": "246f60e3ed3ed0ed5e44673b7b837372d2dc80efa48364c0080647e0e93d81fa",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/replay/analyzer.py",
+      "published_sha256": "246f60e3ed3ed0ed5e44673b7b837372d2dc80efa48364c0080647e0e93d81fa",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "config.py",
+      "source_sha256": "915fb5fd4d1f45f484881565e46f1f3a9df7c2c558b40a49e39b36ab04bb34dd",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/replay/config.py",
+      "published_sha256": "915fb5fd4d1f45f484881565e46f1f3a9df7c2c558b40a49e39b36ab04bb34dd",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "67c29f995b81d8a07d829ab6016a4efb73588c30c5f7f1f0a6cb17f75ae025b8",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/replay/converters/__init__.py",
+      "published_sha256": "67c29f995b81d8a07d829ab6016a4efb73588c30c5f7f1f0a6cb17f75ae025b8",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "base.py",
+      "source_sha256": "2ad0b9cc37f553995621e0e76219ceff96d6b0c9f63326d840ae6046a1118e88",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/replay/converters/base.py",
+      "published_sha256": "2ad0b9cc37f553995621e0e76219ceff96d6b0c9f63326d840ae6046a1118e88",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "codex_swebenchpro.py",
+      "source_sha256": "69074e0fa2fb46db199260bce0b7e1783b126657e2cb6125c2c992d1f262df4e",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/replay/converters/codex_swebenchpro.py",
+      "published_sha256": "69074e0fa2fb46db199260bce0b7e1783b126657e2cb6125c2c992d1f262df4e",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "executor.py",
+      "source_sha256": "f9b06c8ea1f0f67ce239d64e566b2d2c6f860087493de4c904cc1e4d369802d6",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/replay/executor.py",
+      "published_sha256": "f9b06c8ea1f0f67ce239d64e566b2d2c6f860087493de4c904cc1e4d369802d6",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "planner.py",
+      "source_sha256": "eb0a6b55f47bcc745f6078da80bbebab8bbbe86dd6e6941ae67c519ccfc991d5",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/replay/planner.py",
+      "published_sha256": "eb0a6b55f47bcc745f6078da80bbebab8bbbe86dd6e6941ae67c519ccfc991d5",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "prompt.py",
+      "source_sha256": "8a3fdeb19bc2291f2df310c0187b2cce655030d4d7500e6627715eafa89b39bc",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/replay/prompt.py",
+      "published_sha256": "8a3fdeb19bc2291f2df310c0187b2cce655030d4d7500e6627715eafa89b39bc",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "runner.py",
+      "source_sha256": "fde494631d9a1bba08d9b830b9854b252c9c97899dca6588c2279dbc6abd18b9",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/replay/runner.py",
+      "published_sha256": "fde494631d9a1bba08d9b830b9854b252c9c97899dca6588c2279dbc6abd18b9",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "sampler.py",
+      "source_sha256": "050028133b165455bf84b485c0165d84d7e67fcba50ca6e317af9dbefc541c06",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/replay/sampler.py",
+      "published_sha256": "050028133b165455bf84b485c0165d84d7e67fcba50ca6e317af9dbefc541c06",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "schema.py",
+      "source_sha256": "2b74310a6fec8128559fdf9c73f5362bb4b9ee2024f2be683c9f959fe369b457",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/replay/schema.py",
+      "published_sha256": "2b74310a6fec8128559fdf9c73f5362bb4b9ee2024f2be683c9f959fe369b457",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "timing.py",
+      "source_sha256": "64eafd5af3b0a0854fa25fb6805ef0ace3288da34bca0f1ac8aca89d1cb7f3ba",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/replay/timing.py",
+      "published_sha256": "64eafd5af3b0a0854fa25fb6805ef0ace3288da34bca0f1ac8aca89d1cb7f3ba",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "tokenizer_retry.py",
+      "source_sha256": "66b46133f1b0cf4e6a08f4a671c99396cd7ab0ce53245f9da9a2c09e05dde303",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/replay/tokenizer_retry.py",
+      "published_sha256": "66b46133f1b0cf4e6a08f4a671c99396cd7ab0ce53245f9da9a2c09e05dde303",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "transport.py",
+      "source_sha256": "cd20f032bc0ac2fac77cce19237b7d78a7597ffc131ca2cea6f1b34e3e6622ee",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/replay/transport.py",
+      "published_sha256": "cd20f032bc0ac2fac77cce19237b7d78a7597ffc131ca2cea6f1b34e3e6622ee",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "unified_trace_ir.py",
+      "source_sha256": "1b1b0bec374b9e93e2dcd4e2b2a4603401ebd72fc01e7a4b36a578e479bf847a",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/replay/unified_trace_ir.py",
+      "published_sha256": "1b1b0bec374b9e93e2dcd4e2b2a4603401ebd72fc01e7a4b36a578e479bf847a",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "70f6dbf3b8a4cbd4b97a56cd443c422ff65711ce0c826796a569bf980639120e",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/request_proxy/__init__.py",
+      "published_sha256": "70f6dbf3b8a4cbd4b97a56cd443c422ff65711ce0c826796a569bf980639120e",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "lifecycle.py",
+      "source_sha256": "4658cba897ea9b2e1c948332d07f1f3726cdc128fc859cf8fef768429a546c25",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/request_proxy/lifecycle.py",
+      "published_sha256": "4658cba897ea9b2e1c948332d07f1f3726cdc128fc859cf8fef768429a546c25",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "observers.py",
+      "source_sha256": "c93d4d7738a722ff08b1bc43666b6110bf15938d471a2d25e836414c2f639ccc",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/request_proxy/observers.py",
+      "published_sha256": "c93d4d7738a722ff08b1bc43666b6110bf15938d471a2d25e836414c2f639ccc",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "process.py",
+      "source_sha256": "c12f03b52a500d2708b98634701516059581c9fa5d4b0472b9ba8dc2217b87ab",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/request_proxy/process.py",
+      "published_sha256": "c12f03b52a500d2708b98634701516059581c9fa5d4b0472b9ba8dc2217b87ab",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "request_trace.py",
+      "source_sha256": "8874e48b5cdb653d158d888ea4cfee3ca5d7d41c3a967f037dc9c204acd92c1e",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/request_proxy/request_trace.py",
+      "published_sha256": "8874e48b5cdb653d158d888ea4cfee3ca5d7d41c3a967f037dc9c204acd92c1e",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "server.py",
+      "source_sha256": "f4e11564014798f5b7fbbf153a518f00e154fcfdfef1ee47fd2d263a9dbc6f90",
+      "published_path": "scripts/runner/vendor/agentinfer/agentbench/request_proxy/server.py",
+      "published_sha256": "f4e11564014798f5b7fbbf153a518f00e154fcfdfef1ee47fd2d263a9dbc6f90",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "089bfc9b4ef8a0ee8cb9187a5fa80e54514ade8ce88b0cb02dcf4fce484593fd",
+      "published_path": "scripts/runner/vendor/agentinfer/agentcache/__init__.py",
+      "published_sha256": "089bfc9b4ef8a0ee8cb9187a5fa80e54514ade8ce88b0cb02dcf4fce484593fd",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "91e785c1afc67bca6b705b03327d10bcc628434c05ac1b7aa1680adce8732c5f",
+      "published_path": "scripts/runner/vendor/agentinfer/agentcache/core/__init__.py",
+      "published_sha256": "91e785c1afc67bca6b705b03327d10bcc628434c05ac1b7aa1680adce8732c5f",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "api_adapter.py",
+      "source_sha256": "d596a9f3f1b18eac25c14257c882711c21b434d79888610869bb169488ecbff9",
+      "published_path": "scripts/runner/vendor/agentinfer/agentcache/core/api_adapter.py",
+      "published_sha256": "d596a9f3f1b18eac25c14257c882711c21b434d79888610869bb169488ecbff9",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "factory.py",
+      "source_sha256": "aa95cde573314477918bd9191049a81b148d51863637e3af41709bc5419af21d",
+      "published_path": "scripts/runner/vendor/agentinfer/agentcache/core/factory.py",
+      "published_sha256": "aa95cde573314477918bd9191049a81b148d51863637e3af41709bc5419af21d",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "request_queue.py",
+      "source_sha256": "b94f976b4c0f1461aa1f1eab33ce506809f26c32c958a64c979acc689f2fa8f0",
+      "published_path": "scripts/runner/vendor/agentinfer/agentcache/core/request_queue.py",
+      "published_sha256": "b94f976b4c0f1461aa1f1eab33ce506809f26c32c958a64c979acc689f2fa8f0",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "scheduler.py",
+      "source_sha256": "08800b33e2eb0f73e5ef62d9fab617bc643a930ec0959bbee0a53320cecfc61d",
+      "published_path": "scripts/runner/vendor/agentinfer/agentcache/core/scheduler.py",
+      "published_sha256": "08800b33e2eb0f73e5ef62d9fab617bc643a930ec0959bbee0a53320cecfc61d",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "vllm_logging.py",
+      "source_sha256": "136452cf8fd669ca388997dfeddb4b5aa43af0793498542da4552138e9edb2dc",
+      "published_path": "scripts/runner/vendor/agentinfer/agentcache/core/vllm_logging.py",
+      "published_sha256": "136452cf8fd669ca388997dfeddb4b5aa43af0793498542da4552138e9edb2dc",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "05d30e01f55c0485a7edcdfda612b36e7f7ee8d0be3155d4bbbd1a9fdfd0ee52",
+      "published_path": "scripts/runner/vendor/agentinfer/agentcache/entrypoints/__init__.py",
+      "published_sha256": "05d30e01f55c0485a7edcdfda612b36e7f7ee8d0be3155d4bbbd1a9fdfd0ee52",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "bench.py",
+      "source_sha256": "5c2d69a753f14595564f3a3bbab60526810f659723a414226e34ee7ca03b40b9",
+      "published_path": "scripts/runner/vendor/agentinfer/agentcache/entrypoints/bench.py",
+      "published_sha256": "5c2d69a753f14595564f3a3bbab60526810f659723a414226e34ee7ca03b40b9",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "05d30e01f55c0485a7edcdfda612b36e7f7ee8d0be3155d4bbbd1a9fdfd0ee52",
+      "published_path": "scripts/runner/vendor/agentinfer/agentcache/entrypoints/cli/__init__.py",
+      "published_sha256": "05d30e01f55c0485a7edcdfda612b36e7f7ee8d0be3155d4bbbd1a9fdfd0ee52",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "main.py",
+      "source_sha256": "d131a126ba15a459d594bab6f5cc4cbfea89e57cb801500ce9956a4d7c22bcca",
+      "published_path": "scripts/runner/vendor/agentinfer/agentcache/entrypoints/cli/main.py",
+      "published_sha256": "d131a126ba15a459d594bab6f5cc4cbfea89e57cb801500ce9956a4d7c22bcca",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "llm.py",
+      "source_sha256": "5b5c9b011926c545d9c3b776d4c8df534767f974b8247daeda41f5152a3d00d1",
+      "published_path": "scripts/runner/vendor/agentinfer/agentcache/llm.py",
+      "published_sha256": "5b5c9b011926c545d9c3b776d4c8df534767f974b8247daeda41f5152a3d00d1",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "f59778ee311574ea7a5e46a723bc3cd825ffa202e4f1d0bc5c0d370d4499a77e",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/__init__.py",
+      "published_sha256": "f59778ee311574ea7a5e46a723bc3cd825ffa202e4f1d0bc5c0d370d4499a77e",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "admission_outcome.py",
+      "source_sha256": "f567b8ba2980e0e19f1ae7fff3707da308ca8bdc5fe79359e8c7e3d1be84688d",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/admission_outcome.py",
+      "published_sha256": "f567b8ba2980e0e19f1ae7fff3707da308ca8bdc5fe79359e8c7e3d1be84688d",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "backend.py",
+      "source_sha256": "a53d5a2255e3f5827c7655ac1542f0ebfe5b01d0ca77d48129c0ba4ed83e799e",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/backend.py",
+      "published_sha256": "a53d5a2255e3f5827c7655ac1542f0ebfe5b01d0ca77d48129c0ba4ed83e799e",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "domain.py",
+      "source_sha256": "2c14c17bd19a12d398bf0dddc8ceccec2760c37a01e1616e11b2c3c416c5f33c",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/domain.py",
+      "published_sha256": "2c14c17bd19a12d398bf0dddc8ceccec2760c37a01e1616e11b2c3c416c5f33c",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "events.py",
+      "source_sha256": "2a8e549917c3024dd79ac6f84fff43bff841b8a93099a78d2cbbc576054bf592",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/events.py",
+      "published_sha256": "2a8e549917c3024dd79ac6f84fff43bff841b8a93099a78d2cbbc576054bf592",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "factors.py",
+      "source_sha256": "54f2f0aea51f09824c3892b6d7bd77498e6c89787e13fb0a21f58664a5902fa4",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/factors.py",
+      "published_sha256": "54f2f0aea51f09824c3892b6d7bd77498e6c89787e13fb0a21f58664a5902fa4",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "headers.py",
+      "source_sha256": "4b5f91c6412b4c062d64099019846871a9dc92790e73312f8fea62872e40d0a7",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/headers.py",
+      "published_sha256": "4b5f91c6412b4c062d64099019846871a9dc92790e73312f8fea62872e40d0a7",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "identity.py",
+      "source_sha256": "dd6de7baee319ff5b1a768d0ef14afbeb53e6c3e08f7c3e5bbc80b55be980d4d",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/identity.py",
+      "published_sha256": "dd6de7baee319ff5b1a768d0ef14afbeb53e6c3e08f7c3e5bbc80b55be980d4d",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "lifecycle.py",
+      "source_sha256": "9148915e0ce909721bf3b664b113ef7b7b744323409ee679fb4abf504a224408",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/lifecycle.py",
+      "published_sha256": "9148915e0ce909721bf3b664b113ef7b7b744323409ee679fb4abf504a224408",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "observability.py",
+      "source_sha256": "f1ddbbc8fb7cfda11c4eeeab48c9dd566f758e97344151fcf7d12a27563268c3",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/observability.py",
+      "published_sha256": "f1ddbbc8fb7cfda11c4eeeab48c9dd566f758e97344151fcf7d12a27563268c3",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "program_registry.py",
+      "source_sha256": "afc4548fff8dc1fa11ca6397cf988060b765cd57e94186c341815419a845ddd7",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/program_registry.py",
+      "published_sha256": "afc4548fff8dc1fa11ca6397cf988060b765cd57e94186c341815419a845ddd7",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "program_runtime.py",
+      "source_sha256": "f35f52ac07e918be4bd986b421a51ba0bc3d905444fe6bd5a7c8aa6a9baaaba9",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/program_runtime.py",
+      "published_sha256": "f35f52ac07e918be4bd986b421a51ba0bc3d905444fe6bd5a7c8aa6a9baaaba9",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "__init__.py",
+      "source_sha256": "416538c0b77e52751b5ff6226781083ba5478b36a87827f5434472d18f950b7a",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/progress_ttl/__init__.py",
+      "published_sha256": "416538c0b77e52751b5ff6226781083ba5478b36a87827f5434472d18f950b7a",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "builder.py",
+      "source_sha256": "90fe5be63d37d9a1f3e8d347a72c0d1abf4057c9c08c3c15ba44666c88408090",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/progress_ttl/builder.py",
+      "published_sha256": "90fe5be63d37d9a1f3e8d347a72c0d1abf4057c9c08c3c15ba44666c88408090",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "config.py",
+      "source_sha256": "38c550a34d37a2a03e7fb1de8da959362395cecca6c65835bd5bb96016bacbb7",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/progress_ttl/config.py",
+      "published_sha256": "38c550a34d37a2a03e7fb1de8da959362395cecca6c65835bd5bb96016bacbb7",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "factors.py",
+      "source_sha256": "54d75faeff6b4a138464c710f5aef86532482fd9c4401261352aa818766d075d",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/progress_ttl/factors.py",
+      "published_sha256": "54d75faeff6b4a138464c710f5aef86532482fd9c4401261352aa818766d075d",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "rolling_stats.py",
+      "source_sha256": "0d6db6b846cb0149f62ba77b36480c5e364d93d516a7e457ed4147bbe6b27a25",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/progress_ttl/rolling_stats.py",
+      "published_sha256": "0d6db6b846cb0149f62ba77b36480c5e364d93d516a7e457ed4147bbe6b27a25",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "strategy.py",
+      "source_sha256": "aa33d780d5db7e027b3dfb6432ac1108240803a04e78e2ece4c28ba16628ae51",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/progress_ttl/strategy.py",
+      "published_sha256": "aa33d780d5db7e027b3dfb6432ac1108240803a04e78e2ece4c28ba16628ae51",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "request_pool.py",
+      "source_sha256": "3f95a6e8110a0fbea48a2cf229f97b82953bf298d40b8dbfa40aa23bf2589de0",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/request_pool.py",
+      "published_sha256": "3f95a6e8110a0fbea48a2cf229f97b82953bf298d40b8dbfa40aa23bf2589de0",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "runtime.py",
+      "source_sha256": "0344a81c373fd167605dc5fc7a8a71d8f6562e9ff458c55e26d9a53f08063302",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/runtime.py",
+      "published_sha256": "0344a81c373fd167605dc5fc7a8a71d8f6562e9ff458c55e26d9a53f08063302",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "snapshot.py",
+      "source_sha256": "9bfbeb0d74178c4fa4aa07d3c42613b815d8b60f9497efb5645be7fa5c10f04c",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/snapshot.py",
+      "published_sha256": "9bfbeb0d74178c4fa4aa07d3c42613b815d8b60f9497efb5645be7fa5c10f04c",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "strategy.py",
+      "source_sha256": "a64213c6a45d3b4f1d9cced864454dc0be80f030561788fee6d6c8db473d6a88",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/strategy.py",
+      "published_sha256": "a64213c6a45d3b4f1d9cced864454dc0be80f030561788fee6d6c8db473d6a88",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "transitions.py",
+      "source_sha256": "d4c4b68ff326221db9630f23ea3049d8b282f03902fadaeb02b54ac9cf6ba9a4",
+      "published_path": "scripts/runner/vendor/agentinfer/scheduling/transitions.py",
+      "published_sha256": "d4c4b68ff326221db9630f23ea3049d8b282f03902fadaeb02b54ac9cf6ba9a4",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-materials-async-1011",
+      "source_file": "prefixcache-async-pr4.patch",
+      "source_sha256": "a70d0f0e3359cd47916ea061ad05f73e132eed39ce99b98f3873f73247a44a2c",
+      "published_path": "environment/patches/prefixcache-async-pr4.patch",
+      "published_sha256": "a70d0f0e3359cd47916ea061ad05f73e132eed39ce99b98f3873f73247a44a2c",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-materials-async-1011",
+      "source_file": "ascend-local-modifications.patch",
+      "source_sha256": "64835379d59fa6fd9a1df5ab4eaedb0b7ddcae476621f9775f070068fcbc3c83",
+      "published_path": "environment/patches/ascend-local-modifications.patch",
+      "published_sha256": "64835379d59fa6fd9a1df5ab4eaedb0b7ddcae476621f9775f070068fcbc3c83",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-materials-async-1011",
+      "source_file": "afd-asymmetric-startup.patch",
+      "source_sha256": "9d34871e2ef53ce0a3927ca8cd1605080156d9947768a3a3b1137806bbb7074b",
+      "published_path": "environment/patches/afd-asymmetric-startup.patch",
+      "published_sha256": "9d34871e2ef53ce0a3927ca8cd1605080156d9947768a3a3b1137806bbb7074b",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "latest026-four-arm-1010",
+      "source_file": "LICENSE",
+      "source_sha256": "0e8566ea362276878e1f38f97da49964dbea301c15d4aa9d727f97a4c39fd943",
+      "published_path": "environment/Apache-2.0.txt",
+      "published_sha256": "0e8566ea362276878e1f38f97da49964dbea301c15d4aa9d727f97a4c39fd943",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "HOST_LOADER_FIX.md",
+      "source_sha256": "8b2063d51f31b5ac29333bffee27f9dd807d8ffee5d38556e67df115043ccf5f",
+      "published_path": "environment/host-loader-fix.md",
+      "published_sha256": "cc6e0afe080b43cde2e64b27748d17ea674438cdf91073cb07244b159747d7b6",
+      "transformation": "private evidence links replaced with retained-evidence labels"
+    },
+    {
+      "source_collection": "experiment-materials-async-1011",
+      "source_file": "route-afd.json",
+      "source_sha256": "ca7a4e03d1c355b4aa5339be91fde4d50c4df822946d4ed3cb16603e88921117",
+      "published_path": "datasets/frozen-256/route-afd.json",
+      "published_sha256": "ca7a4e03d1c355b4aa5339be91fde4d50c4df822946d4ed3cb16603e88921117",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-materials-async-1011",
+      "source_file": "route-nonafd.json",
+      "source_sha256": "94a332b49f5e0b01741f3e74359f091a2842bc186d34c54a39da54913c4da2d7",
+      "published_path": "datasets/frozen-256/route-nonafd.json",
+      "published_sha256": "94a332b49f5e0b01741f3e74359f091a2842bc186d34c54a39da54913c4da2d7",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-materials-async-1011",
+      "source_file": "workload.json",
+      "source_sha256": "3cfdd0e691d2b531ad96a7aba59f581eb23f2eb84029464dbd6cacf035dd5bf2",
+      "published_path": "datasets/frozen-256/workload.json",
+      "published_sha256": "3cfdd0e691d2b531ad96a7aba59f581eb23f2eb84029464dbd6cacf035dd5bf2",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-async-two-machine-1011",
+      "source_file": "manifest.json",
+      "source_sha256": "6bc3496e004525274ed88db6cdedee791d114bce59d4481668ccb5a668047b1c",
+      "published_path": "datasets/frozen-256/manifest.json",
+      "published_sha256": "ae703ee8cd1a42fc0ccc192c144e5e12b9228b5fa7a63d16150795e90ebcea5d",
+      "transformation": "selected fields; removed inherited parent distribution and paths; explicit subset statistics"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "requests.jsonl",
+      "source_sha256": "cc116f4adeeddac36c2f630369c6a33c52d1b22c7a404fe70ec6828d362fe583",
+      "published_path": "results/2026-10-11/requests/non_ep4.csv.gz",
+      "published_sha256": "4d5870ee021d59b1fb27fd0257f1102e3c10384757316d567ce2f7dfe1b4889f",
+      "transformation": "allowlisted HTTP fields joined to unique native request_finished, original timings and counts preserved"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "non_ep4.json",
+      "source_sha256": "204a733307be96a7f53497d7c3ea6c6ee3bf98d3e8ab22e397bf2c9ccd6f476e",
+      "published_path": "results/2026-10-11/summaries/non_ep4.json",
+      "published_sha256": "b0240e6ad1f349c1e941aab9318b231ff0e23d16e1e36a0c4f4a8b2b911f13cc",
+      "transformation": "allowlisted metrics and audit fields; raw machine/process metadata excluded"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "requests.jsonl",
+      "source_sha256": "9c6412432ff13f9387f513056e68cf3eb55c663f2d843f6b17e3dc859161ff8d",
+      "published_path": "results/2026-10-11/requests/non_ep8.csv.gz",
+      "published_sha256": "e925d1fb6a33b7e813f592709bd2700e3d0abd799a073be6cd6c9513c621a3a9",
+      "transformation": "allowlisted HTTP fields joined to unique native request_finished, original timings and counts preserved"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "non_ep8.json",
+      "source_sha256": "6613785258ac5d4240bb67b021ebd9975dfdfe9f3b1f92c5845fc2da1d8e3ee0",
+      "published_path": "results/2026-10-11/summaries/non_ep8.json",
+      "published_sha256": "754fb6c61716aae7dae4db5e84ef2d03aaf837652346697276e369e5c42340c1",
+      "transformation": "allowlisted metrics and audit fields; raw machine/process metadata excluded"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "requests.jsonl",
+      "source_sha256": "d4982ab64aac21e07f4acaf9b532f1271a3c819080c32d7860d4ffad99ceac02",
+      "published_path": "results/2026-10-11/requests/afd_eager.csv.gz",
+      "published_sha256": "069b3052dc6ae9d2989b7fd044eee3e055d974d3e9183a4e84bab66242314ebc",
+      "transformation": "allowlisted HTTP fields joined to unique native request_finished, original timings and counts preserved"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "afd_eager.json",
+      "source_sha256": "2209e7a115aad08e6c5d97d6834d61720aa2af0864b0d92a6945def23f45f9af",
+      "published_path": "results/2026-10-11/summaries/afd_eager.json",
+      "published_sha256": "1232e01a6900c0381f620b34214812f9cfb4d8163f60c5c67751ef9d05000a5b",
+      "transformation": "allowlisted metrics and audit fields; raw machine/process metadata excluded"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "requests.jsonl",
+      "source_sha256": "ce20b7302c3bbf5c79450a2d215dec614cd66d75ba3769eb7ebea536f55a8b0d",
+      "published_path": "results/2026-10-11/requests/afd_fgraph.csv.gz",
+      "published_sha256": "c6f84146c02eaead782ebf6bb770ff054a7ab6708d35fe9cdc4753b864f29e03",
+      "transformation": "allowlisted HTTP fields joined to unique native request_finished, original timings and counts preserved"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "afd_fgraph.json",
+      "source_sha256": "7e1a34fcb7ea3041d0fe647e3aaa6468ca4240fa21323ce756429355ecb8a8f8",
+      "published_path": "results/2026-10-11/summaries/afd_fgraph.json",
+      "published_sha256": "d63492d08be0657556c851b22c77990d431f4684b41bdd361f37b4403caa132c",
+      "transformation": "allowlisted metrics and audit fields; raw machine/process metadata excluded; retained-machine path labels substituted, numerical fields unchanged"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "metrics.csv",
+      "source_sha256": "795a73e2b1c05578db617ae5bfbbe6f867fd2096e05f2b692eaeab2e90914536",
+      "published_path": "results/2026-10-11/metrics.csv",
+      "published_sha256": "795a73e2b1c05578db617ae5bfbbe6f867fd2096e05f2b692eaeab2e90914536",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "paired-latency.csv",
+      "source_sha256": "55421e705d6afa7d9ceb6c7f6367d31a6409976ea7e65ca0cdfadd6b201a2617",
+      "published_path": "results/2026-10-11/paired-latency.csv",
+      "published_sha256": "55421e705d6afa7d9ceb6c7f6367d31a6409976ea7e65ca0cdfadd6b201a2617",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "per-session.csv",
+      "source_sha256": "a69d9e2d039141eda87db9846adb22a16209c90cbb9f6a6fb04ce9056ee8e92c",
+      "published_path": "results/2026-10-11/per-session.csv",
+      "published_sha256": "a69d9e2d039141eda87db9846adb22a16209c90cbb9f6a6fb04ce9056ee8e92c",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "per-domain-capacity.csv",
+      "source_sha256": "3f5e902ceb4912c2c7a3433386a49f68269aff9998503ef6e7832cff6898c082",
+      "published_path": "results/2026-10-11/per-domain-capacity.csv",
+      "published_sha256": "3f5e902ceb4912c2c7a3433386a49f68269aff9998503ef6e7832cff6898c082",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "per-die-memory.csv",
+      "source_sha256": "420751dfba4ec5547c14387b8f68c7907e65beddfa199d842ffeb896692614fe",
+      "published_path": "results/2026-10-11/per-die-memory.csv",
+      "published_sha256": "d7b24135be7c3afa0926e4f8964d8dd650c8fe30f4e6479a348d973b7295005b",
+      "transformation": "process IDs and retained-source paths excluded; measurements and CPU affinity preserved"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "FINAL_REPORT.zh-CN.md",
+      "source_sha256": "9aafdf0a6f3e6a9ba41804b66abefabc7be466af5782806cccf7d4efa7e0ca05",
+      "published_path": "results/2026-10-11/REPORT.zh-CN.md",
+      "published_sha256": "c4953f0f6c7932f214fdd6f923caaa4f1f343b93bc4a0f7a75c3b8846a03a1fe",
+      "transformation": "public paths; 43-work-item terminology correction; original measurements unchanged"
+    },
+    {
+      "source_collection": "experiment-closeout-host-fixed-1011",
+      "source_file": "actual-configurations.json",
+      "source_sha256": "3b7a19daae29f1def44a1cb7e9ea09a6bc42260b920de1daf67dc4a3cd4fe184",
+      "published_path": "experiments/2026-10-11-async/recorded-configuration.json",
+      "published_sha256": "fa306c39b3f7d4fde3a6dca7a7a8761c739a6f92ae6d71809e5126dd581545c2",
+      "transformation": "allowlisted execution settings; locations parameterized; secrets and infrastructure environment omitted"
+    },
+    {
+      "source_collection": "afd-critical-path-1012",
+      "source_file": "current-diagnostic-audit.json",
+      "source_sha256": "7dbd5c2cdebd37159410a96ac5ccc790cfcd0f2d47c19d2bab7030befc5646fc",
+      "published_path": "diagnostics/f-graph-2026-10-12/current-diagnostic-audit.json",
+      "published_sha256": "7dbd5c2cdebd37159410a96ac5ccc790cfcd0f2d47c19d2bab7030befc5646fc",
+      "transformation": "JSON reserialized"
+    },
+    {
+      "source_collection": "afd-critical-path-1012",
+      "source_file": "latest-formal-analysis.json",
+      "source_sha256": "97879596da612f2cb0f995668713d95f6ec903e74b378a8c176b4e173f04f578",
+      "published_path": "diagnostics/f-graph-2026-10-12/latest-formal-analysis.json",
+      "published_sha256": "a7660937700967968dd56258ec008ddfc0df30d86f8b672f0e2168420e504e1f",
+      "transformation": "JSON reserialized; retained-machine path labels substituted, numerical fields unchanged"
+    },
+    {
+      "source_collection": "afd-critical-path-1012",
+      "source_file": "evidence-overview.png",
+      "source_sha256": "cecd0cc22ee684a389adea21299406329a5d4c8159180a23f813b3bc7afa15ab",
+      "published_path": "diagnostics/f-graph-2026-10-12/evidence-overview.png",
+      "published_sha256": "cecd0cc22ee684a389adea21299406329a5d4c8159180a23f813b3bc7afa15ab",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "afd-benefit",
+      "source_file": "REPORT.md",
+      "source_sha256": "4abc94e38178153368048b932ab15d6ad0aa3845ed1fd4de0f514ab6ecf3d90b",
+      "published_path": "archive/early-benefit-report.md",
+      "published_sha256": "aaea18210544bd2c8e310ab94e27815fd61791fb809f93af1dd6ba621e2eacf4",
+      "transformation": "public report copy; retained-only attachment links labelled"
+    },
+    {
+      "source_collection": "experiment-async-two-machine-1011",
+      "source_file": "INTERIM_REPORT.zh-CN.md",
+      "source_sha256": "ae241e994fa60b7d22190ddde22a3fddff10121545cf37d811879ed1f7d0a46f",
+      "published_path": "archive/pre-host-fix-async-report.md",
+      "published_sha256": "465857b1cc14b58de3d4f6053ed09d72423e532504c0d13c21dbdcaac7ed19fa",
+      "transformation": "public report copy; retained-only attachment links labelled"
+    },
+    {
+      "source_collection": "experiment-followup-ep8-graph-1011",
+      "source_file": "F_FULL_GRAPH_TIMELINE.md",
+      "source_sha256": "b49453754a5353009a8f2dd1ebdf003f7f7665c2b59d8c7f42b4d245204527ad",
+      "published_path": "archive/old-f-graph-timeline.md",
+      "published_sha256": "2a189fc1f84298ab08c9c2eeb5ee7f2694f86951d11e3974c2c7203e4ee9b7c0",
+      "transformation": "public report copy; retained-only attachment links labelled"
+    }
+  ]
+}

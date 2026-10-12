@@ -1,0 +1,7 @@
+base,candidate,wall_time_speedup,e2e_faster_requests,e2e_slower_requests,paired_e2e_ratio_median,paired_e2e_ratio_p95,scope
+non_ep4,non_ep8,2.854065649606451,6382,2696,0.4630475949003602,3.8736734524056473,descriptive same-request comparison; realized ready order may differ; all Compressor roles use the uniform repaired host baseline
+non_ep4,afd_eager,3.7974233245344635,6551,2527,0.3265765406856749,4.830267040870904,descriptive same-request comparison; realized ready order may differ; all Compressor roles use the uniform repaired host baseline
+non_ep4,afd_fgraph,3.7632663024018624,6538,2540,0.3282572725817253,4.831515259965111,descriptive same-request comparison; realized ready order may differ; all Compressor roles use the uniform repaired host baseline
+non_ep8,afd_eager,1.3305311757836027,5031,4047,0.8772328263112822,4.469978110584249,descriptive same-request comparison; realized ready order may differ; all Compressor roles use the uniform repaired host baseline
+non_ep8,afd_fgraph,1.3185633283946294,4991,4087,0.8825943349963834,4.445683556710228,descriptive same-request comparison; realized ready order may differ; all Compressor roles use the uniform repaired host baseline
+afd_eager,afd_fgraph,0.991005210846018,4503,4575,1.0008491637120644,1.5803960637515746,descriptive same-request comparison; realized ready order may differ; all Compressor roles use the uniform repaired host baseline

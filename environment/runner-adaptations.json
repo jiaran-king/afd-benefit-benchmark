@@ -1,0 +1,27 @@
+[
+  {
+    "file": "scripts/runner/run_formal.py",
+    "source_sha256": "304dd6cfc1f1b9828e268228526394ec6082ae7d551562c14d1971890a85ecee",
+    "changes": "workspace path parameterized; explicit pre-pressure proof required by replay"
+  },
+  {
+    "file": "scripts/runner/audit_native.py",
+    "source_sha256": "ca8297f6500284445c261e21e4bb209f91ad41663e7a0e39e71659c7265ec869",
+    "changes": "workspace path / task label only"
+  },
+  {
+    "file": "scripts/runner/collect_capacity.py",
+    "source_sha256": "55c881db908578ed6cdda4299cf43bcf74f951540c8e9a3ca6d277d9c61221a9",
+    "changes": "workspace path / task label only"
+  },
+  {
+    "file": "scripts/runner/three_arm_topology.py",
+    "source_sha256": "d3982fbdc3dc13cc0a18d592b58400497721ccfb5e3e5de53e88b8c56cfe07bf",
+    "changes": "workspace path / task label only"
+  },
+  {
+    "file": "scripts/runner/stop_owned.py",
+    "source_sha256": "3f780dd67ad1188218c5c8b59be181c1f50f440f7a5617ff5c60cf9186dbad9f",
+    "changes": "workspace and run name parameterized; ownership algorithm unchanged"
+  }
+]

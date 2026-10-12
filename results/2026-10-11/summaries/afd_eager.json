@@ -1,0 +1,142 @@
+{
+  "group": "afd_eager",
+  "run_id": "afd_eager-host-fixed-closeout-256sessions-v1",
+  "metrics": {
+    "group": "afd_eager",
+    "sessions": 256,
+    "requests": 9078,
+    "prompt_tokens": 748751397,
+    "cached_tokens": 655360000,
+    "actual_prefill_tokens": 93391397,
+    "preemptions": 0,
+    "hit_rate": 0.8752704871414083,
+    "duration_seconds": 3775.0447729863226,
+    "requests_per_second": 2.4047396907609846,
+    "restores": 8170,
+    "ttft_mean": 6.556121211786026,
+    "ttft_p50": 3.833503915928304,
+    "ttft_p95": 23.64489251994527,
+    "ttft_p99": 50.773772757630766,
+    "e2e_mean": 6.559454572425204,
+    "e2e_p50": 3.8361991071142256,
+    "e2e_p95": 23.646456036902954,
+    "e2e_p99": 50.77609364830886,
+    "continuation_zero_cached": 652,
+    "total_actual_unique_kv_gib": 515.7792737483978
+  },
+  "audit_status": "complete",
+  "execution_audit": {
+    "status": "passed",
+    "peak_inflight_requests": 16,
+    "request_limit": 16,
+    "dependency_order_and_ready_priority": "passed"
+  },
+  "native_totals": {
+    "requests": 9078,
+    "prompt_tokens": 748751397,
+    "cached_tokens": 655360000,
+    "actual_prefill_tokens": 93391397,
+    "preemptions": 0,
+    "hit_rate": 0.8752704871414083
+  },
+  "domains": [
+    {
+      "domain": 0,
+      "totals": {
+        "requests": 3007,
+        "prompt_tokens": 241461621,
+        "cached_tokens": 206323712,
+        "actual_prefill_tokens": 35137909,
+        "preemptions": 0,
+        "hit_rate": 0.8544782858059252
+      },
+      "miss_evidence": {
+        "checkpoint_limited_requests": 25,
+        "checkpoint_limited_snapshot_budget": 25,
+        "continuation_zero_cached": 276,
+        "ready_checkpoint_but_ordinary_miss": 224
+      },
+      "checkpoint_evictions": {
+        "snapshot_budget": 4909
+      },
+      "formal_counters": {
+        "ordinary_cached_block_evictions": 247401,
+        "checkpoint_created": 5622,
+        "restore_plans": 2646,
+        "admission_allocation_failed_attempts": 0,
+        "lookup_observation_microseconds": 3238239
+      }
+    },
+    {
+      "domain": 1,
+      "totals": {
+        "requests": 2999,
+        "prompt_tokens": 249176519,
+        "cached_tokens": 215986176,
+        "actual_prefill_tokens": 33190343,
+        "preemptions": 0,
+        "hit_rate": 0.8667998769177765
+      },
+      "miss_evidence": {
+        "checkpoint_limited_requests": 26,
+        "checkpoint_limited_snapshot_budget": 26,
+        "continuation_zero_cached": 230,
+        "ready_checkpoint_but_ordinary_miss": 201
+      },
+      "checkpoint_evictions": {
+        "snapshot_budget": 4658
+      },
+      "formal_counters": {
+        "ordinary_cached_block_evictions": 227832,
+        "checkpoint_created": 5371,
+        "restore_plans": 2683,
+        "admission_allocation_failed_attempts": 0,
+        "lookup_observation_microseconds": 3667116
+      }
+    },
+    {
+      "domain": 2,
+      "totals": {
+        "requests": 3072,
+        "prompt_tokens": 258113257,
+        "cached_tokens": 233050112,
+        "actual_prefill_tokens": 25063145,
+        "preemptions": 0,
+        "hit_rate": 0.9028986527414204
+      },
+      "miss_evidence": {
+        "checkpoint_limited_requests": 3,
+        "checkpoint_limited_snapshot_budget": 3,
+        "continuation_zero_cached": 146,
+        "ready_checkpoint_but_ordinary_miss": 122
+      },
+      "checkpoint_evictions": {
+        "snapshot_budget": 3173
+      },
+      "formal_counters": {
+        "ordinary_cached_block_evictions": 145333,
+        "checkpoint_created": 3886,
+        "restore_plans": 2841,
+        "admission_allocation_failed_attempts": 0,
+        "lookup_observation_microseconds": 3374213
+      }
+    }
+  ],
+  "graph": {
+    "captures": {},
+    "logged_replay_counts": {},
+    "release_replay_counts": {},
+    "dedicated_graph_bytes": null,
+    "formal_observation_state": {
+      "status": "passed",
+      "policy": "same read-only recorder before and after pressure for both AFD modes",
+      "before_recorded_at_ns": 1791714474885433800,
+      "formal_start_ns": 1.7917145533998938e+18,
+      "formal_end_metrics_ns": 1.791718354136752e+18,
+      "after_started_ns": 1791718364773716742,
+      "unique_state_samples": 2,
+      "samples_during_pressure": 0
+    }
+  },
+  "actual_host_opmaster_sha256": "2e0fa08edea5cb0cc1bdbd076cf06f4bf2b0bbc7feb380dcc740f444e571d612"
+}

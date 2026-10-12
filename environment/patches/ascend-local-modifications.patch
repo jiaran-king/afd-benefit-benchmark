@@ -1,0 +1,126 @@
+--- a/vllm_ascend/ascend_config.py
++++ b/vllm_ascend/ascend_config.py
+@@ -14,6 +14,7 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ import json
++import math
+ import os
+ from typing import TYPE_CHECKING, Any
+ 
+@@ -27,6 +28,21 @@
+ DSV4_ASYNC_CHECKPOINT_SCHEDULER = "vllm_ascend.core.compressor_checkpoint_scheduler.CompressorCheckpointAsyncScheduler"
+ DSV4_CHECKPOINT_BLOCK_SIZE = 32
+ DSV4_CHECKPOINT_TAIL_BLOCK_SIZES = (2, 8)
++DEFAULT_COMPRESSOR_CHECKPOINT_BUDGET_RATIO = 0.0625
++
++
++def get_compressor_checkpoint_budget_ratio(
++    additional_config: dict[str, Any] | None,
++) -> float:
++    """Validate the optional allocator-page budget; it does not preallocate pages."""
++    value = (additional_config or {}).get(
++        "compressor_checkpoint_budget_ratio", DEFAULT_COMPRESSOR_CHECKPOINT_BUDGET_RATIO
++    )
++    if isinstance(value, bool) or not isinstance(value, (int, float)):
++        raise ValueError("compressor_checkpoint_budget_ratio must be a finite number strictly between 0 and 1")
++    if not 0 < value < 1 or not math.isfinite(value):
++        raise ValueError("compressor_checkpoint_budget_ratio must be a finite number strictly between 0 and 1")
++    return float(value)
+ 
+ 
+ def get_dsv4_shared_compressor_workspace_fallback_reasons(
+@@ -210,6 +226,7 @@
+         self.enable_cpu_binding = additional_config.get("enable_cpu_binding", True)
+         self.enable_sleep_mode_extra_cleanup = additional_config.get("enable_sleep_mode_extra_cleanup", False)
+         self.multistream_dsv4_dsa_overlap = additional_config.get("multistream_dsv4_dsa_overlap", True)
++        self.compressor_checkpoint_budget_ratio = get_compressor_checkpoint_budget_ratio(additional_config)
+         shared_compressor_workspace_requested = bool(
+             additional_config.get("enable_dsv4_shared_compressor_workspace", False)
+         )
+--- a/vllm_ascend/core/compressor_checkpoint_scheduler.py
++++ b/vllm_ascend/core/compressor_checkpoint_scheduler.py
+@@ -2,16 +2,20 @@
+ # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
+ """Checkpoint scheduling for private compressor rings in either scheduling mode."""
+ 
++import math
+ from dataclasses import dataclass, field, fields
+ 
++from vllm.logger import init_logger
+ from vllm.v1.core.kv_cache_manager import KVCacheManager
+ from vllm.v1.core.sched.async_scheduler import AsyncScheduler
+ from vllm.v1.core.sched.output import SchedulerOutput
+ from vllm.v1.core.sched.scheduler import Scheduler
+ from vllm.v1.request import RequestStatus
+-
++from vllm_ascend.ascend_config import get_compressor_checkpoint_budget_ratio
+ from vllm_ascend.core.compressor_checkpoint import TailCheckpointKey, TailRestorePlan, TailSavePlan
+ from vllm_ascend.core.compressor_checkpoint_coordinator import CompressorCheckpointCoordinator
++
++logger = init_logger(__name__)
+ 
+ 
+ @dataclass
+@@ -30,8 +34,9 @@
+ 
+ 
+ class CompressorCheckpointScheduler(Scheduler):
+-    def __init__(self, *args, **kwargs):
+-        super().__init__(*args, **kwargs)
++    def __init__(self, vllm_config, *args, **kwargs):
++        ratio = get_compressor_checkpoint_budget_ratio(vllm_config.additional_config)
++        super().__init__(vllm_config, *args, **kwargs)
+         coordinator = self.kv_cache_manager.coordinator
+         if not isinstance(coordinator, CompressorCheckpointCoordinator):
+             raise ValueError("CompressorCheckpointScheduler requires ring + prefix caching")
+@@ -40,6 +45,21 @@
+         if self.parallel_config.pipeline_parallel_size != 1:
+             raise ValueError("Compressor checkpoints require PP=1")
+         self.checkpoint_coordinator = coordinator
++        # No request/save/restore has been admitted during construction. Apply
++        # the host-only cap here, where VllmConfig is available, without changing
++        # the upstream coordinator factory or the allocated device tensor layout.
++        pool = coordinator.checkpoints
++        assert not pool.used_blocks
++        pool.max_blocks = math.floor(coordinator.kv_cache_config.num_blocks * ratio)
++        logger.info(
++            "Compressor checkpoint capacity: total_kv_blocks=%d budget_ratio=%s "
++            "budget_blocks=%d blocks_per_checkpoint=%d max_checkpoints=%d",
++            coordinator.kv_cache_config.num_blocks,
++            ratio,
++            pool.max_blocks,
++            pool.blocks_per_checkpoint,
++            pool.max_blocks // pool.blocks_per_checkpoint,
++        )
+         # Scope the allocation hook to this checkpoint scheduler instance;
+         # keep upstream admission, accounting and allocation unchanged.
+         self.kv_cache_manager.allocate_slots = self._allocate_slots
+@@ -49,6 +69,12 @@
+         # Cancellation must not recycle destination rings or KV still being
+         # written by the current worker step. Reuse the upstream execution fence.
+         self.defer_block_free = True
++        # ### PATCH START: experiment observation, unique actual DP identity
++        diagnostics = (vllm_config.additional_config or {}).get("checkpoint_budget_diagnostics_path")
++        if diagnostics:
++            from checkpoint_observer import install
++            install(self, diagnostics.format(dp_rank=vllm_config.parallel_config.data_parallel_rank))
++        # ### PATCH END: experiment observation, unique actual DP identity
+ 
+     def _allocate_slots(self, request, num_new_tokens, num_new_computed_tokens=0, new_computed_blocks=None, **kwargs):
+         manager = self.kv_cache_manager
+--- a/vllm_ascend/worker/model_runner_v1.py
++++ b/vllm_ascend/worker/model_runner_v1.py
+@@ -3687,6 +3687,12 @@
+                     kv_cache_raw_tensors[name].view(kv_cache_config.num_blocks, layer_specs[name].page_size_bytes)
+                     for name in tail_layers
+                 ]
++        # ### PATCH START: experiment allocator and ring layout capture
++        capacity_path = (self.vllm_config.additional_config or {}).get("benefit_worker_capacity_path")
++        if capacity_path:
++            from checkpoint_observer import record_worker_capacity
++            record_worker_capacity(self, kv_cache_config, kv_cache_raw_tensors, capacity_path)
++        # ### PATCH END: experiment allocator and ring layout capture
+         # Change the memory buffer to the desired shape
+         kv_caches = self._reshape_kv_cache_tensors(kv_cache_config, kv_cache_raw_tensors)
+ 

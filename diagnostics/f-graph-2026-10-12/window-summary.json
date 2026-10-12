@@ -1,0 +1,442 @@
+{
+  "duration_seconds": 2.3419645,
+  "F": [
+    {
+      "path": "retained-artifact:kernel_details.csv",
+      "device": 12,
+      "clipped_kernel_us": {
+        "AfdAsyncDispatchRecv": 1021009.5,
+        "aclnnGroupedMatmulSwigluQuantV2Layered_GroupedMatmulSwigluQuantV2Layered_GroupedMatmulSwigluQuantV2Layered": 613433.25,
+        "aclnnGroupedMatmulLayered_GroupedMatmulLayered_GroupedMatmulLayered": 357267.0,
+        "AfdAsyncCombineSend": 333982.5
+      },
+      "device_idle_us": 16272.25,
+      "complete_boundaries": [
+        {
+          "transaction": 344,
+          "start_us": 1791772853457259.0,
+          "end_us": 1791772853457737.0,
+          "gap_us": 478.0
+        },
+        {
+          "transaction": 387,
+          "start_us": 1791772853632107.0,
+          "end_us": 1791772853632560.5,
+          "gap_us": 453.5
+        },
+        {
+          "transaction": 430,
+          "start_us": 1791772853809704.8,
+          "end_us": 1791772853810157.5,
+          "gap_us": 452.75
+        },
+        {
+          "transaction": 473,
+          "start_us": 1791772853985404.0,
+          "end_us": 1791772853985835.0,
+          "gap_us": 431.0
+        },
+        {
+          "transaction": 516,
+          "start_us": 1791772854192018.8,
+          "end_us": 1791772854192461.2,
+          "gap_us": 442.5
+        },
+        {
+          "transaction": 559,
+          "start_us": 1791772854356185.5,
+          "end_us": 1791772854356620.0,
+          "gap_us": 434.5
+        },
+        {
+          "transaction": 602,
+          "start_us": 1791772854488602.8,
+          "end_us": 1791772854489050.5,
+          "gap_us": 447.75
+        },
+        {
+          "transaction": 645,
+          "start_us": 1791772854622787.5,
+          "end_us": 1791772854623268.2,
+          "gap_us": 480.75
+        },
+        {
+          "transaction": 688,
+          "start_us": 1791772854791087.0,
+          "end_us": 1791772854791542.8,
+          "gap_us": 455.75
+        },
+        {
+          "transaction": 731,
+          "start_us": 1791772854909798.0,
+          "end_us": 1791772854910290.2,
+          "gap_us": 492.25
+        },
+        {
+          "transaction": 774,
+          "start_us": 1791772855038957.2,
+          "end_us": 1791772855039419.8,
+          "gap_us": 462.5
+        },
+        {
+          "transaction": 817,
+          "start_us": 1791772855158861.5,
+          "end_us": 1791772855159311.5,
+          "gap_us": 450.0
+        },
+        {
+          "transaction": 860,
+          "start_us": 1791772855329724.5,
+          "end_us": 1791772855330147.0,
+          "gap_us": 422.5
+        },
+        {
+          "transaction": 903,
+          "start_us": 1791772855447913.5,
+          "end_us": 1791772855448409.8,
+          "gap_us": 496.25
+        },
+        {
+          "transaction": 946,
+          "start_us": 1791772855568739.5,
+          "end_us": 1791772855569162.5,
+          "gap_us": 423.0
+        }
+      ],
+      "boundary_gap_us": 6823.0,
+      "boundary_pct_window": 0.29133661078124795,
+      "runtime_model_execute_count_full_trace": 989,
+      "graph_model_ids": [
+        "49"
+      ]
+    },
+    {
+      "path": "retained-artifact:kernel_details.csv",
+      "device": 13,
+      "clipped_kernel_us": {
+        "AfdAsyncDispatchRecv": 1060937.0,
+        "aclnnGroupedMatmulSwigluQuantV2Layered_GroupedMatmulSwigluQuantV2Layered_GroupedMatmulSwigluQuantV2Layered": 600422.0,
+        "aclnnGroupedMatmulLayered_GroupedMatmulLayered_GroupedMatmulLayered": 343762.75,
+        "AfdAsyncCombineSend": 320498.75
+      },
+      "device_idle_us": 16344.0,
+      "complete_boundaries": [
+        {
+          "transaction": 344,
+          "start_us": 1791772853457212.0,
+          "end_us": 1791772853457756.0,
+          "gap_us": 544.0
+        },
+        {
+          "transaction": 387,
+          "start_us": 1791772853631172.5,
+          "end_us": 1791772853631677.5,
+          "gap_us": 505.0
+        },
+        {
+          "transaction": 430,
+          "start_us": 1791772853809663.2,
+          "end_us": 1791772853810142.8,
+          "gap_us": 479.5
+        },
+        {
+          "transaction": 473,
+          "start_us": 1791772853984595.8,
+          "end_us": 1791772853985039.5,
+          "gap_us": 443.75
+        },
+        {
+          "transaction": 516,
+          "start_us": 1791772854190635.5,
+          "end_us": 1791772854191090.5,
+          "gap_us": 455.0
+        },
+        {
+          "transaction": 559,
+          "start_us": 1791772854356253.8,
+          "end_us": 1791772854356680.5,
+          "gap_us": 426.75
+        },
+        {
+          "transaction": 602,
+          "start_us": 1791772854488461.2,
+          "end_us": 1791772854488861.0,
+          "gap_us": 399.75
+        },
+        {
+          "transaction": 645,
+          "start_us": 1791772854622538.0,
+          "end_us": 1791772854623058.5,
+          "gap_us": 520.5
+        },
+        {
+          "transaction": 688,
+          "start_us": 1791772854791113.8,
+          "end_us": 1791772854791556.0,
+          "gap_us": 442.25
+        },
+        {
+          "transaction": 731,
+          "start_us": 1791772854910181.0,
+          "end_us": 1791772854910631.5,
+          "gap_us": 450.5
+        },
+        {
+          "transaction": 774,
+          "start_us": 1791772855038718.5,
+          "end_us": 1791772855039152.8,
+          "gap_us": 434.25
+        },
+        {
+          "transaction": 817,
+          "start_us": 1791772855158896.0,
+          "end_us": 1791772855159353.2,
+          "gap_us": 457.25
+        },
+        {
+          "transaction": 860,
+          "start_us": 1791772855329389.5,
+          "end_us": 1791772855329846.5,
+          "gap_us": 457.0
+        },
+        {
+          "transaction": 903,
+          "start_us": 1791772855449064.2,
+          "end_us": 1791772855449550.0,
+          "gap_us": 485.75
+        },
+        {
+          "transaction": 946,
+          "start_us": 1791772855567415.2,
+          "end_us": 1791772855567842.5,
+          "gap_us": 427.25
+        }
+      ],
+      "boundary_gap_us": 6928.5,
+      "boundary_pct_window": 0.2958413759047159,
+      "runtime_model_execute_count_full_trace": 989,
+      "graph_model_ids": [
+        "49"
+      ]
+    },
+    {
+      "path": "retained-artifact:kernel_details.csv",
+      "device": 15,
+      "clipped_kernel_us": {
+        "AfdAsyncDispatchRecv": 1076262.0,
+        "aclnnGroupedMatmulSwigluQuantV2Layered_GroupedMatmulSwigluQuantV2Layered_GroupedMatmulSwigluQuantV2Layered": 594453.25,
+        "aclnnGroupedMatmulLayered_GroupedMatmulLayered_GroupedMatmulLayered": 339948.0,
+        "AfdAsyncCombineSend": 314783.25
+      },
+      "device_idle_us": 16518.0,
+      "complete_boundaries": [
+        {
+          "transaction": 344,
+          "start_us": 1791772853457080.5,
+          "end_us": 1791772853457587.2,
+          "gap_us": 506.75
+        },
+        {
+          "transaction": 387,
+          "start_us": 1791772853631438.8,
+          "end_us": 1791772853631954.2,
+          "gap_us": 515.5
+        },
+        {
+          "transaction": 430,
+          "start_us": 1791772853808473.2,
+          "end_us": 1791772853808913.0,
+          "gap_us": 439.75
+        },
+        {
+          "transaction": 473,
+          "start_us": 1791772853985202.8,
+          "end_us": 1791772853985616.2,
+          "gap_us": 413.5
+        },
+        {
+          "transaction": 516,
+          "start_us": 1791772854190357.2,
+          "end_us": 1791772854190886.2,
+          "gap_us": 529.0
+        },
+        {
+          "transaction": 559,
+          "start_us": 1791772854357410.2,
+          "end_us": 1791772854357860.0,
+          "gap_us": 449.75
+        },
+        {
+          "transaction": 602,
+          "start_us": 1791772854488443.0,
+          "end_us": 1791772854488869.2,
+          "gap_us": 426.25
+        },
+        {
+          "transaction": 645,
+          "start_us": 1791772854622594.2,
+          "end_us": 1791772854623037.0,
+          "gap_us": 442.75
+        },
+        {
+          "transaction": 688,
+          "start_us": 1791772854791082.2,
+          "end_us": 1791772854791520.8,
+          "gap_us": 438.5
+        },
+        {
+          "transaction": 731,
+          "start_us": 1791772854909970.2,
+          "end_us": 1791772854910433.0,
+          "gap_us": 462.75
+        },
+        {
+          "transaction": 774,
+          "start_us": 1791772855037808.2,
+          "end_us": 1791772855038210.5,
+          "gap_us": 402.25
+        },
+        {
+          "transaction": 817,
+          "start_us": 1791772855159029.8,
+          "end_us": 1791772855159567.8,
+          "gap_us": 538.0
+        },
+        {
+          "transaction": 860,
+          "start_us": 1791772855329538.8,
+          "end_us": 1791772855330027.5,
+          "gap_us": 488.75
+        },
+        {
+          "transaction": 903,
+          "start_us": 1791772855447889.8,
+          "end_us": 1791772855448382.5,
+          "gap_us": 492.75
+        },
+        {
+          "transaction": 946,
+          "start_us": 1791772855568398.2,
+          "end_us": 1791772855568892.2,
+          "gap_us": 494.0
+        }
+      ],
+      "boundary_gap_us": 7040.25,
+      "boundary_pct_window": 0.30061301099995325,
+      "runtime_model_execute_count_full_trace": 989,
+      "graph_model_ids": [
+        "49"
+      ]
+    },
+    {
+      "path": "retained-artifact:kernel_details.csv",
+      "device": 14,
+      "clipped_kernel_us": {
+        "AfdAsyncDispatchRecv": 1061606.25,
+        "aclnnGroupedMatmulSwigluQuantV2Layered_GroupedMatmulSwigluQuantV2Layered_GroupedMatmulSwigluQuantV2Layered": 600688.25,
+        "aclnnGroupedMatmulLayered_GroupedMatmulLayered_GroupedMatmulLayered": 342962.25,
+        "AfdAsyncCombineSend": 320174.75
+      },
+      "device_idle_us": 16533.0,
+      "complete_boundaries": [
+        {
+          "transaction": 344,
+          "start_us": 1791772853457218.5,
+          "end_us": 1791772853457699.5,
+          "gap_us": 481.0
+        },
+        {
+          "transaction": 387,
+          "start_us": 1791772853631870.0,
+          "end_us": 1791772853632323.0,
+          "gap_us": 453.0
+        },
+        {
+          "transaction": 430,
+          "start_us": 1791772853810578.8,
+          "end_us": 1791772853811014.0,
+          "gap_us": 435.25
+        },
+        {
+          "transaction": 473,
+          "start_us": 1791772853984999.5,
+          "end_us": 1791772853985427.2,
+          "gap_us": 427.75
+        },
+        {
+          "transaction": 516,
+          "start_us": 1791772854189754.2,
+          "end_us": 1791772854190293.8,
+          "gap_us": 539.5
+        },
+        {
+          "transaction": 559,
+          "start_us": 1791772854356049.8,
+          "end_us": 1791772854356488.8,
+          "gap_us": 439.0
+        },
+        {
+          "transaction": 602,
+          "start_us": 1791772854488326.0,
+          "end_us": 1791772854488828.0,
+          "gap_us": 502.0
+        },
+        {
+          "transaction": 645,
+          "start_us": 1791772854622638.8,
+          "end_us": 1791772854623092.0,
+          "gap_us": 453.25
+        },
+        {
+          "transaction": 688,
+          "start_us": 1791772854791207.2,
+          "end_us": 1791772854791669.0,
+          "gap_us": 461.75
+        },
+        {
+          "transaction": 731,
+          "start_us": 1791772854909922.5,
+          "end_us": 1791772854910375.2,
+          "gap_us": 452.75
+        },
+        {
+          "transaction": 774,
+          "start_us": 1791772855038995.8,
+          "end_us": 1791772855039470.8,
+          "gap_us": 475.0
+        },
+        {
+          "transaction": 817,
+          "start_us": 1791772855159246.2,
+          "end_us": 1791772855159696.5,
+          "gap_us": 450.25
+        },
+        {
+          "transaction": 860,
+          "start_us": 1791772855329474.5,
+          "end_us": 1791772855329934.5,
+          "gap_us": 460.0
+        },
+        {
+          "transaction": 903,
+          "start_us": 1791772855447831.0,
+          "end_us": 1791772855448379.2,
+          "gap_us": 548.25
+        },
+        {
+          "transaction": 946,
+          "start_us": 1791772855567363.0,
+          "end_us": 1791772855567870.0,
+          "gap_us": 507.0
+        }
+      ],
+      "boundary_gap_us": 7085.75,
+      "boundary_pct_window": 0.3025558243944347,
+      "runtime_model_execute_count_full_trace": 989,
+      "graph_model_ids": [
+        "49"
+      ]
+    }
+  ],
+  "scope": "all 16 workers' common profiler window; F complement is outside four main kernels, not hardware idle"
+}

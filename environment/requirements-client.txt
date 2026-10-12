@@ -1,0 +1,8 @@
+# Compatible client dependencies; the original complete pip lock was not captured.
+# The exact vendored AgentInfer source is preserved. Record installed versions for every new run.
+httpx==0.28.1
+pydantic>=2.10,<3
+PyYAML==6.0.3
+numpy==2.2.6
+prometheus-client==0.23.1
+tqdm==4.67.1

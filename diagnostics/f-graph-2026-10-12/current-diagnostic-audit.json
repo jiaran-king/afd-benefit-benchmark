@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "requests": 1024,
+  "sessions": 256,
+  "turns_per_session": 4,
+  "peak_http_inflight": 16,
+  "frozen_input_ids_prompt_hashes_routes_priorities": "matched original formal records",
+  "dependencies": "all 768 consecutive-turn edges satisfied",
+  "native_records": "1024, unique and matched to domain, cache/prefill arithmetic passed, zero preemptions",
+  "output": "one token ID and complete SSE per request; computation unchanged, no numerical treatment comparison",
+  "host_loading": "current formal Compressor host on all 12 A workers; unchanged plugin on all 16 workers",
+  "cold_reset": {
+    "http://127.0.0.1:8510": {
+      "success": true
+    }
+  },
+  "profile_traces": 16,
+  "owned_processes_remaining": 0,
+  "idle_die_after_stop": 16,
+  "formal_speedup_claim": false
+}

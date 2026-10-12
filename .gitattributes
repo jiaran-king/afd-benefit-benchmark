@@ -1,0 +1,5 @@
+# Evidence and patch hashes refer to exact bytes, including original line endings.
+*.patch -text -whitespace
+*.csv -text whitespace=cr-at-eol
+*.csv.gz -text -diff
+*.png -text -diff

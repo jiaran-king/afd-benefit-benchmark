@@ -1,0 +1,159 @@
+{
+  "group": "non_ep8",
+  "run_id": "non_ep8-workspace-fixed-256sessions-v1",
+  "metrics": {
+    "group": "non_ep8",
+    "sessions": 256,
+    "requests": 9078,
+    "prompt_tokens": 748751397,
+    "cached_tokens": 628490240,
+    "actual_prefill_tokens": 120261157,
+    "preemptions": 0,
+    "hit_rate": 0.8393843971686106,
+    "duration_seconds": 5022.814760437235,
+    "requests_per_second": 1.8073531342433504,
+    "restores": 7829,
+    "ttft_mean": 8.775143583215208,
+    "ttft_p50": 4.015854715835303,
+    "ttft_p95": 33.51342134769074,
+    "ttft_p99": 53.484201704049454,
+    "e2e_mean": 8.77764254689338,
+    "e2e_p50": 4.0168402954004705,
+    "e2e_p95": 33.51459465450606,
+    "e2e_p99": 53.48947041440751,
+    "continuation_zero_cached": 993,
+    "total_actual_unique_kv_gib": 468.8379671573639
+  },
+  "audit_status": "complete",
+  "execution_audit": {
+    "status": "passed",
+    "peak_inflight_requests": 16,
+    "request_limit": 16,
+    "dependency_order_and_ready_priority": "passed"
+  },
+  "native_totals": {
+    "requests": 9078,
+    "prompt_tokens": 748751397,
+    "cached_tokens": 628490240,
+    "actual_prefill_tokens": 120261157,
+    "preemptions": 0,
+    "hit_rate": 0.8393843971686106
+  },
+  "domains": [
+    {
+      "domain": 0,
+      "totals": {
+        "requests": 2237,
+        "prompt_tokens": 183869004,
+        "cached_tokens": 154783744,
+        "actual_prefill_tokens": 29085260,
+        "preemptions": 0,
+        "hit_rate": 0.8418153176051358
+      },
+      "miss_evidence": {
+        "checkpoint_limited_requests": 25,
+        "checkpoint_limited_snapshot_budget": 25,
+        "continuation_zero_cached": 246,
+        "ready_checkpoint_but_ordinary_miss": 130
+      },
+      "checkpoint_evictions": {
+        "snapshot_budget": 4720
+      },
+      "formal_counters": {
+        "ordinary_cached_block_evictions": 216551,
+        "checkpoint_created": 5206,
+        "restore_plans": 1927,
+        "admission_allocation_failed_attempts": 0,
+        "lookup_observation_microseconds": 2814990
+      }
+    },
+    {
+      "domain": 1,
+      "totals": {
+        "requests": 2429,
+        "prompt_tokens": 198902492,
+        "cached_tokens": 174551040,
+        "actual_prefill_tokens": 24351452,
+        "preemptions": 0,
+        "hit_rate": 0.8775709054464738
+      },
+      "miss_evidence": {
+        "checkpoint_limited_requests": 17,
+        "checkpoint_limited_snapshot_budget": 17,
+        "continuation_zero_cached": 177,
+        "ready_checkpoint_but_ordinary_miss": 126
+      },
+      "checkpoint_evictions": {
+        "snapshot_budget": 3626
+      },
+      "formal_counters": {
+        "ordinary_cached_block_evictions": 164498,
+        "checkpoint_created": 4112,
+        "restore_plans": 2188,
+        "admission_allocation_failed_attempts": 0,
+        "lookup_observation_microseconds": 2807871
+      }
+    },
+    {
+      "domain": 2,
+      "totals": {
+        "requests": 2059,
+        "prompt_tokens": 170902535,
+        "cached_tokens": 135262208,
+        "actual_prefill_tokens": 35640327,
+        "preemptions": 0,
+        "hit_rate": 0.7914581723436694
+      },
+      "miss_evidence": {
+        "checkpoint_limited_requests": 26,
+        "checkpoint_limited_snapshot_budget": 26,
+        "continuation_zero_cached": 314,
+        "ready_checkpoint_but_ordinary_miss": 146
+      },
+      "checkpoint_evictions": {
+        "snapshot_budget": 6197
+      },
+      "formal_counters": {
+        "ordinary_cached_block_evictions": 285406,
+        "checkpoint_created": 6683,
+        "restore_plans": 1681,
+        "admission_allocation_failed_attempts": 0,
+        "lookup_observation_microseconds": 2855053
+      }
+    },
+    {
+      "domain": 3,
+      "totals": {
+        "requests": 2353,
+        "prompt_tokens": 195077366,
+        "cached_tokens": 163893248,
+        "actual_prefill_tokens": 31184118,
+        "preemptions": 0,
+        "hit_rate": 0.8401448684723373
+      },
+      "miss_evidence": {
+        "checkpoint_limited_requests": 25,
+        "checkpoint_limited_snapshot_budget": 25,
+        "continuation_zero_cached": 256,
+        "ready_checkpoint_but_ordinary_miss": 146
+      },
+      "checkpoint_evictions": {
+        "snapshot_budget": 5302
+      },
+      "formal_counters": {
+        "ordinary_cached_block_evictions": 235175,
+        "checkpoint_created": 5788,
+        "restore_plans": 2033,
+        "admission_allocation_failed_attempts": 0,
+        "lookup_observation_microseconds": 3067367
+      }
+    }
+  ],
+  "graph": {
+    "captures": {},
+    "logged_replay_counts": {},
+    "release_replay_counts": {},
+    "dedicated_graph_bytes": null
+  },
+  "actual_host_opmaster_sha256": "2e0fa08edea5cb0cc1bdbd076cf06f4bf2b0bbc7feb380dcc740f444e571d612"
+}
