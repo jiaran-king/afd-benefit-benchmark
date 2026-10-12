@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import tempfile
+import time
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -38,13 +39,17 @@ def download(asset, output):
         archive = Path(tmp) / "payload.gz"
         request = Request(asset["url"], headers={"User-Agent": "afd-benefit-benchmark/1"})
         size = 0
+        last_progress = time.monotonic()
         print(f"Downloading: {asset['filename']}", flush=True)
         with urlopen(request, timeout=60) as response, archive.open("xb") as dst:
-            for data in iter(lambda: response.read(CHUNK), b""):
+            for data in iter(lambda: response.read(64 * 1024), b""):
                 size += len(data)
                 if size > asset["bytes"]:
                     raise ValueError("Downloaded file exceeds the frozen asset size")
                 dst.write(data)
+                if time.monotonic() - last_progress >= 10:
+                    print(f"Received: {size:,} / {asset['bytes']:,} bytes", flush=True)
+                    last_progress = time.monotonic()
         verify(archive, asset)
         unpacked = Path(tmp) / "verified-payload"
         size = 0

@@ -22,5 +22,74 @@
   "offline_tests": 10,
   "formal_numerical_evidence_requests": 36312,
   "tokenizer_regeneration": "not rerun; exact retained frozen payload published",
-  "device_runs": 0
+  "device_runs": 0,
+  "github_release": {
+    "url": "https://github.com/jiaran-king/afd-benefit-benchmark/releases/tag/datasets-20261012-v1",
+    "published": true,
+    "assets": [
+      {
+        "name": "codex_swebenchpro.json.gz",
+        "bytes": 29250521,
+        "digest": "sha256:d408223f811d160b63a9bd8d74040ade42147ed218b793dc72c8124f23898f2d",
+        "state": "uploaded"
+      },
+      {
+        "name": "frozen-256-requests.jsonl.gz",
+        "bytes": 437440297,
+        "digest": "sha256:50f12516e1cd5823fd8762839c484958b86c30c79c96512a8a9d2e2f367b94aa",
+        "state": "uploaded"
+      },
+      {
+        "name": "release-manifest.json",
+        "bytes": 1340,
+        "digest": "sha256:a43c7f078f1a86f1c6591cd95941da53169ba504421633b1fc8e60a628a22a7f",
+        "state": "uploaded"
+      },
+      {
+        "name": "SHA256SUMS",
+        "bytes": 187,
+        "digest": "sha256:74685792aaf6dc9a0e7815d5cb3c3336a86193badad2df8e7fab61b4a5388259",
+        "state": "uploaded"
+      }
+    ]
+  },
+  "anonymous_public_download_checks": [
+    {
+      "dataset": "raw",
+      "offset": 0,
+      "bytes": 65536,
+      "http_status": 206,
+      "exact_bytes_match": true,
+      "elapsed_seconds": 2.8825011659937445
+    },
+    {
+      "dataset": "raw",
+      "offset": 29184985,
+      "bytes": 65536,
+      "http_status": 206,
+      "exact_bytes_match": true,
+      "elapsed_seconds": 5.807515335007338
+    },
+    {
+      "dataset": "frozen",
+      "offset": 0,
+      "bytes": 65536,
+      "http_status": 206,
+      "exact_bytes_match": true,
+      "elapsed_seconds": 11.467830333975144
+    },
+    {
+      "dataset": "frozen",
+      "offset": 437374761,
+      "bytes": 65536,
+      "http_status": 206,
+      "exact_bytes_match": true,
+      "elapsed_seconds": 6.477510945987888
+    }
+  ],
+  "full_public_redownload": {
+    "completed": false,
+    "reason": "Local public download throughput approximately 24 KB/s; the full re-download was interrupted. All original and compressed bytes were fully verified locally, all uploaded assets match GitHub server SHA256, and anonymous public first/last 64 KiB reads match for both data files."
+  },
+  "initial_github_ci": "https://github.com/jiaran-king/afd-benefit-benchmark/actions/runs/38206825094"
 }
