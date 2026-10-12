@@ -5,7 +5,7 @@
 | 层级 | 规模 | 用途 | 下载 |
 |---|---|---|---|
 | [raw：原始会话](raw/README.md) | 610 会话、20,230 轮、40,460 条消息 | 查看原始历史、准备扩展负载 | [codex_swebenchpro.json.gz](https://github.com/jiaran-king/afd-benefit-benchmark/releases/download/datasets-20261012-v1/codex_swebenchpro.json.gz)，29.25 MB，解压 218.65 MB |
-| [frozen-256：正式冻结负载](frozen-256/README.md) | 256 完整会话、9,078 请求、748,751,397 prompt tokens | 复现 2026-10-11 四组正式实验 | [frozen-256-requests.jsonl.gz](https://github.com/jiaran-king/afd-benefit-benchmark/releases/download/datasets-20261012-v1/frozen-256-requests.jsonl.gz)，437.44 MB，解压 3.634 GB |
+| [frozen-256：正式冻结负载](frozen-256/README.md) | 256 完整会话、9,078 请求、748,751,397 prompt tokens | 复现 2026-10-11–12 五组正式实验，含 EP16 | [frozen-256-requests.jsonl.gz](https://github.com/jiaran-king/afd-benefit-benchmark/releases/download/datasets-20261012-v1/frozen-256-requests.jsonl.gz)，437.44 MB，解压 3.634 GB |
 
 表中大小采用十进制 MB/GB。精确字节数及压缩前后的完整 SHA256 见 [Release 清单](releases/2026-10-12.json)。下载与导入并存建议预留至少 10 GB；只复现实验可仅下载 frozen。
 

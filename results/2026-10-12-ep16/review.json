@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "review_date": "2026-10-12",
+  "decision": "Eligible for the five-group single-run deployment comparison",
+  "run_id": "non_ep16-async-256sessions-v1",
+  "checks": {
+    "unique_http_native_request_pairs": 9078,
+    "frozen_catalog_and_prompt_sha": "exact match for all 9078 requests",
+    "complete_sessions": 256,
+    "prompt_tokens": 748751397,
+    "output_tokens_per_request": 1,
+    "all_http_status_200": true,
+    "complete_sse_streams": 9078,
+    "route": "same four-domain frozen Non mapping",
+    "native_preemptions": 0,
+    "recompute_tokens": 0,
+    "dependency_and_frozen_ready_priority": "passed",
+    "peak_admitted_requests": 16,
+    "peak_actual_http_requests": 16,
+    "native_domain_baselines": 4,
+    "successful_cold_reset_endpoints": 1,
+    "matched_host_workers": 16,
+    "old_four_metrics": "all original fields unchanged",
+    "old_four_memory_capacity": "all original fields unchanged in merged view",
+    "five_group_recomputed_requests": 45390,
+    "five_group_admission_events": 90780,
+    "figure_inputs_and_ep16_paired_latency": "independently recomputed",
+    "reproduction_tests_passed": 12
+  },
+  "observations": {
+    "duration_seconds": 3264.9470341196284,
+    "duration_reduction_vs_afd_eager_percent": 13.512362621945051,
+    "total_actual_unique_kv_gib": 562.6754155158997,
+    "cached_tokens": 686751744,
+    "actual_prefill_tokens": 61999653
+  },
+  "limits": [
+    "One complete run per deployment; no statistical significance claim.",
+    "Execution/identity/count checks are not a full numerical-accuracy evaluation.",
+    "Topology, communication, MBT, cache domains and dynamic batching are not isolated causal factors.",
+    "F holds experts; its absence of KV alone does not explain the whole-machine KV difference or establish wasted HBM.",
+    "Later stopped memory-attribution diagnostics are not formal performance evidence.",
+    "Portable runner changes were checked offline; no new hardware run during repository integration."
+  ],
+  "commands": [
+    "python3 scripts/recompute_results.py",
+    "python3 -m unittest discover -s tests -v",
+    "python3 scripts/benchmark.py plan --group non_ep16 --workspace /tmp/afd-reproduction --run-name example"
+  ]
+}

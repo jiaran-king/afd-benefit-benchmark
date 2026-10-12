@@ -1,0 +1,151 @@
+{
+  "group": "non_ep16",
+  "run_id": "non_ep16-async-256sessions-v1",
+  "metrics": {
+    "group": "non_ep16",
+    "sessions": 256,
+    "requests": 9078,
+    "prompt_tokens": 748751397,
+    "cached_tokens": 686751744,
+    "actual_prefill_tokens": 61999653,
+    "preemptions": 0,
+    "hit_rate": 0.9171959434754817,
+    "recompute_tokens": 0,
+    "duration_seconds": 3264.9470341196284,
+    "requests_per_second": 2.7804432675728914,
+    "restores": 8605,
+    "ttft_mean": 5.670506361011218,
+    "ttft_p50": 4.046804582234472,
+    "ttft_p95": 14.822419526521115,
+    "ttft_p99": 30.86570824416345,
+    "e2e_mean": 5.676269204975838,
+    "e2e_p50": 4.055126052815467,
+    "e2e_p95": 14.827019105805084,
+    "e2e_p99": 30.874071878241285,
+    "continuation_zero_cached": 217,
+    "total_actual_unique_kv_gib": 562.6754155158997
+  },
+  "audit_status": "complete",
+  "execution_audit": {
+    "status": "passed",
+    "peak_inflight_requests": 16,
+    "request_limit": 16,
+    "dependency_order_and_ready_priority": "passed"
+  },
+  "native_totals": {
+    "requests": 9078,
+    "prompt_tokens": 748751397,
+    "cached_tokens": 686751744,
+    "actual_prefill_tokens": 61999653,
+    "preemptions": 0,
+    "hit_rate": 0.9171959434754817
+  },
+  "domains": [
+    {
+      "domain": 0,
+      "totals": {
+        "requests": 2237,
+        "prompt_tokens": 183869004,
+        "cached_tokens": 169099264,
+        "actual_prefill_tokens": 14769740,
+        "preemptions": 0,
+        "hit_rate": 0.9196724859617992
+      },
+      "miss_evidence": {
+        "ready_checkpoint_but_ordinary_miss": 50,
+        "continuation_zero_cached": 50
+      },
+      "checkpoint_evictions": {
+        "snapshot_budget": 1551
+      },
+      "formal_counters": {
+        "ordinary_cached_block_evictions": 67497,
+        "checkpoint_created": 2134,
+        "restore_plans": 2123,
+        "admission_allocation_failed_attempts": 0,
+        "lookup_observation_microseconds": 2330439
+      }
+    },
+    {
+      "domain": 1,
+      "totals": {
+        "requests": 2429,
+        "prompt_tokens": 198902492,
+        "cached_tokens": 186077184,
+        "actual_prefill_tokens": 12825308,
+        "preemptions": 0,
+        "hit_rate": 0.935519621342904
+      },
+      "miss_evidence": {
+        "ready_checkpoint_but_ordinary_miss": 15,
+        "continuation_zero_cached": 15
+      },
+      "checkpoint_evictions": {
+        "snapshot_budget": 1206
+      },
+      "formal_counters": {
+        "ordinary_cached_block_evictions": 43452,
+        "checkpoint_created": 1789,
+        "restore_plans": 2350,
+        "admission_allocation_failed_attempts": 0,
+        "lookup_observation_microseconds": 2324498
+      }
+    },
+    {
+      "domain": 2,
+      "totals": {
+        "requests": 2059,
+        "prompt_tokens": 170902535,
+        "cached_tokens": 151891968,
+        "actual_prefill_tokens": 19010567,
+        "preemptions": 0,
+        "hit_rate": 0.888763692124286
+      },
+      "miss_evidence": {
+        "checkpoint_limited_requests": 11,
+        "checkpoint_limited_snapshot_budget": 11,
+        "continuation_zero_cached": 104,
+        "ready_checkpoint_but_ordinary_miss": 95
+      },
+      "checkpoint_evictions": {
+        "snapshot_budget": 2340
+      },
+      "formal_counters": {
+        "ordinary_cached_block_evictions": 113561,
+        "checkpoint_created": 2923,
+        "restore_plans": 1891,
+        "admission_allocation_failed_attempts": 0,
+        "lookup_observation_microseconds": 2382114
+      }
+    },
+    {
+      "domain": 3,
+      "totals": {
+        "requests": 2353,
+        "prompt_tokens": 195077366,
+        "cached_tokens": 179683328,
+        "actual_prefill_tokens": 15394038,
+        "preemptions": 0,
+        "hit_rate": 0.9210875238083746
+      },
+      "miss_evidence": {
+        "continuation_zero_cached": 48,
+        "ready_checkpoint_but_ordinary_miss": 47
+      },
+      "checkpoint_evictions": {
+        "snapshot_budget": 1654
+      },
+      "formal_counters": {
+        "ordinary_cached_block_evictions": 71359,
+        "checkpoint_created": 2237,
+        "restore_plans": 2241,
+        "admission_allocation_failed_attempts": 0,
+        "lookup_observation_microseconds": 2392511
+      }
+    }
+  ],
+  "graph": null,
+  "actual_host_opmaster_sha256": [
+    "2e0fa08edea5cb0cc1bdbd076cf06f4bf2b0bbc7feb380dcc740f444e571d612"
+  ]
+}

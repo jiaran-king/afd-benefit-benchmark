@@ -19,6 +19,7 @@ def load(name,path):
 bench=load("bench","scripts/benchmark.py")
 dataset=load("dataset","scripts/import_dataset.py")
 sse=load("sse","scripts/runner/replay_sse.py")
+from three_arm_topology import domain_worker
 
 class ReproductionTests(unittest.TestCase):
     def test_topology_and_affinity(self):
@@ -30,6 +31,32 @@ class ReproductionTests(unittest.TestCase):
             self.assertEqual(len(endpoints),3 if group.startswith("afd") else 4)
         ep8=bench.endpoints_for("non_ep8")
         self.assertEqual([(v["instance"],v["dp_rank"]) for v in ep8.values()],[(0,0),(0,1),(1,0),(1,1)])
+
+    def test_ep16_single_endpoint_and_four_real_domains(self):
+        services=bench.services_for("non_ep16")
+        self.assertEqual(len(services),1)
+        endpoints=bench.endpoints_for("non_ep16")
+        self.assertEqual(len({e["url"] for e in endpoints.values()}),1)
+        for domain in range(4):
+            endpoint=endpoints[str(domain)]
+            self.assertEqual(endpoint["headers"]["X-data-parallel-rank"],str(domain))
+            self.assertEqual((endpoint["instance"],endpoint["dp_rank"]),(0,domain))
+            self.assertEqual(domain_worker("non_ep16",domain),("nonafd",0,domain))
+
+    def test_ep16_keeps_non_performance_settings(self):
+        with patch.dict(os.environ,{},clear=True):
+            _,_,ep4,env4,cfg4=bench.build_service("non_ep4",0,Path("/tmp/check"),"same-run")
+            _,_,ep16,env16,cfg16=bench.build_service("non_ep16",0,Path("/tmp/check"),"same-run")
+        # Independent EP4 evidence is the control: only the DP argument changes.
+        control=ep4.copy()
+        control[control.index("--data-parallel-size")+1]="4"
+        self.assertEqual(ep16,control)
+        self.assertEqual(cfg16,cfg4)
+        control_env=json.loads((ROOT/"experiments/2026-10-11-async/recorded-configuration.json").read_text())["non_ep4/nonafd-0"]["environment"]
+        for key in control_env:
+            if key!="ASCEND_RT_VISIBLE_DEVICES":
+                self.assertEqual(env16[key],env4[key],key)
+        self.assertEqual(env16["ASCEND_RT_VISIBLE_DEVICES"],",".join(map(str,range(16))))
 
     def test_graph_scope_and_no_diagnostics(self):
         with patch.dict(os.environ,{},clear=True):

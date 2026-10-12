@@ -1,4 +1,4 @@
-"""Portable orchestration for the preserved four-arm experiment. Plan is read-only."""
+"""Portable orchestration for the preserved five-arm experiment. Plan is read-only."""
 import argparse
 import hashlib
 import importlib.metadata
@@ -15,7 +15,7 @@ import time
 REPO=Path(__file__).resolve().parents[1]
 CLIENT=REPO/"scripts/runner"
 sys.path.insert(0,str(CLIENT))
-from topology import GROUPS, CONFIG, services_for, endpoints_for
+from topology import GROUPS, configuration_path, services_for, endpoints_for
 from three_arm_topology import TOPOLOGY, PREPARED
 from launch_service import redact
 
@@ -35,7 +35,7 @@ def digest(path):
 def build_service(group,index,workspace,name,execute=False):
     role,instance,devices,port,dp_port=services_for(group)[index]
     run=workspace/"runs"/name
-    record=json.loads(CONFIG.read_text())[f"{group}/{role}-{instance}"]
+    record=json.loads(configuration_path(group).read_text())[f"{group}/{role}-{instance}"]
     env=dict(os.environ)
     forbidden=[k for k in env if k.startswith(("ASYNC_VALIDATION","PREFIX_STAGE_TRACE","PREFIX_OPERATOR_TRACE")) or "PROFILER" in k]
     if forbidden:
@@ -133,7 +133,7 @@ def main():
         for i in range(len(services_for(a.group))):
             role,instance,cmd,env,config=build_service(a.group,i,work,a.run_name)
             print(f"{role}-{instance}: {shlex.join(cmd)}")
-            print(json.dumps({"performance_environment":{k:env[k] for k in json.loads(CONFIG.read_text())[f"{a.group}/{role}-{instance}"]["environment"]},
+            print(json.dumps({"performance_environment":{k:env[k] for k in json.loads(configuration_path(a.group).read_text())[f"{a.group}/{role}-{instance}"]["environment"]},
                               "additional_config":config},ensure_ascii=False))
         return
     if a.action=="start":

@@ -1,0 +1,285 @@
+{
+  "scope": "EP16 and five-group curated evidence; original four-run artifacts remain in results/2026-10-11.",
+  "artifacts": [
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "evidence/checkpoint-budget-nonafd-1009/non_ep16/runs/non_ep16-async-256sessions-v1/formal-http/requests.jsonl",
+      "source_sha256": "f6b752623e1dfc044760f3fda2846f09ac92148739c4e016ebfea34b82050764",
+      "published_path": "results/2026-10-12-ep16/requests/non_ep16.csv.gz",
+      "published_sha256": "795db979792d20294b985c4e5ed28e5f0154be96936114c2905115b485d658c8",
+      "transformation": "Allowlisted fields joined one-to-one to native domain results after cold-reset offsets; original counts and timings preserved."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "evidence/checkpoint-budget-nonafd-1009/non_ep16/runs/non_ep16-async-256sessions-v1/nonafd-0-domain-0.jsonl",
+      "source_sha256": "1ae5e82b4fd55c6d6e1009eb5cb1b9891c92be47ebf4d34aaacf9c6988a924ad",
+      "published_path": "results/2026-10-12-ep16/requests/non_ep16.csv.gz",
+      "published_sha256": "795db979792d20294b985c4e5ed28e5f0154be96936114c2905115b485d658c8",
+      "transformation": "Native request_finished counts joined to HTTP by exact request identity after formal-start offset."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "evidence/checkpoint-budget-nonafd-1009/non_ep16/runs/non_ep16-async-256sessions-v1/nonafd-0-domain-1.jsonl",
+      "source_sha256": "d28fe90c8702667a935c02ce308e7265d47da6edc4cef8720ab662982ffdfe96",
+      "published_path": "results/2026-10-12-ep16/requests/non_ep16.csv.gz",
+      "published_sha256": "795db979792d20294b985c4e5ed28e5f0154be96936114c2905115b485d658c8",
+      "transformation": "Native request_finished counts joined to HTTP by exact request identity after formal-start offset."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "evidence/checkpoint-budget-nonafd-1009/non_ep16/runs/non_ep16-async-256sessions-v1/nonafd-0-domain-2.jsonl",
+      "source_sha256": "d105bd249a11dd4a90d2397a11229f85221942d162506950b663616480e052a7",
+      "published_path": "results/2026-10-12-ep16/requests/non_ep16.csv.gz",
+      "published_sha256": "795db979792d20294b985c4e5ed28e5f0154be96936114c2905115b485d658c8",
+      "transformation": "Native request_finished counts joined to HTTP by exact request identity after formal-start offset."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "evidence/checkpoint-budget-nonafd-1009/non_ep16/runs/non_ep16-async-256sessions-v1/nonafd-0-domain-3.jsonl",
+      "source_sha256": "ba30ed25dd91ec5ffbc0b988bfe1188fbcb0298264f4d5ed58cbc4ab6494aefc",
+      "published_path": "results/2026-10-12-ep16/requests/non_ep16.csv.gz",
+      "published_sha256": "795db979792d20294b985c4e5ed28e5f0154be96936114c2905115b485d658c8",
+      "transformation": "Native request_finished counts joined to HTTP by exact request identity after formal-start offset."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "evidence/checkpoint-budget-nonafd-1009/non_ep16/runs/non_ep16-async-256sessions-v1/formal-http/events.jsonl",
+      "source_sha256": "570f90e2a7d129624a4e9b82c9db94b89af327b754a5e2ee02277a95947ad87c",
+      "published_path": "results/2026-10-12-ep16/events/non_ep16.csv.gz",
+      "published_sha256": "c3ce4bf414559fb55c49f979d7cc157451e57d332f702f7c481b80e3de3f2063",
+      "transformation": "Allowlisted admission/completion fields; original event order preserved."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "analysis/non_ep16.json",
+      "source_sha256": "a5395538b00a06ff03ccd9cb97a4e48fc248e955a862ceda318a620c081e87db",
+      "published_path": "results/2026-10-12-ep16/summaries/non_ep16.json",
+      "published_sha256": "bccc47a9dd5417e6fe158abe8930208540448a67e552cece1962897e824494f2",
+      "transformation": "Allowlisted metrics and audit; private process metadata omitted. Graph is not applicable to this eager run."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "evidence/checkpoint-budget-nonafd-1009/non_ep16/runs/non_ep16-async-256sessions-v1/final-frozen-input-audit.json",
+      "source_sha256": "46cda0fdbf1a87427fb68c6e43c55ec43648d498c8c465aca2e04e2b18f3081c",
+      "published_path": "results/2026-10-12-ep16/audits/frozen-input.json",
+      "published_sha256": "fbf801281ce10ed1e3b152cc24fbdec770cb24ab2df5ca1454248d59e0aed19c",
+      "transformation": "Allowlisted complete-run audit; inherited parent-set statistics and private paths omitted."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "evidence/checkpoint-budget-nonafd-1009/non_ep16/runs/non_ep16-async-256sessions-v1/formal-start.json",
+      "source_sha256": "ea48e7bcc7ac2a53ba2988fafb513feabce1bed1e64c46ba7f992200ea656d85",
+      "published_path": "results/2026-10-12-ep16/audits/prepressure.json",
+      "published_sha256": "6d094ad4194f0ba12a0a88663afe0150c1d42c5fba6be8377f461a7b8ee774f8",
+      "transformation": "Cold-reset responses and per-domain baselines; allowlisted prepressure and loaded-library evidence combined."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "evidence/checkpoint-budget-nonafd-1009/non_ep16/runs/non_ep16-async-256sessions-v1/configuration/prepressure-capture.json",
+      "source_sha256": "f0cbc86cd324aad7f0c7c8202c2489d63ee4beed30616f2577183a44cf6ac5d8",
+      "published_path": "results/2026-10-12-ep16/audits/prepressure.json",
+      "published_sha256": "6d094ad4194f0ba12a0a88663afe0150c1d42c5fba6be8377f461a7b8ee774f8",
+      "transformation": "Worker/scheduler/loaded-host audit projected; process IDs and full environments omitted."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "evidence/checkpoint-budget-nonafd-1009/non_ep16/runs/non_ep16-async-256sessions-v1/configuration/host-loader-audit.json",
+      "source_sha256": "368576613d326fb35ba880107a124e8639a541959655b20f0cdc22018e5d682a",
+      "published_path": "results/2026-10-12-ep16/audits/prepressure.json",
+      "published_sha256": "6d094ad4194f0ba12a0a88663afe0150c1d42c5fba6be8377f461a7b8ee774f8",
+      "transformation": "Host/API identities for all 16 workers, without machine paths."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "analysis/per-die-memory-five-arm.csv",
+      "source_sha256": "bf37119e3424935b79adb86280de555266b81dd17cb6c7090f80f479d5294764",
+      "published_path": "results/2026-10-12-ep16/per-die-memory.csv",
+      "published_sha256": "192e6c1e1265e2a138425c290fc8448ff5cdf6ac17b057402cd715fe89f41773",
+      "transformation": "Private process IDs and source paths omitted; all 80 device measurements retained."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "analysis/metrics-five-arm.csv",
+      "source_sha256": "252d84396bb5d8801efbe23df6d1b84996c60cdf38f3b1b8a1067a03686e8f12",
+      "published_path": "results/2026-10-12-ep16/metrics.csv",
+      "published_sha256": "252d84396bb5d8801efbe23df6d1b84996c60cdf38f3b1b8a1067a03686e8f12",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "analysis/per-domain-capacity-five-arm.csv",
+      "source_sha256": "112068834263e6e233493249605117c2240c7af14647a36bfdd79ea8886fd167",
+      "published_path": "results/2026-10-12-ep16/per-domain-capacity.csv",
+      "published_sha256": "112068834263e6e233493249605117c2240c7af14647a36bfdd79ea8886fd167",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "analysis/paired-ep16.csv",
+      "source_sha256": "7d3a24bb681814ad6c85e141396389b4c648f8dd2a8f26b05fa1f58d4e2a7caf",
+      "published_path": "results/2026-10-12-ep16/paired-ep16.csv",
+      "published_sha256": "7d3a24bb681814ad6c85e141396389b4c648f8dd2a8f26b05fa1f58d4e2a7caf",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "figures/fig01_five_arm_overview.pdf",
+      "source_sha256": "2612d25172b3846372a01c28f0e5094a5479988d6a68d55f2a6bad11b4b4c1f7",
+      "published_path": "results/2026-10-12-ep16/figures/fig01_five_arm_overview.pdf",
+      "published_sha256": "2612d25172b3846372a01c28f0e5094a5479988d6a68d55f2a6bad11b4b4c1f7",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "figures/fig01_five_arm_overview.png",
+      "source_sha256": "be22c06115b4d718dd5fab41f25080ca027b154eda0adec211ab28f298f2d789",
+      "published_path": "results/2026-10-12-ep16/figures/fig01_five_arm_overview.png",
+      "published_sha256": "be22c06115b4d718dd5fab41f25080ca027b154eda0adec211ab28f298f2d789",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "figures/fig01_five_arm_overview.svg",
+      "source_sha256": "49a5e539796ffcfdfba18e66bec9bfcb5ee8dd371caac785ccb0f93982f0b069",
+      "published_path": "results/2026-10-12-ep16/figures/fig01_five_arm_overview.svg",
+      "published_sha256": "49a5e539796ffcfdfba18e66bec9bfcb5ee8dd371caac785ccb0f93982f0b069",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "figures/fig02_five_arm_cache_prefill_partition.pdf",
+      "source_sha256": "a13a0ee33c4527fe9c98480123e5a65aa430fbef87492d2b003e750e4e87a8d0",
+      "published_path": "results/2026-10-12-ep16/figures/fig02_five_arm_cache_prefill_partition.pdf",
+      "published_sha256": "a13a0ee33c4527fe9c98480123e5a65aa430fbef87492d2b003e750e4e87a8d0",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "figures/fig02_five_arm_cache_prefill_partition.png",
+      "source_sha256": "0d5c3a9aabc8dd2d7315903a7ef036732c8ced4436695670ad038a0c38822220",
+      "published_path": "results/2026-10-12-ep16/figures/fig02_five_arm_cache_prefill_partition.png",
+      "published_sha256": "0d5c3a9aabc8dd2d7315903a7ef036732c8ced4436695670ad038a0c38822220",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "figures/fig02_five_arm_cache_prefill_partition.svg",
+      "source_sha256": "34e967e1e35747ef8caaf70db178f39049a5b11d8a0cff302ccd028cbc1646d7",
+      "published_path": "results/2026-10-12-ep16/figures/fig02_five_arm_cache_prefill_partition.svg",
+      "published_sha256": "34e967e1e35747ef8caaf70db178f39049a5b11d8a0cff302ccd028cbc1646d7",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "figures/fig03_five_arm_relationships.pdf",
+      "source_sha256": "cc3ddb595f67ef4fc8a8b05231458c1656aa693dec16beda2e14bc3b7a9eea96",
+      "published_path": "results/2026-10-12-ep16/figures/fig03_five_arm_relationships.pdf",
+      "published_sha256": "cc3ddb595f67ef4fc8a8b05231458c1656aa693dec16beda2e14bc3b7a9eea96",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "figures/fig03_five_arm_relationships.png",
+      "source_sha256": "b5ccdead66c24358275af9d47e998e51f32c3be8ef5aa70994ccb0b4083dabc1",
+      "published_path": "results/2026-10-12-ep16/figures/fig03_five_arm_relationships.png",
+      "published_sha256": "b5ccdead66c24358275af9d47e998e51f32c3be8ef5aa70994ccb0b4083dabc1",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "figures/fig03_five_arm_relationships.svg",
+      "source_sha256": "2b149f82a12bc51041fcbc815c586c5fdfc52122cfc575e6ce3186fa3698fec0",
+      "published_path": "results/2026-10-12-ep16/figures/fig03_five_arm_relationships.svg",
+      "published_sha256": "2b149f82a12bc51041fcbc815c586c5fdfc52122cfc575e6ce3186fa3698fec0",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "figures/five-arm-figure-data.csv",
+      "source_sha256": "fb0dd21f68f04eb951575a0f204f602c08152870c7e7f1b8f5c56f04c038fa3b",
+      "published_path": "results/2026-10-12-ep16/figures/five-arm-figure-data.csv",
+      "published_sha256": "fb0dd21f68f04eb951575a0f204f602c08152870c7e7f1b8f5c56f04c038fa3b",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "evidence/checkpoint-budget-nonafd-1009/non_ep16/runs/non_ep16-async-256sessions-v1/configuration/nonafd-0/argv.json",
+      "source_sha256": "735b94c2402d91cdbd8f4c7936d5825b3418fa9a92f5d7ba3dfb70ce5246c19a",
+      "published_path": "experiments/2026-10-12-ep16/recorded-configuration.json",
+      "published_sha256": "469cd46113f7b9281194e1c0935faef72f26d5611c0f93613ec6d4ac7f671f79",
+      "transformation": "Performance environment allowlist; executable, model, run and client locations parameterized."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "evidence/checkpoint-budget-nonafd-1009/non_ep16/runs/non_ep16-async-256sessions-v1/configuration/nonafd-0/environment.json",
+      "source_sha256": "24a9c5aedc2758d77a385642d7f538cb689373469972a7cfa825ed67a53336c0",
+      "published_path": "experiments/2026-10-12-ep16/recorded-configuration.json",
+      "published_sha256": "469cd46113f7b9281194e1c0935faef72f26d5611c0f93613ec6d4ac7f671f79",
+      "transformation": "Performance environment allowlist; executable, model, run and client locations parameterized."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "evidence/checkpoint-budget-nonafd-1009/non_ep16/runs/non_ep16-async-256sessions-v1/configuration/replay-client/argv.json",
+      "source_sha256": "876340fb5c458a7eb2c620d875d34d654a85064bd4ae91fbe49f0cdfacd40faa",
+      "published_path": "experiments/2026-10-12-ep16/recorded-configuration.json",
+      "published_sha256": "469cd46113f7b9281194e1c0935faef72f26d5611c0f93613ec6d4ac7f671f79",
+      "transformation": "Performance environment allowlist; executable, model, run and client locations parameterized."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "evidence/checkpoint-budget-nonafd-1009/non_ep16/runs/non_ep16-async-256sessions-v1/configuration/replay-client/environment.json",
+      "source_sha256": "1c0b8d4e445e806f6acb9e4d6df9660fd6d371b381d8b2d32ab79033e6bf619c",
+      "published_path": "experiments/2026-10-12-ep16/recorded-configuration.json",
+      "published_sha256": "469cd46113f7b9281194e1c0935faef72f26d5611c0f93613ec6d4ac7f671f79",
+      "transformation": "Performance environment allowlist; executable, model, run and client locations parameterized."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "analysis/config-comparison-ep16.json",
+      "source_sha256": "c8a0413be68dc4bc2bf8bb8756e7d026c495ee49813feca4d6ef361f3b5e9d95",
+      "published_path": "experiments/2026-10-12-ep16/configuration-comparison.json",
+      "published_sha256": "bca7164917bc2409fad8ab116f2ffed176bf7dc1c99d78decaab37add2a79f58",
+      "transformation": "Original run paths replaced with RUN_DIR; expected DP/device differences retained."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "FIVE_ARM_REPORT.zh-CN.md",
+      "source_sha256": "fa1cbbeee12e7acd6da9c84bc8ecc0b701a2ff2143d489f85e63e2e6e19df606",
+      "published_path": "results/2026-10-12-ep16/REPORT.zh-CN.md",
+      "published_sha256": "af4066e47e65c9f62a8839176ef91a8248e9cb020d8957c37fdc40ee13fca9fa",
+      "transformation": "Public evidence links; clarified capacity causality and single-run boundaries using later review; all measurements unchanged."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "BENCH_METHOD.zh-CN.md",
+      "source_sha256": "1714c6618fa815b0f82fabe031423845456e6790900c207ae0bb44c9415ce21f",
+      "published_path": "docs/bench-method.md",
+      "published_sha256": "23474f6442a26b82c4a7a1adeaa0d68b113ab59a022c58b88ed0a84b169336f6",
+      "transformation": "Implementation links relocated to portable public scripts; public evidence and migration scope clarified."
+    },
+    {
+      "source_collection": "experiment-ep16-1012",
+      "source_file": "plot_five_arm.py",
+      "source_sha256": "b09d0029a5544e204aad9ce1ff052e8109ea27c3449baae0dbd1d1240237f67b",
+      "published_path": "scripts/report/plot_five_arm.py",
+      "published_sha256": "c83378fe1736e17436ab94fcc6f621e156673afda03e69001ee2fc88462b0ea9",
+      "transformation": "Same figure logic and measurements; repository input path, output directory and optional font path parameterized."
+    },
+    {
+      "source_collection": "public-five-group-report",
+      "source_file": "results/2026-10-12-ep16/REPORT.zh-CN.md",
+      "source_sha256": "af4066e47e65c9f62a8839176ef91a8248e9cb020d8957c37fdc40ee13fca9fa",
+      "published_path": "results/2026-10-12-ep16/REPORT.zh-CN.html",
+      "published_sha256": "611a34dae2d00f538e4aef19de4efde5d3871a5a2645ee1beb36e73e468f472a",
+      "transformation": "Rendered from the public Markdown with embedded local PNG figures and public GitHub evidence links using scripts/report/render_report.mjs."
+    },
+    {
+      "source_collection": "public-five-group-report",
+      "source_file": "results/2026-10-12-ep16/REPORT.zh-CN.md",
+      "source_sha256": "af4066e47e65c9f62a8839176ef91a8248e9cb020d8957c37fdc40ee13fca9fa",
+      "published_path": "results/2026-10-12-ep16/REPORT.zh-CN.pdf",
+      "published_sha256": "58f9c56bde13801f5b744d3d4292c542dc7a13965558e27fb07f7142d7bf9eb9",
+      "transformation": "Rendered from the public Markdown with embedded local PNG figures and public GitHub evidence links using scripts/report/render_report.mjs."
+    }
+  ]
+}

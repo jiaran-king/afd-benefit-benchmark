@@ -1,6 +1,6 @@
 # 正式实验冻结负载
 
-这是 2026-10-11 四组正式实验共用的精确输入：256 完整会话、9,078 请求、748,751,397 prompt tokens，最大 prompt 235,936，固定输出 1 token。
+这是 2026-10-11 原四组及 2026-10-12 新增 EP16 正式实验共用的精确输入：256 完整会话、9,078 请求、748,751,397 prompt tokens，最大 prompt 235,936，固定输出 1 token。EP16 没有重新选样或修改冻结文件。
 
 [下载完整 token 文件](https://github.com/jiaran-king/afd-benefit-benchmark/releases/download/datasets-20261012-v1/frozen-256-requests.jsonl.gz)，或执行：
 

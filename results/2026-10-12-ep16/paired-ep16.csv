@@ -1,0 +1,5 @@
+base,candidate,ep16_faster_requests,ep16_slower_requests,paired_e2e_ratio_median,paired_e2e_ratio_p95,scope
+non_ep4,non_ep16,6611,2467,0.3187940283145103,4.802557427355851,descriptive same-request comparison; actual ready order and cache state may differ
+non_ep8,non_ep16,3864,5214,1.077380991365544,3.3491855222171227,descriptive same-request comparison; actual ready order and cache state may differ
+afd_eager,non_ep16,3763,5315,1.186701381871532,5.116434961275932,descriptive same-request comparison; actual ready order and cache state may differ
+afd_fgraph,non_ep16,3774,5304,1.1855007471594803,5.06749086100034,descriptive same-request comparison; actual ready order and cache state may differ

@@ -4,6 +4,7 @@
 
 ~~~bash
 python3 scripts/recompute_results.py --output /tmp/afd-recomputed.csv
+python3 scripts/recompute_results.py --result-set 2026-10-11
 python3 -m unittest discover -s tests -v
 ~~~
 
@@ -38,11 +39,11 @@ source /path/to/afd-local.env
   --group non_ep4 --workspace /path/to/afd-work --run-name non-ep4-repro-001
 ~~~
 
-四组的 group 值为 non_ep4、non_ep8、afd_eager、afd_fgraph。每次使用新 run-name；已有目录会拒绝覆盖。plan 不启动模型、不访问 API。
+五组的 group 值为 non_ep4、non_ep8、non_ep16、afd_eager、afd_fgraph。EP16 使用单实例 DP4/TP4/EP16，四个 DP rank 的映射和记录配置见 [EP16 定义](../experiments/2026-10-12-ep16/README.md)。每次使用新 run-name；已有目录会拒绝覆盖。plan 不启动模型、不访问 API。
 
 ## 执行一个组
 
-以下命令使用同一 group、workspace、run-name。Non 两组在同一机器顺序运行；AFD 两组在另一机器顺序运行。不要同时在一台机器启动两组。
+以下命令使用同一 group、workspace、run-name。Non 三组在同一机器顺序运行；AFD 两组在另一机器顺序运行。不要同时在一台机器启动两组。
 
 ~~~bash
 "$BENEFIT_PYTHON" scripts/benchmark.py start \
@@ -68,7 +69,7 @@ replay 内部执行全部唯一端点冷 reset、逐域基线记录，再调用�
 
 ## 完成与归档
 
-至少检查：formal-http/summary.json complete、formal-audit.json passed、9,078 请求/256 会话、零未解释失败；输入 SHA、域路由、就绪优先级、C16 全部一致。AFD 还要有压力前后 graph 状态，FULL 的 4 个 F worker replay 计数递增。
+至少检查：formal-http/summary.json complete、formal-audit.json complete 且 execution_audit passed、9,078 请求/256 会话、零未解释失败；输入 SHA、域路由、就绪优先级、C16 全部一致。AFD 还要有压力前后 graph 状态，FULL 的 4 个 F worker replay 计数递增。
 
 保留 manifest、configuration、device 快照、all-endpoint-metrics、逐域日志、formal-start、formal-http、formal-audit、stop-owned。机器环境和完整日志留在私有证据存储；公开结果采用字段白名单，不能直接上传整个 run。
 

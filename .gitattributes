@@ -3,3 +3,5 @@
 *.csv -text whitespace=cr-at-eol
 *.csv.gz -text -diff
 *.png -text -diff
+# Preserve matplotlib's original vector output, including path whitespace.
+results/*/figures/*.svg -text -whitespace

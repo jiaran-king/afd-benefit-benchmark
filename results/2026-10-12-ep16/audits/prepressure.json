@@ -1,0 +1,67 @@
+{
+  "host_audit_status": "passed",
+  "worker_count": 16,
+  "compressor_host_sha256": [
+    "2e0fa08edea5cb0cc1bdbd076cf06f4bf2b0bbc7feb380dcc740f444e571d612"
+  ],
+  "compressor_api_sha256": [
+    "8b555cd6188876b15a8243456fcd17e05a69dd678765db97135809534bfb8dc2"
+  ],
+  "effective_worker_environments": "all 16 matched recorded launch performance variables",
+  "schedulers": [
+    {
+      "domain": 0,
+      "class": "CompressorCheckpointAsyncScheduler"
+    },
+    {
+      "domain": 1,
+      "class": "CompressorCheckpointAsyncScheduler"
+    },
+    {
+      "domain": 2,
+      "class": "CompressorCheckpointAsyncScheduler"
+    },
+    {
+      "domain": 3,
+      "class": "CompressorCheckpointAsyncScheduler"
+    }
+  ],
+  "capacity_files": 16,
+  "formal_start": {
+    "request_sha256": "d41cca12002e1b35d5fb801876b87439c070e1307a52d469245686802751c48a",
+    "route_sha256": "94a332b49f5e0b01741f3e74359f091a2842bc186d34c54a39da54913c4da2d7",
+    "concurrency": 16,
+    "checkpoint_ratio": 0.25,
+    "mbt": 8192,
+    "output_tokens": 1,
+    "expected_requests": 9078,
+    "expected_sessions": 256,
+    "reset": {
+      "http://127.0.0.1:8500": {
+        "success": true
+      }
+    },
+    "observers": {
+      "0": {
+        "file": "nonafd-0-domain-0.jsonl",
+        "offset": 189,
+        "counters": {}
+      },
+      "1": {
+        "file": "nonafd-0-domain-1.jsonl",
+        "offset": 190,
+        "counters": {}
+      },
+      "2": {
+        "file": "nonafd-0-domain-2.jsonl",
+        "offset": 189,
+        "counters": {}
+      },
+      "3": {
+        "file": "nonafd-0-domain-3.jsonl",
+        "offset": 190,
+        "counters": {}
+      }
+    }
+  }
+}

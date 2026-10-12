@@ -41,11 +41,11 @@ def check():
                 target=link.split("#",1)[0]
                 if not (p.parent/target).exists():
                     failures.append((str(p.relative_to(ROOT)),"broken link: "+link))
-    sources=json.loads((ROOT/"results/2026-10-11/sources.json").read_text())
-    for row in sources["artifacts"]:
-        p=ROOT/row["published_path"]
-        if not p.exists() or hashlib.sha256(p.read_bytes()).hexdigest()!=row["published_sha256"]:
-            failures.append((row["published_path"],"source map output hash differs"))
+    for source_map in sorted((ROOT/"results").glob("*/sources.json")):
+        for row in json.loads(source_map.read_text())["artifacts"]:
+            p=ROOT/row["published_path"]
+            if not p.exists() or hashlib.sha256(p.read_bytes()).hexdigest()!=row["published_sha256"]:
+                failures.append((row["published_path"],"source map output hash differs"))
     frozen=json.loads((ROOT/"datasets/frozen-256/manifest.json").read_text())
     raw=json.loads((ROOT/"datasets/raw/manifest.json").read_text())
     release=json.loads((ROOT/"datasets/releases/2026-10-12.json").read_text())

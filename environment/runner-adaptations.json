@@ -17,7 +17,7 @@
   {
     "file": "scripts/runner/three_arm_topology.py",
     "source_sha256": "d3982fbdc3dc13cc0a18d592b58400497721ccfb5e3e5de53e88b8c56cfe07bf",
-    "changes": "workspace path / task label only"
+    "changes": "workspace path / task label parameterized; added audited EP16 DP4/TP4/EP16 topology and four domains mapped to instance 0 ranks 0–3"
   },
   {
     "file": "scripts/runner/stop_owned.py",

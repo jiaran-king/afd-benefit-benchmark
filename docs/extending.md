@@ -10,7 +10,7 @@
 4. 唯一 run ID、实际命令/环境、采集时间与校验结果。
 5. 指标定义、失败/缺失数据，以及结论可适用的范围。
 
-当前 benchmark.py 明确实现冻结四组，启动参数从 recorded-configuration.json 读取。新增 EP 数或拓扑时，需要同步新的 service/device 划分、endpoints DP rank、three_arm_topology/domain_worker、容量核对和新实验配置加载路径，并增加相应离线校验；不能只改标签沿用旧路由。扩展并发或输出长度时还需修改准入及 SSE 校验，单独保存执行器版本。
+当前 benchmark.py 明确实现冻结五组（含 non_ep16），启动参数从对应实验目录的 recorded-configuration.json 读取。新增 EP 数或拓扑时，需要同步新的 service/device 划分、endpoints DP rank、three_arm_topology/domain_worker、容量核对和新实验配置加载路径，并增加相应离线校验；不能只改标签沿用旧路由。扩展并发或输出长度时还需修改准入及 SSE 校验，单独保存执行器版本。EP16 的独立目录与复用旧四组证据的方式可作为扩展参考。
 
 比较两组 graph 时保持 A eager、异步调度、CAM async、两份 token 微批次与 F layered GMM 一致，仅改变 F 执行模式及必要 graph 设置。测量应对称；profiler 运行进入 diagnostics，不直接替代无 profiler 正式全量。
 

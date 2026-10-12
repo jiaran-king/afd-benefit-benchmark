@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "scope": "complete EP16 frozen input and client execution",
+  "request_sha256": "d41cca12002e1b35d5fb801876b87439c070e1307a52d469245686802751c48a",
+  "route_sha256": "94a332b49f5e0b01741f3e74359f091a2842bc186d34c54a39da54913c4da2d7",
+  "requests": 9078,
+  "sessions": 256,
+  "prompt_tokens": 748751397,
+  "max_prompt_tokens": 235936,
+  "priorities_checked": 9078,
+  "routes_checked": 9078,
+  "complete_sse_checked": 9078,
+  "client_sources": [
+    {
+      "file": "run_formal.py",
+      "sha256": "304dd6cfc1f1b9828e268228526394ec6082ae7d551562c14d1971890a85ecee"
+    },
+    {
+      "file": "agentinfer_frozen_replay.py",
+      "sha256": "db314678df094710b38bd3c6e9e366b5789c4278f4c46ae1c8f83cd68e45156a"
+    },
+    {
+      "file": "deterministic_runtime.py",
+      "sha256": "f95423d475ba3c3577c24f77c1d4919bf0a50b915b19a1092559b17550541f51"
+    },
+    {
+      "file": "random_priority_admission.py",
+      "sha256": "07ff74d911e0f7158d1e17587b87b7b65c33f7b108991568dbe4775c84c7a2a3"
+    },
+    {
+      "file": "replay_sse.py",
+      "sha256": "a54a550734941442a9b29fe1d613bc7219580d7cb13c8177f80685c2733609bd"
+    },
+    {
+      "file": "three_arm_topology.py",
+      "sha256": "37d8d6bb574a93a979f5fae3afcdd15811967097e31a5eb4dd4719ad43caed91"
+    }
+  ],
+  "model_files": {
+    "config.json": "6c6cdc4a47e00e41137081429b95bd5c1cf91ba62e87309d1398431de7f4a8e1",
+    "tokenizer.json": "8f9f37ca37fdc4f5fd36d5cf4d3b0e8392edb4e894fd10cc0d70b4957c8633cf",
+    "tokenizer_config.json": "6ac8c8dc065ed118161d02dd532749ae3f52c243deac27872134fae2f50d8547"
+  }
+}

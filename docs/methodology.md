@@ -2,18 +2,19 @@
 
 ## 研究问题与比较单位
 
-研究相同 16 DIE 预算下，AFD 的专家与注意力布局如何影响可用 KV、缓存采用、实际 prefill 和完整会话负载耗时。每个配置独占一台 16 DIE，独立启动、正常 profile、冷 reset，然后完整回放一次。两台机器可分别顺序运行 Non 两组与 AFD 两组，不能在同一 16 DIE 上争用。
+研究相同 16 DIE 预算下，不同专家与注意力布局如何影响可用 KV、缓存采用、实际 prefill 和完整会话负载耗时。每个配置独占一台 16 DIE，独立启动、正常 profile、冷 reset，然后完整回放一次。两台机器可分别顺序运行 Non 三组与 AFD 两组，不能在同一 16 DIE 上争用。
 
 | 组 | 拓扑 | KV 域 | MBT | 执行 |
 |---|---|---:|---:|---|
 | non_ep4 | 4 × DP1/TP4/EP4 | 4 | 8192 | eager |
 | non_ep8 | 2 × DP2/TP4/EP8 | 4 | 8192 | eager |
+| non_ep16 | 1 × DP4/TP4/EP16 | 4 | 8192 | eager |
 | afd_eager | A DP3/TP4，F DP4/TP1/EP4 | 3 | 32768 | A/F eager |
 | afd_fgraph | 同上，12A + 4F | 3 | 32768 | A eager，F FULL |
 
 共同：maxlen 262144，seq8/域，utilization 0.9，block32，checkpoint ratio 0.25，OMP4 与 CPU 绑定，全局 HTTP C16，显式异步调度，APC/CWS/hybrid KV/chunked prefill 开启。无 PD、MTP、DSA CP、DSA overlap 或强制负载均衡。
 
-Non 开 FlashComm1 和 prefill/fused MC2；AFD A 开 FlashComm1、F 关闭，fused MC2 关闭。AFD 使用 CAM async、两份 token 微批次、gate 在 A、dynamicQuant=1，两个 F 组同设 layered GMM=1。shared expert DP 保持开启；新版 AFD 共享专家实际在 A。AFD A/F 通信缓冲分别 1024/4096 MiB。完整实际参数以 [记录配置](../experiments/2026-10-11-async/recorded-configuration.json) 为准。
+Non 开 FlashComm1 和 prefill/fused MC2；AFD A 开 FlashComm1、F 关闭，fused MC2 关闭。AFD 使用 CAM async、两份 token 微批次、gate 在 A、dynamicQuant=1，两个 F 组同设 layered GMM=1。shared expert DP 保持开启；新版 AFD 共享专家实际在 A。AFD A/F 通信缓冲分别 1024/4096 MiB。完整实际参数以 [原四组记录配置](../experiments/2026-10-11-async/recorded-configuration.json) 和 [EP16 记录配置](../experiments/2026-10-12-ep16/recorded-configuration.json) 为准。
 
 ## 冻结负载与调度
 
@@ -23,7 +24,7 @@ Non 开 FlashComm1 和 prefill/fused MC2；AFD A 开 FlashComm1、F 关闭，fus
 
 调用链是 AgentInfer runner → planner → 原生依赖图 → streaming transport。256 会话可以进入图，HTTP 准入独立限制为 C16。优先级仅在当前图上已就绪的请求间比较；完成时间不同，实际就绪顺序和组批仍可能变化。不设置轮次屏障，不添加人为到达等待，不自动重试。
 
-会话固定亲和到 KV 域。Non 共用四域映射；EP8 的域必须同时落实到实例和实例内 DP rank。AFD 使用三域映射。端点请求带 X-data-parallel-rank；不能仅轮询 HTTP 实例来代替域亲和。
+会话固定亲和到 KV 域。Non 共用四域映射；EP8 的域必须同时落实到实例和实例内 DP rank，EP16 则映射到单实例的 DP rank 0–3。AFD 使用三域映射。端点请求带 X-data-parallel-rank；不能仅轮询 HTTP 实例来代替域亲和。详细准入和计时语义见 [bench 并发与调度](bench-method.md)。
 
 ## 启动、冷基线与证据
 

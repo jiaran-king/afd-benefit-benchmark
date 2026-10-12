@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "old_group": "non_ep4",
+  "new_group": "non_ep16",
+  "argv_length": 49,
+  "argv_differences": [
+    {
+      "index": 44,
+      "old": "1",
+      "ep16": "4"
+    },
+    {
+      "index": 48,
+      "old": "{\"enable_dsv4_shared_compressor_workspace\":true,\"multistream_dsv4_dsa_overlap\":false,\"enable_force_load_balance\":false,\"compressor_checkpoint_budget_ratio\":0.25,\"enable_dsa_cp\":false,\"enable_shared_expert_dp\":true,\"enable_cpu_binding\":true,\"checkpoint_budget_diagnostics_path\":\"${RUN_DIR}/nonafd-0-domain-{dp_rank}.jsonl\",\"benefit_worker_capacity_path\":\"${RUN_DIR}/nonafd-0-capacity-{dp_rank}-{tp_rank}.json\",\"enable_prefill_mc2\":true}",
+      "ep16": "{\"enable_dsv4_shared_compressor_workspace\":true,\"multistream_dsv4_dsa_overlap\":false,\"enable_force_load_balance\":false,\"compressor_checkpoint_budget_ratio\":0.25,\"enable_dsa_cp\":false,\"enable_shared_expert_dp\":true,\"enable_cpu_binding\":true,\"checkpoint_budget_diagnostics_path\":\"${RUN_DIR}/nonafd-0-domain-{dp_rank}.jsonl\",\"benefit_worker_capacity_path\":\"${RUN_DIR}/nonafd-0-capacity-{dp_rank}-{tp_rank}.json\",\"enable_prefill_mc2\":true}"
+    }
+  ],
+  "additional_config_output_path_fields": [
+    "checkpoint_budget_diagnostics_path",
+    "benefit_worker_capacity_path"
+  ],
+  "additional_config_non_path_fields_equal": true,
+  "performance_environment_keys_compared": [
+    "VLLM_PLUGINS",
+    "VLLM_ASCEND_ENABLE_FUSED_MC2",
+    "VLLM_ASCEND_ENABLE_FLASHCOMM1",
+    "OMP_NUM_THREADS",
+    "PYTORCH_NPU_ALLOC_CONF",
+    "VLLM_USE_V1",
+    "VLLM_USE_V2_MODEL_RUNNER",
+    "VLLM_WORKER_MULTIPROC_METHOD",
+    "AFD_FORCE_SPAWN_MULTIPROCESSING",
+    "HCCL_IF_IP",
+    "HCCL_SOCKET_IFNAME",
+    "HCCL_CONNECT_TIMEOUT",
+    "HCCL_EXEC_TIMEOUT",
+    "HCCL_OP_EXPANSION_MODE",
+    "HCCL_DETERMINISTIC",
+    "HCCL_BUFFSIZE",
+    "LONG_PREFILL_TOKEN_THRESHOLD"
+  ],
+  "performance_environment_differences": {},
+  "visible_devices_change": {
+    "old": "0,1,2,3",
+    "ep16": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"
+  },
+  "interpretation": "Only DP1→DP4, 4→16 visible DIEs, and run-specific diagnostic paths change; other command arguments and selected performance environment values match."
+}
