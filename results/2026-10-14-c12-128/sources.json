@@ -1,0 +1,837 @@
+{
+  "scope": "C12 / 128 complete-session four-deployment curated evidence; previous results preserved.",
+  "artifacts": [
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/prepared/request-index.jsonl",
+      "source_sha256": "a0a31a04f115123a61774b4a66b72b19798cb23a6d8120b0cbbdf0c9ec04bd75",
+      "published_path": "datasets/frozen-128/request-index.csv.gz",
+      "transformation": "JSONL to compressed CSV; original frozen line hashes retained; every request matched to published frozen-256 parent.",
+      "published_sha256": "4120b8a5ee386f36234261d98f41b652956650dccda0ab62d304fc81c3cbf977"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/prepared/priorities.json",
+      "source_sha256": "79ff2e1be9c2ac6e0c0f2de2ba258e16d8aef51ea0ad5290881b32c83e150469",
+      "published_path": "datasets/frozen-128/priorities.json",
+      "transformation": "byte-identical",
+      "published_sha256": "79ff2e1be9c2ac6e0c0f2de2ba258e16d8aef51ea0ad5290881b32c83e150469"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/prepared/route-afd.json",
+      "source_sha256": "c72d1f18efa56dd964640dc6a9629edb74872a8cb55058cdfe092b38d3b1365d",
+      "published_path": "datasets/frozen-128/route-afd.json",
+      "transformation": "byte-identical",
+      "published_sha256": "c72d1f18efa56dd964640dc6a9629edb74872a8cb55058cdfe092b38d3b1365d"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/prepared/route-nonafd.json",
+      "source_sha256": "4f040f7ee647c9895930a7991be65a149d761b1691a423d175af7ced08b822b0",
+      "published_path": "datasets/frozen-128/route-nonafd.json",
+      "transformation": "byte-identical",
+      "published_sha256": "4f040f7ee647c9895930a7991be65a149d761b1691a423d175af7ced08b822b0"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/prepared/manifest.json",
+      "source_sha256": "c635121394fc99989886ae6110ab6d23334af1e8fff3a6e7c8bc7b5b4b2b8d00",
+      "published_path": "datasets/frozen-128/manifest.json",
+      "transformation": "Public metadata recomputed for the exact 128-session subset; inherited parent descriptive fields omitted; frozen identity unchanged.",
+      "published_sha256": "f808fe34aedab1b53b50a643982b41dc69d63b6f6756e488d7877de98a7a8557"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "analysis/all/c12-128-metrics.json",
+      "source_sha256": "dbc368e61e10d4b2bd5bd942b0b12a9fd57bc328760e5384fe8d3b33a9cf9f55",
+      "published_path": "results/2026-10-14-c12-128/metrics.csv",
+      "transformation": "CSV projection; physical node and private source paths omitted; numeric measurements unchanged.",
+      "published_sha256": "91b82fe7ab7d5fb4be26cb1977f40c5920884d8405c75f107922123d95e0083d"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "analysis/per-die-memory.csv",
+      "source_sha256": "4772a37dfd8292481b2959f7588df5db9c22afd278456f8c1b629fbbc6d84e7c",
+      "published_path": "results/2026-10-14-c12-128/per-die-memory.csv",
+      "transformation": "All 64 per-DIE measurements retained; private PIDs and source line numbers omitted; unknown F profile fields remain blank.",
+      "published_sha256": "04c20d193a5165a3616dad7c2f7b25999671ae7d716a76860b9608c7fd546425"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/formal-http/requests.jsonl",
+      "source_sha256": "2c9681da629941648649c7c5637085391d30b8529186d7ee66c1330ea54f87c1",
+      "published_path": "results/2026-10-14-c12-128/requests/non_ep4.csv.gz",
+      "transformation": "Allowlisted HTTP fields joined one-to-one to native results after cold-reset offsets; all identities/counts/timings preserved.",
+      "published_sha256": "12b31810143026709c418c3ff6fbae34b42e4faaca628e3167a0d9de57508ea1"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/nonafd-0-domain-0.jsonl",
+      "source_sha256": "f155783001835fd62b777a3d58bf512170d83cf940c37d59d73bc3598681f808",
+      "published_path": "results/2026-10-14-c12-128/requests/non_ep4.csv.gz",
+      "transformation": "Native request_finished joined to HTTP by exact request identity and domain; no aggregation before pairing.",
+      "published_sha256": "12b31810143026709c418c3ff6fbae34b42e4faaca628e3167a0d9de57508ea1"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/nonafd-1-domain-0.jsonl",
+      "source_sha256": "0680cebd6a27c03afb1d9f3d0851786c5b9e9824277c0bf1da5f893d84d42630",
+      "published_path": "results/2026-10-14-c12-128/requests/non_ep4.csv.gz",
+      "transformation": "Native request_finished joined to HTTP by exact request identity and domain; no aggregation before pairing.",
+      "published_sha256": "12b31810143026709c418c3ff6fbae34b42e4faaca628e3167a0d9de57508ea1"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/nonafd-2-domain-0.jsonl",
+      "source_sha256": "31d410cafa0605b02ffea168bb7d65dc6fdb1dff8d81f67b0eeb6fa6b1345d65",
+      "published_path": "results/2026-10-14-c12-128/requests/non_ep4.csv.gz",
+      "transformation": "Native request_finished joined to HTTP by exact request identity and domain; no aggregation before pairing.",
+      "published_sha256": "12b31810143026709c418c3ff6fbae34b42e4faaca628e3167a0d9de57508ea1"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/nonafd-3-domain-0.jsonl",
+      "source_sha256": "7f375645d3590b595e606610847133160f9e297f0cf1bbf15a25d47ed9aceb96",
+      "published_path": "results/2026-10-14-c12-128/requests/non_ep4.csv.gz",
+      "transformation": "Native request_finished joined to HTTP by exact request identity and domain; no aggregation before pairing.",
+      "published_sha256": "12b31810143026709c418c3ff6fbae34b42e4faaca628e3167a0d9de57508ea1"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/formal-http/events.jsonl",
+      "source_sha256": "006daad1f6cec09c83dbcca70255c402af4ad38f0ec238a3577df320f88b7ce5",
+      "published_path": "results/2026-10-14-c12-128/events/non_ep4.csv.gz",
+      "transformation": "Allowlisted admission/completion identity fields; original event order preserved.",
+      "published_sha256": "4f10531c0bb5dae5e293de4d668ddbd9f63eac0887a2708d36eafc8435041872"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/formal-audit.json",
+      "source_sha256": "601fd404389bffb92525423ac25c0ac109c6d90d6e2e99132b2d1448b6e641e0",
+      "published_path": "results/2026-10-14-c12-128/summaries/non_ep4.json",
+      "transformation": "Formal totals and per-domain counters only; private paths omitted.",
+      "published_sha256": "bc9a4307f9389de1bc1fa82b54d3c1191d7df8b5a676b3107a352731e4314e6e"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/final-frozen-input-audit.json",
+      "source_sha256": "c4d591b6d980514b9203af626d6b18e0f7f91aa18b67f8f864e7308ea9757f60",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/formal-start.json",
+      "source_sha256": "138b0b4805d8a1d2fcfe90e4c798f0f06f3bbb9fe464de4cbab163d16e1306af",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/configuration/prepressure-capture.json",
+      "source_sha256": "909e985618bdf9f6e5350701116c42c5e426039bacefd1217297cc32c8318fcd",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/configuration/c32-runtime-audit.json",
+      "source_sha256": "0da181c60421968694ebeda8aeafea5ddb1005c130afcdcdc05feffc2afb9448",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/stop-owned.json",
+      "source_sha256": "01483e8826aeebf45744d8e75473e99df594f3bb8e08917e62b3b54c2110654b",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/configuration/historical-config-comparison.json",
+      "source_sha256": "c8cda3aca268b459c331c5d1987f8c756c68b2289b6392a0e41e1c805a9b5e27",
+      "published_path": "experiments/2026-10-14-c12-128/configuration-comparison.json",
+      "transformation": "Comparison decision/model hashes/argv deltas retained; private old/new environments omitted.",
+      "published_sha256": "0863c92beef3e737e64c76545989e31c48b2c2b669c01fa74bcd14a3abcb432e"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/configuration/nonafd-0/argv.json",
+      "source_sha256": "88be881df706e6dbd40b8f416b12411cc338f0b794dbe9e8cebe478bab2fbf5f",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/configuration/nonafd-0/environment.json",
+      "source_sha256": "0d9cfe2762c95b2403e6fd6d2b2327c22d6bfb826a98156eb3f954325e9c8b62",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/configuration/nonafd-1/argv.json",
+      "source_sha256": "d268b72f8f9a66a7bd933e497766ccfa9eb849e07101a547ba39fda2547657b7",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/configuration/nonafd-1/environment.json",
+      "source_sha256": "b956d43aae7b1391158c5601b5fdfe5ce7c14e8ab8830cad06a806b013c8db1c",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/configuration/nonafd-2/argv.json",
+      "source_sha256": "04996d159548815cbd5e121e888db9e973533801aeaa7e3e115fe4e24651ab2a",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/configuration/nonafd-2/environment.json",
+      "source_sha256": "cf4835ed1f0f8831cedfdb2befd7d90023b3317c32328efaeefe13eb753b925b",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/configuration/nonafd-3/argv.json",
+      "source_sha256": "b0621428c0d7e6c4293171ed255cac59e857597dde8edf906c2caad8371526d9",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/configuration/nonafd-3/environment.json",
+      "source_sha256": "bcb0de8b7f0a5bee4bc505e266cc9cfccbd708faa9c5756bdf5161dc001e62d3",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/configuration/replay-client/argv.json",
+      "source_sha256": "a8e8603083f786053eb800e7a24acfaf1136603d77d72894039ed4535b6890e7",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/configuration/replay-client/environment.json",
+      "source_sha256": "885a8518be5543f9a820399060156d2d45f019817a508eb7c36416da590a80b9",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/formal-http/requests.jsonl",
+      "source_sha256": "c00194b3159166515d77f12cf2d65426d003cdbc34776c741a308a18840ae44d",
+      "published_path": "results/2026-10-14-c12-128/requests/non_ep8.csv.gz",
+      "transformation": "Allowlisted HTTP fields joined one-to-one to native results after cold-reset offsets; all identities/counts/timings preserved.",
+      "published_sha256": "e95d029e08755169cbeff32558aab28bfe87fcd08014293cf1ae64e8a7cc5469"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/nonafd-0-domain-0.jsonl",
+      "source_sha256": "0c2e5fdbda1878deb29100f877f9e67b445f39c1a9aab3b2d8709d01e837b45a",
+      "published_path": "results/2026-10-14-c12-128/requests/non_ep8.csv.gz",
+      "transformation": "Native request_finished joined to HTTP by exact request identity and domain; no aggregation before pairing.",
+      "published_sha256": "e95d029e08755169cbeff32558aab28bfe87fcd08014293cf1ae64e8a7cc5469"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/nonafd-0-domain-1.jsonl",
+      "source_sha256": "dddaf894e6856d69b7c129f09eb34595eee113242df7ee0c6ada42dd6dd3ddae",
+      "published_path": "results/2026-10-14-c12-128/requests/non_ep8.csv.gz",
+      "transformation": "Native request_finished joined to HTTP by exact request identity and domain; no aggregation before pairing.",
+      "published_sha256": "e95d029e08755169cbeff32558aab28bfe87fcd08014293cf1ae64e8a7cc5469"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/nonafd-1-domain-0.jsonl",
+      "source_sha256": "fff1495e2a37bfd970963afa9f20b8e7d083ef607aaeb14ebefd8e2b7f97259d",
+      "published_path": "results/2026-10-14-c12-128/requests/non_ep8.csv.gz",
+      "transformation": "Native request_finished joined to HTTP by exact request identity and domain; no aggregation before pairing.",
+      "published_sha256": "e95d029e08755169cbeff32558aab28bfe87fcd08014293cf1ae64e8a7cc5469"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/nonafd-1-domain-1.jsonl",
+      "source_sha256": "2f67ee9dee584b1e8078644632841fe86a1022a8a27304abbdef608304e51d84",
+      "published_path": "results/2026-10-14-c12-128/requests/non_ep8.csv.gz",
+      "transformation": "Native request_finished joined to HTTP by exact request identity and domain; no aggregation before pairing.",
+      "published_sha256": "e95d029e08755169cbeff32558aab28bfe87fcd08014293cf1ae64e8a7cc5469"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/formal-http/events.jsonl",
+      "source_sha256": "2de4b94a680e26b260860e45a05358b05bca2587c0c63b5bc4a0f9ea5d9c4f11",
+      "published_path": "results/2026-10-14-c12-128/events/non_ep8.csv.gz",
+      "transformation": "Allowlisted admission/completion identity fields; original event order preserved.",
+      "published_sha256": "7bd1a65ebda513645655a22bda80c2b433542e716d7a553c150f1d774b7125b2"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/formal-audit.json",
+      "source_sha256": "b11e92cf3bb48218910df4afeb8e5e852ded5b8bd9f944c2ccc5c2effa950e03",
+      "published_path": "results/2026-10-14-c12-128/summaries/non_ep8.json",
+      "transformation": "Formal totals and per-domain counters only; private paths omitted.",
+      "published_sha256": "ef758fad2a6b9ed9e05b740b1efd95428ed08218cdaf5ce9fad87e177b90bf42"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/final-frozen-input-audit.json",
+      "source_sha256": "7fdd981a639738ac226e56cf806856f47e4a4ad83f92d55855e04b8f5196b689",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/formal-start.json",
+      "source_sha256": "b547773e8ff62fa39c618f738d56ebc1e9147de3c40c932f3b2f9a0b9d242235",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/configuration/prepressure-capture.json",
+      "source_sha256": "220c1c8ab2ea172e1903eabda1ee40d8d6260c298826d11314a6542a53822024",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/configuration/c32-runtime-audit.json",
+      "source_sha256": "980b5891f638f69587304ec84ce24da8a2c70278e9d466ee48c35956e854ac39",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/stop-owned.json",
+      "source_sha256": "24160740751fcd0fd81a4b78634664bf3f7359c961e47ee164c3048d00a87662",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/configuration/historical-config-comparison.json",
+      "source_sha256": "2734a02864ea5d44d52df17c620619ab28e3fb8a9e039b25ff55c0517b21ad7e",
+      "published_path": "experiments/2026-10-14-c12-128/configuration-comparison.json",
+      "transformation": "Comparison decision/model hashes/argv deltas retained; private old/new environments omitted.",
+      "published_sha256": "0863c92beef3e737e64c76545989e31c48b2c2b669c01fa74bcd14a3abcb432e"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/configuration/nonafd-0/argv.json",
+      "source_sha256": "88ee50110f590ff2a8f70410a1edba3aa14d4c14638c51013379c58cf676bb7a",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/configuration/nonafd-0/environment.json",
+      "source_sha256": "b6f957dedb8850dfa7c0dc287d3f98bd960474809bbe5f1f76015d31d4ffadbf",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/configuration/nonafd-1/argv.json",
+      "source_sha256": "85ac2c5dcd75dcc2ab0468521b698793c245adfbe1ba83c5abe254bbdd8eef1c",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/configuration/nonafd-1/environment.json",
+      "source_sha256": "4eb3ef53110ab24b2b3147ac8a58dda6895eb34659c4bcea9385e71c0b422299",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/configuration/replay-client/argv.json",
+      "source_sha256": "2f481a6f5bba52bcf241fb4b499cdf1e0497f04d72fe26949bc3d8e78433fa01",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/configuration/replay-client/environment.json",
+      "source_sha256": "0a041c112197014be9c264818b88250cf29b13c63ebd8f3100a0731ce25c54bd",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/formal-http/requests.jsonl",
+      "source_sha256": "163c717578162dc4b7dd8d2d7fc61e3afdb92dc7258e464d226bf5961ae1ec9a",
+      "published_path": "results/2026-10-14-c12-128/requests/non_ep16.csv.gz",
+      "transformation": "Allowlisted HTTP fields joined one-to-one to native results after cold-reset offsets; all identities/counts/timings preserved.",
+      "published_sha256": "85f55baabdf4eaa01db50be5512904aaf0bbf31bf4823020fa42b08987cc27ec"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/nonafd-0-domain-0.jsonl",
+      "source_sha256": "f074fbbf69ac06040292eef960438547982a64433ab52a9a97612ff404061738",
+      "published_path": "results/2026-10-14-c12-128/requests/non_ep16.csv.gz",
+      "transformation": "Native request_finished joined to HTTP by exact request identity and domain; no aggregation before pairing.",
+      "published_sha256": "85f55baabdf4eaa01db50be5512904aaf0bbf31bf4823020fa42b08987cc27ec"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/nonafd-0-domain-1.jsonl",
+      "source_sha256": "8f2852faf2ec51acb1aca5ac6f54687c54daf095cf3e3c0b0f72e670811f9bc3",
+      "published_path": "results/2026-10-14-c12-128/requests/non_ep16.csv.gz",
+      "transformation": "Native request_finished joined to HTTP by exact request identity and domain; no aggregation before pairing.",
+      "published_sha256": "85f55baabdf4eaa01db50be5512904aaf0bbf31bf4823020fa42b08987cc27ec"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/nonafd-0-domain-2.jsonl",
+      "source_sha256": "bc1906297c3594bef13338a661442f410f6e19f1c4fb994ebbaef99ee558a6c2",
+      "published_path": "results/2026-10-14-c12-128/requests/non_ep16.csv.gz",
+      "transformation": "Native request_finished joined to HTTP by exact request identity and domain; no aggregation before pairing.",
+      "published_sha256": "85f55baabdf4eaa01db50be5512904aaf0bbf31bf4823020fa42b08987cc27ec"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/nonafd-0-domain-3.jsonl",
+      "source_sha256": "dbdf252371f512f7a940a8e57fa573a233593819fb89fbc8762c2d58a45d898e",
+      "published_path": "results/2026-10-14-c12-128/requests/non_ep16.csv.gz",
+      "transformation": "Native request_finished joined to HTTP by exact request identity and domain; no aggregation before pairing.",
+      "published_sha256": "85f55baabdf4eaa01db50be5512904aaf0bbf31bf4823020fa42b08987cc27ec"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/formal-http/events.jsonl",
+      "source_sha256": "52a6fb139650c555e2f1f7d80be440e18ad03a21297216056047418eda984220",
+      "published_path": "results/2026-10-14-c12-128/events/non_ep16.csv.gz",
+      "transformation": "Allowlisted admission/completion identity fields; original event order preserved.",
+      "published_sha256": "26c914ebb47932165a6b47a76e90b277b3e801c41de939a6320d7d16adf9fad7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/formal-audit.json",
+      "source_sha256": "baa3d5d0edc7fb44cc0a38855c1c00cfc63672c5ad3b3853c68384896f6b278b",
+      "published_path": "results/2026-10-14-c12-128/summaries/non_ep16.json",
+      "transformation": "Formal totals and per-domain counters only; private paths omitted.",
+      "published_sha256": "c97b51ca5c47275dcb1c12e11e855dab0d9be0659279248c6fbeb43fc2e1bb2f"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/final-frozen-input-audit.json",
+      "source_sha256": "a128f25230835f815736f08a8bec7510ebdf3bd026784cd80d6927f53e9b76f7",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/formal-start.json",
+      "source_sha256": "b93a5bf5a89d57ffae0b29d0b76a141812fd412ef00780e727c5f5471c3ef4ab",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/configuration/prepressure-capture.json",
+      "source_sha256": "1e9748a55ae0e0fbc836d9de865d2694dbbdb1d5f3a3787e79843d0ee00a4c2b",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/configuration/c32-runtime-audit.json",
+      "source_sha256": "3d0785b003aa7c63bdf46b93da2bbdfbb0b118af84e30c02a97ceaf5755e69a0",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/stop-owned.json",
+      "source_sha256": "c48fe82e373db3e65e632066b14fd4a5f7fd039c3a2b0fbe58abd9837dd913f1",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/configuration/historical-config-comparison.json",
+      "source_sha256": "dfa43a149fecc0ad377cb37f3008e5d26873acd5746dcb433202ec6617c4b701",
+      "published_path": "experiments/2026-10-14-c12-128/configuration-comparison.json",
+      "transformation": "Comparison decision/model hashes/argv deltas retained; private old/new environments omitted.",
+      "published_sha256": "0863c92beef3e737e64c76545989e31c48b2c2b669c01fa74bcd14a3abcb432e"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/configuration/nonafd-0/argv.json",
+      "source_sha256": "b3df3838e2abe55552f150767ba34f1af93e90da34cedd5f8004d796a0536d27",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/configuration/nonafd-0/environment.json",
+      "source_sha256": "4f820936112299037bfb561be4dc293b7cd931afb7f7e84066c45975c2c6035b",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/configuration/replay-client/argv.json",
+      "source_sha256": "710ee892d1f664a7abed30a3f065ecac43c36b5c2ad305acdf32abe0ddb58421",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/configuration/replay-client/environment.json",
+      "source_sha256": "534ab083baf9e8cca3047e5b7ff734e915499b5e7011a9552f1420c161bce033",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/formal-http/requests.jsonl",
+      "source_sha256": "a6ed87713b2188d33501252dd9a921b2a038df16b943c0cd06b0f6de8bd7cd4b",
+      "published_path": "results/2026-10-14-c12-128/requests/afd_eager.csv.gz",
+      "transformation": "Allowlisted HTTP fields joined one-to-one to native results after cold-reset offsets; all identities/counts/timings preserved.",
+      "published_sha256": "22a572813f8fa274d773b4e145175830e843ac0f8e60df18ef0783c41548acc5"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/attention-0-domain-0.jsonl",
+      "source_sha256": "48cada0b4443090acc0af352b8e729035890cceb657f25ddc37503fc9a1b9396",
+      "published_path": "results/2026-10-14-c12-128/requests/afd_eager.csv.gz",
+      "transformation": "Native request_finished joined to HTTP by exact request identity and domain; no aggregation before pairing.",
+      "published_sha256": "22a572813f8fa274d773b4e145175830e843ac0f8e60df18ef0783c41548acc5"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/attention-0-domain-1.jsonl",
+      "source_sha256": "9537a6949c8ae47d963ed23c29c73c55a3a774cc7a8b275761422e7ad2853ca2",
+      "published_path": "results/2026-10-14-c12-128/requests/afd_eager.csv.gz",
+      "transformation": "Native request_finished joined to HTTP by exact request identity and domain; no aggregation before pairing.",
+      "published_sha256": "22a572813f8fa274d773b4e145175830e843ac0f8e60df18ef0783c41548acc5"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/attention-0-domain-2.jsonl",
+      "source_sha256": "b6ddc3a385e4221a20e7ccb240d14d6212d8535a154d680bf3e7635fcc586199",
+      "published_path": "results/2026-10-14-c12-128/requests/afd_eager.csv.gz",
+      "transformation": "Native request_finished joined to HTTP by exact request identity and domain; no aggregation before pairing.",
+      "published_sha256": "22a572813f8fa274d773b4e145175830e843ac0f8e60df18ef0783c41548acc5"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/formal-http/events.jsonl",
+      "source_sha256": "38c3e76bf27d498532f63cd7505325fc9f981138de70916849471f3db8230a58",
+      "published_path": "results/2026-10-14-c12-128/events/afd_eager.csv.gz",
+      "transformation": "Allowlisted admission/completion identity fields; original event order preserved.",
+      "published_sha256": "e0463d82b4b174c8fbe87b6a075eb57d97442faf6716f89088d23c840ade34c7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/formal-audit.json",
+      "source_sha256": "b8afb15fbfa6b802904793c74e3ca9b69ea63169fb1cdece554e5a1ce9850991",
+      "published_path": "results/2026-10-14-c12-128/summaries/afd_eager.json",
+      "transformation": "Formal totals and per-domain counters only; private paths omitted.",
+      "published_sha256": "bd0af5542d46aac9122589528d134bcef5578a910b46da99764602735565e623"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/final-frozen-input-audit.json",
+      "source_sha256": "f2c779008be557c73035fe0ed34abaa59f0ad21a5d19c4e48df9f8b6ca798d4d",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/formal-start.json",
+      "source_sha256": "a59b7a76780ad14b249a3b20dbc11aadddaa43f08b9ba52615b3759eddf62e5a",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/configuration/prepressure-capture.json",
+      "source_sha256": "91a0e9268024c2b2910cb6699daaa47d0323db9b5cf53218b62299145277b3a7",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/configuration/c32-runtime-audit.json",
+      "source_sha256": "b5c196c1d24d036bcb2fe79ee47812c1defde6d621ec551fddd3ae08ef5f5cbb",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/stop-owned.json",
+      "source_sha256": "184cfb4214b8202d0dc23751d88bf0423ac4ac4be3fafcb15c5b671768e89379",
+      "published_path": "results/2026-10-14-c12-128/audits/complete-runs.json",
+      "transformation": "Allowlisted validation conclusions and identities; full machine environments remain in original evidence archive.",
+      "published_sha256": "43bb528810cb1e18f726a4dcbd5d7029e055049fe28d19b354838577abe6f042"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/configuration/historical-config-comparison.json",
+      "source_sha256": "cc44e41b3b93659b31fc7814d6272cdaffa90031f08ec73f33746ca5ffd3d4f0",
+      "published_path": "experiments/2026-10-14-c12-128/configuration-comparison.json",
+      "transformation": "Comparison decision/model hashes/argv deltas retained; private old/new environments omitted.",
+      "published_sha256": "0863c92beef3e737e64c76545989e31c48b2c2b669c01fa74bcd14a3abcb432e"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/configuration/attention-0/argv.json",
+      "source_sha256": "731f4a505e68e35020edb74282feea581e4e6115e5756bbe02bc9b41ffdc7ced",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/configuration/attention-0/environment.json",
+      "source_sha256": "51563d5a41a2bda192ef257f095a381103768dd48c6885e20642ca7b31af129d",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/configuration/ffn-0/argv.json",
+      "source_sha256": "bed15a2e7c3304fcbb3c6cee1872a32902f5386f4d4b873d1089d50a44278afa",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/configuration/ffn-0/environment.json",
+      "source_sha256": "a4d503121b23aa1cdb2f294d0a1c9c7880d1cc23a44345731d8dc7eb970993e5",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/configuration/replay-client/argv.json",
+      "source_sha256": "d1a63e978ccdf9493068ad631d2aaf62269b2f145120c3f2b95195b969b1987d",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/configuration/replay-client/environment.json",
+      "source_sha256": "141f2923d5f1c46956760e09ea643ec04490d159ccb1f734d3c70eb783fb90a4",
+      "published_path": "experiments/2026-10-14-c12-128/recorded-configuration.json",
+      "transformation": "Performance environment allowlist; executable/model/client/record paths parameterized, raw environment withheld.",
+      "published_sha256": "f7b017cdd3ba404ae92d2c8d1b246d153f6fa405a3a848b408d0b7390618f9d7"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep4-c12-128sessions-1014-v1/actual-capacity.json",
+      "source_sha256": "30a9a8c3a05a69010cf701c08480ecbf967fcb13254b968b3fe3e9d4c187d3fc",
+      "published_path": "results/2026-10-14-c12-128/per-domain-capacity.csv",
+      "transformation": "Natural per-domain capacity and unique tensor storage; private paths omitted.",
+      "published_sha256": "7e10aa1c4da2c1df574da68bf570405a2e739bb9176200689db886bb9745f7b2"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep8-c12-128sessions-1014-v1/actual-capacity.json",
+      "source_sha256": "7abf809931eb2a5039fe54fe440718503ded7907a5af0c7729d080a70ba432c3",
+      "published_path": "results/2026-10-14-c12-128/per-domain-capacity.csv",
+      "transformation": "Natural per-domain capacity and unique tensor storage; private paths omitted.",
+      "published_sha256": "7e10aa1c4da2c1df574da68bf570405a2e739bb9176200689db886bb9745f7b2"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/non_ep16-c12-128sessions-1014-v1/actual-capacity.json",
+      "source_sha256": "60eeb8f0b49c742194d63c10c6e9a5cd92bf32afd7fcac796d6ec5187723aa3e",
+      "published_path": "results/2026-10-14-c12-128/per-domain-capacity.csv",
+      "transformation": "Natural per-domain capacity and unique tensor storage; private paths omitted.",
+      "published_sha256": "7e10aa1c4da2c1df574da68bf570405a2e739bb9176200689db886bb9745f7b2"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/runs/afd_eager-c12-128sessions-1014-v2/actual-capacity.json",
+      "source_sha256": "4991f372b8fce66b82d5f1ff589ca1b6172a24cfa15e151151507eebde60960c",
+      "published_path": "results/2026-10-14-c12-128/per-domain-capacity.csv",
+      "transformation": "Natural per-domain capacity and unique tensor storage; private paths omitted.",
+      "published_sha256": "7e10aa1c4da2c1df574da68bf570405a2e739bb9176200689db886bb9745f7b2"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "analysis/native-metrics.json",
+      "source_sha256": "9f022c7a8f8d0193e15c52cf314016e5143832a571b3c59382f942452a737b0a",
+      "published_path": "results/2026-10-14-c12-128/native-metrics.json",
+      "transformation": "byte-identical; no private identifiers present",
+      "published_sha256": "9f022c7a8f8d0193e15c52cf314016e5143832a571b3c59382f942452a737b0a"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "analysis/simulation-vs-actual.json",
+      "source_sha256": "cdd92db032099f1b8a45d2dba6fa3a0eaf33c4375885f130d99d5475668af97b",
+      "published_path": "results/2026-10-14-c12-128/simulation-vs-actual.json",
+      "transformation": "byte-identical; no private identifiers present",
+      "published_sha256": "cdd92db032099f1b8a45d2dba6fa3a0eaf33c4375885f130d99d5475668af97b"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "analysis/cost-audit.json",
+      "source_sha256": "624aee4bd36a38d0cf632c6c38e76cb4cb84115f3f14f11c7bdb1bf14bcd1399",
+      "published_path": "results/2026-10-14-c12-128/cost-audit.json",
+      "transformation": "byte-identical; no private identifiers present",
+      "published_sha256": "624aee4bd36a38d0cf632c6c38e76cb4cb84115f3f14f11c7bdb1bf14bcd1399"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "archive.json",
+      "source_sha256": "7a5ef372f37e1517fd7b0e7c3ee022a090e1ab3e89ceaf0e6577326eeb849769",
+      "published_path": "results/2026-10-14-c12-128/evidence-archive.json",
+      "transformation": "Archive identity retained; internal storage path omitted; raw archive not published.",
+      "published_sha256": "2fecc6c1756b1471301088bc8e6464a62c2c032bcf30147824ff489518dd256c"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "evidence/preparation/execution.json",
+      "source_sha256": "9f2003885ead98e0cf3efd94862544bd7f92c93dd04a35ab2b7b8c00daffcca1",
+      "published_path": "results/2026-10-14-c12-128/run-history.json",
+      "transformation": "Run IDs/order/failure authorization projected; timestamps and private task/Pod identities omitted.",
+      "published_sha256": "e44d6274d781745edd1800ad2a743f472d9a31d8f4a72b06fe69e9cd057dc268"
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "analysis/all/c12-128-metrics.json",
+      "source_sha256": "dbc368e61e10d4b2bd5bd942b0b12a9fd57bc328760e5384fe8d3b33a9cf9f55",
+      "published_path": "results/2026-10-14-c12-128/figures/fig01_four_arm_overview.pdf",
+      "published_sha256": "db374c3f7702cf4acceef24c2c5534bc292d7a99f3c15f15fca1d103af8f532a",
+      "transformation": "Generated with scripts/report/plot_c12_128.py from reviewed numeric inputs; measurements unchanged."
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "analysis/all/c12-128-metrics.json",
+      "source_sha256": "dbc368e61e10d4b2bd5bd942b0b12a9fd57bc328760e5384fe8d3b33a9cf9f55",
+      "published_path": "results/2026-10-14-c12-128/figures/fig01_four_arm_overview.png",
+      "published_sha256": "1a390d5bd49895bdc72fa880d7fa7e21b62c6e1e6da9836e38c8b3e858804406",
+      "transformation": "Generated with scripts/report/plot_c12_128.py from reviewed numeric inputs; measurements unchanged."
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "analysis/all/c12-128-metrics.json",
+      "source_sha256": "dbc368e61e10d4b2bd5bd942b0b12a9fd57bc328760e5384fe8d3b33a9cf9f55",
+      "published_path": "results/2026-10-14-c12-128/figures/fig01_four_arm_overview.svg",
+      "published_sha256": "6a7630112ff7b9a204725f809ebb528003930c509d5b88b9b307c61678217de8",
+      "transformation": "Generated with scripts/report/plot_c12_128.py from reviewed numeric inputs; measurements unchanged."
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "analysis/per-die-memory.csv",
+      "source_sha256": "4772a37dfd8292481b2959f7588df5db9c22afd278456f8c1b629fbbc6d84e7c",
+      "published_path": "results/2026-10-14-c12-128/figures/fig02_per_die_memory.pdf",
+      "published_sha256": "1f6ffca2c33ffd2721186340259bb4cddaf469c505afafe928dbeace7e6d5151",
+      "transformation": "Generated with scripts/report/plot_c12_128.py from reviewed numeric inputs; measurements unchanged."
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "analysis/per-die-memory.csv",
+      "source_sha256": "4772a37dfd8292481b2959f7588df5db9c22afd278456f8c1b629fbbc6d84e7c",
+      "published_path": "results/2026-10-14-c12-128/figures/fig02_per_die_memory.png",
+      "published_sha256": "099b126331bfa4371557a408a2bbfedca3857e58fbfeb6fb0910dc408a6512f8",
+      "transformation": "Generated with scripts/report/plot_c12_128.py from reviewed numeric inputs; measurements unchanged."
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "analysis/per-die-memory.csv",
+      "source_sha256": "4772a37dfd8292481b2959f7588df5db9c22afd278456f8c1b629fbbc6d84e7c",
+      "published_path": "results/2026-10-14-c12-128/figures/fig02_per_die_memory.svg",
+      "published_sha256": "938d19d6867745a47ed79b39e803d3c2adc9690407ef1cd4efb4b8e108ffbe9f",
+      "transformation": "Generated with scripts/report/plot_c12_128.py from reviewed numeric inputs; measurements unchanged."
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "analysis/all/c12-128-metrics.json",
+      "source_sha256": "dbc368e61e10d4b2bd5bd942b0b12a9fd57bc328760e5384fe8d3b33a9cf9f55",
+      "published_path": "results/2026-10-14-c12-128/figures/four-arm-figure-data.csv",
+      "published_sha256": "fd521a51aabe68401334836f353c57ef4104241dec7b72a662f72ba638b99d6c",
+      "transformation": "Generated with scripts/report/plot_c12_128.py from reviewed numeric inputs; measurements unchanged."
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "RESULTS.zh-CN.md",
+      "source_sha256": "a6b4975e5c68255e71b0703b2705d9c7647faed1260f3a335841cf7884942a3b",
+      "published_path": "results/2026-10-14-c12-128/REPORT.zh-CN.md",
+      "published_sha256": "77d3f72fcb204585c18d1b4360887b21e116a2ffd81ca5932b13d32547931101",
+      "transformation": "Reorganized to prior public report format; design review, per-DIE values, simulation error and evidence links added. HTML/PDF render the same public Markdown; no measurements changed."
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "RESULTS.zh-CN.md",
+      "source_sha256": "a6b4975e5c68255e71b0703b2705d9c7647faed1260f3a335841cf7884942a3b",
+      "published_path": "results/2026-10-14-c12-128/REPORT.zh-CN.html",
+      "published_sha256": "bfdb00ac59bf3ebcfcb37320138262d9ae311f293e5e9f92e80c08ffc7d517e4",
+      "transformation": "Reorganized to prior public report format; design review, per-DIE values, simulation error and evidence links added. HTML/PDF render the same public Markdown; no measurements changed."
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "RESULTS.zh-CN.md",
+      "source_sha256": "a6b4975e5c68255e71b0703b2705d9c7647faed1260f3a335841cf7884942a3b",
+      "published_path": "results/2026-10-14-c12-128/REPORT.zh-CN.pdf",
+      "published_sha256": "28e6dc0606c6756cf96bd5dee869afe3205a65c962855e862ce5ec010856aba3",
+      "transformation": "Reorganized to prior public report format; design review, per-DIE values, simulation error and evidence links added. HTML/PDF render the same public Markdown; no measurements changed."
+    },
+    {
+      "source_collection": "experiment-c12-128sessions-1014",
+      "source_file": "analysis/final-design-review.json",
+      "source_sha256": "a1335a19488271b7783ba6a116a18d9262a97f52ae408a8e325f3a86935bcf5c",
+      "published_path": "results/2026-10-14-c12-128/review.json",
+      "published_sha256": "16b43f4b6ffd2bcbe0ab720081093eb32f0c39fafec6469758016f9f713244f7",
+      "transformation": "Publication review combines same-node/Pod and archive validation with recorded runtime/config/input audits and inference boundaries."
+    }
+  ]
+}

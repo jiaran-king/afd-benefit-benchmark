@@ -4,11 +4,13 @@
 |---|---|---|
 | 2026-10-11 closeout host-fixed | 原四组正式基线；EP4 + 两组 AFD 完整，原值保留 | results/2026-10-11 |
 | 2026-10-11 followup EP8 workspace-fixed | 已验证独立完整 EP8，纳入同一主表 | results/2026-10-11/summaries/non_ep8.json |
-| 2026-10-12 Non EP16 | 新增完整正式组，通过逐请求独立复核；五组最新主线 | results/2026-10-12-ep16、experiments/2026-10-12-ep16 |
+| 2026-10-12 Non EP16 | 完整正式组，通过逐请求独立复核；256/C16 五组基线 | results/2026-10-12-ep16、experiments/2026-10-12-ep16 |
+| 2026-10-14 prefix-on / 128 完整会话 / C12 | 同机四组各一次、全部请求完整；设计、参数、调度和结论已复核 | results/2026-10-14-c12-128、experiments/2026-10-14-c12-128 |
 | 异步实验配置包 | 原定义 + 三份必要补丁；实际值以正式记录为准 | experiments、environment |
 | 原始 AgentInfer 客户端 | 实际源码保留；upstream commit 未知 | scripts/runner、vendor |
 | 610 会话原始源数据 | 原始 JSON 无损压缩发布；独立身份和格式说明 | datasets/raw、数据集 Release |
 | 256 会话冻结负载 | 精确 token 文件已发布；选择、路由、优先级和请求身份完整 | datasets/frozen-256、数据集 Release |
+| 128 会话冻结负载 | 同一已发布文件的完整会话子集；字节、优先级保留，路由对子集重建 | datasets/frozen-128、scripts/prepare_frozen_128.py |
 | 2026-10-12 F graph 诊断 | 新 host 基线，1,024 请求；带 profiler | diagnostics/f-graph-2026-10-12 |
 | 旧 F graph 时间线 | 旧 host 基线，仅解释机制 | archive/old-f-graph-timeline.md |
 | 旧异步三组与失败 EP8 | 旧基线和失败现场，不混入主表 | archive/pre-host-fix-async-report.md、历史索引 |

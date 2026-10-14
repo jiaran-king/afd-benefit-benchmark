@@ -4,13 +4,15 @@ import path from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
-const source = path.join(repo, 'results/2026-10-12-ep16/REPORT.zh-CN.md');
-const output = path.resolve(process.argv[2] || path.join(repo, 'results/2026-10-12-ep16'));
+const resultSet = process.env.REPORT_RESULT_SET || '2026-10-12-ep16';
+if (!['2026-10-12-ep16', '2026-10-14-c12-128'].includes(resultSet)) throw new Error('Unknown report result set');
+const source = path.join(repo, 'results', resultSet, 'REPORT.zh-CN.md');
+const output = path.resolve(process.argv[2] || path.join(repo, 'results', resultSet));
 // Override only locates already-installed optional packages, e.g. a shared runtime.
 const packages = process.env.REPORT_NODE_MODULES;
 const {marked} = await import(packages ? pathToFileURL(path.join(packages, 'marked/lib/marked.esm.js')).href : 'marked');
 const {chromium} = await import(packages ? pathToFileURL(path.join(packages, 'playwright/index.mjs')).href : 'playwright');
-const publicBase = 'https://github.com/jiaran-king/afd-benefit-benchmark/blob/main/results/2026-10-12-ep16/';
+const publicBase = `https://github.com/jiaran-king/afd-benefit-benchmark/blob/main/results/${resultSet}/`;
 const tokens = marked.lexer(fs.readFileSync(source, 'utf8'));
 marked.walkTokens(tokens, token => {
   if (token.type === 'image') {
@@ -39,9 +41,10 @@ code { font-size: .92em; }
   p,li { font-size: 10.3pt; line-height: 1.64; } table { font-size: 8.9pt; }
   th,td { padding: 6px; } tr,img { break-inside: avoid; }
 }`;
+const title = resultSet === '2026-10-14-c12-128' ? 'Prefix-on 收益场景：128 完整会话、C12 四组实验' : '五组部署实验：KV 缓存与性能';
 const html = '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">' +
   '<meta name="viewport" content="width=device-width, initial-scale=1">' +
-  '<title>五组部署实验：KV 缓存与性能</title><style>' + css + '</style></head>' +
+  '<title>' + title + '</title><style>' + css + '</style></head>' +
   '<body><main>' + marked.parser(tokens) + '</main></body></html>';
 fs.mkdirSync(output, {recursive: true});
 fs.writeFileSync(path.join(output, 'REPORT.zh-CN.html'), html);

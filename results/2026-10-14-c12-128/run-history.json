@@ -1,0 +1,24 @@
+{
+  "formal_order": [
+    "non_ep8",
+    "afd_eager",
+    "non_ep16",
+    "non_ep4"
+  ],
+  "formal_runs": {
+    "non_ep4": "non_ep4-c12-128sessions-1014-v1",
+    "non_ep8": "non_ep8-c12-128sessions-1014-v1",
+    "non_ep16": "non_ep16-c12-128sessions-1014-v1",
+    "afd_eager": "afd_eager-c12-128sessions-1014-v2"
+  },
+  "failed_run": {
+    "run_id": "afd_eager-c12-128sessions-1014-v1",
+    "formal_requests": 0,
+    "reason": "Inherited recording-purpose guard expected the former 64-session C32 run; fixed before pressure.",
+    "retry": "Exactly one additional AFD start explicitly approved by the human user; same frozen workload/performance settings and original deadline."
+  },
+  "model_starts": 5,
+  "complete_formal_runs": 4,
+  "automatic_retries": 0,
+  "later_publication": "Documentation and offline verification only; no additional hardware replay."
+}

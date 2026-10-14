@@ -1,6 +1,6 @@
 # 公开材料范围
 
-本版公开实验方法、固定参数、必要补丁与执行器、五组正式报告、45,390 请求的数值字段、90,780 条准入/完成事件、逐 DIE/域容量、冻结输入索引和单独标注的诊断。原四组与新增 EP16 分目录保存；原始会话及正式冻结负载作为同一仓库的 [数据集 Release](https://github.com/jiaran-king/afd-benefit-benchmark/releases/tag/datasets-20261012-v1) 附件发布，EP16 复用原文件。
+本版保留原 256/C16 五组报告、45,390 请求数值和 90,780 条事件；新增 [128/C12 四组报告](../results/2026-10-14-c12-128/README.md)、14,900 请求数值、29,800 条事件、64 DIE/15 域容量、冻结索引/路由与实际配置。新旧实验分目录保存，不合并为同一负载。原始会话及 frozen-256 通过同一仓库的 [数据集 Release](https://github.com/jiaran-king/afd-benefit-benchmark/releases/tag/datasets-20261012-v1) 发布，frozen-128 从该文件逐字节派生。
 
 两份数据正文均无删改，分别记录压缩包和原文件 SHA256。原会话的 7 处私钥格式内容已核对为有明确测试用途上下文，见 [核查记录](../datasets/raw/content-review.md)；此前“样例未确认、输入需另行取得”的说明已被本次核查与发布替代。
 

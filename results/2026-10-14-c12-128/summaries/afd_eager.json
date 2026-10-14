@@ -1,0 +1,87 @@
+{
+  "group": "afd_eager",
+  "run_id": "afd_eager-c12-128sessions-1014-v2",
+  "audit_status": "complete",
+  "execution_audit": {
+    "status": "passed",
+    "peak_inflight_requests": 12,
+    "request_limit": 12,
+    "dependency_order_and_ready_priority": "passed"
+  },
+  "native_totals": {
+    "requests": 3725,
+    "prompt_tokens": 294584470,
+    "cached_tokens": 274874368,
+    "actual_prefill_tokens": 19710102,
+    "preemptions": 0,
+    "hit_rate": 0.9330918496823678
+  },
+  "domains": [
+    {
+      "domain": 0,
+      "totals": {
+        "requests": 1238,
+        "prompt_tokens": 99600902,
+        "cached_tokens": 93024256,
+        "actual_prefill_tokens": 6576646,
+        "preemptions": 0,
+        "hit_rate": 0.9339700156530711
+      },
+      "miss_evidence": {},
+      "checkpoint_evictions": {
+        "snapshot_budget": 263
+      },
+      "formal_counters": {
+        "ordinary_cached_block_evictions": 0,
+        "checkpoint_created": 976,
+        "restore_plans": 1195,
+        "admission_allocation_failed_attempts": 0,
+        "lookup_observation_microseconds": 1126190
+      }
+    },
+    {
+      "domain": 1,
+      "totals": {
+        "requests": 1271,
+        "prompt_tokens": 99492220,
+        "cached_tokens": 92864512,
+        "actual_prefill_tokens": 6627708,
+        "preemptions": 0,
+        "hit_rate": 0.9333846606297457
+      },
+      "miss_evidence": {},
+      "checkpoint_evictions": {
+        "snapshot_budget": 256
+      },
+      "formal_counters": {
+        "ordinary_cached_block_evictions": 0,
+        "checkpoint_created": 969,
+        "restore_plans": 1229,
+        "admission_allocation_failed_attempts": 0,
+        "lookup_observation_microseconds": 1100907
+      }
+    },
+    {
+      "domain": 2,
+      "totals": {
+        "requests": 1216,
+        "prompt_tokens": 95491348,
+        "cached_tokens": 88985600,
+        "actual_prefill_tokens": 6505748,
+        "preemptions": 0,
+        "hit_rate": 0.9318708120027795
+      },
+      "miss_evidence": {},
+      "checkpoint_evictions": {
+        "snapshot_budget": 266
+      },
+      "formal_counters": {
+        "ordinary_cached_block_evictions": 0,
+        "checkpoint_created": 979,
+        "restore_plans": 1173,
+        "admission_allocation_failed_attempts": 0,
+        "lookup_observation_microseconds": 1121724
+      }
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "non_ep4": {
+    "status": "passed",
+    "model_files": {
+      "config.json": "6c6cdc4a47e00e41137081429b95bd5c1cf91ba62e87309d1398431de7f4a8e1",
+      "tokenizer.json": "8f9f37ca37fdc4f5fd36d5cf4d3b0e8392edb4e894fd10cc0d70b4957c8633cf",
+      "tokenizer_config.json": "6ac8c8dc065ed118161d02dd532749ae3f52c243deac27872134fae2f50d8547"
+    },
+    "baseline": "successful same-deployment C12 / 64-session run",
+    "normalized_argv_differences": {
+      "nonafd-1": [],
+      "nonafd-2": [],
+      "nonafd-0": [],
+      "nonafd-3": []
+    },
+    "errors": [],
+    "accepted_changes": "Run/recording locations and restored Pod/network identity only; model and performance configuration preserved."
+  },
+  "non_ep8": {
+    "status": "passed",
+    "model_files": {
+      "config.json": "6c6cdc4a47e00e41137081429b95bd5c1cf91ba62e87309d1398431de7f4a8e1",
+      "tokenizer.json": "8f9f37ca37fdc4f5fd36d5cf4d3b0e8392edb4e894fd10cc0d70b4957c8633cf",
+      "tokenizer_config.json": "6ac8c8dc065ed118161d02dd532749ae3f52c243deac27872134fae2f50d8547"
+    },
+    "baseline": "successful same-deployment C12 / 64-session run",
+    "normalized_argv_differences": {
+      "nonafd-1": [],
+      "nonafd-0": []
+    },
+    "errors": [],
+    "accepted_changes": "Run/recording locations and restored Pod/network identity only; model and performance configuration preserved."
+  },
+  "non_ep16": {
+    "status": "passed",
+    "model_files": {
+      "config.json": "6c6cdc4a47e00e41137081429b95bd5c1cf91ba62e87309d1398431de7f4a8e1",
+      "tokenizer.json": "8f9f37ca37fdc4f5fd36d5cf4d3b0e8392edb4e894fd10cc0d70b4957c8633cf",
+      "tokenizer_config.json": "6ac8c8dc065ed118161d02dd532749ae3f52c243deac27872134fae2f50d8547"
+    },
+    "baseline": "successful same-deployment C12 / 64-session run",
+    "normalized_argv_differences": {
+      "nonafd-0": []
+    },
+    "errors": [],
+    "accepted_changes": "Run/recording locations and restored Pod/network identity only; model and performance configuration preserved."
+  },
+  "afd_eager": {
+    "status": "passed",
+    "model_files": {
+      "config.json": "6c6cdc4a47e00e41137081429b95bd5c1cf91ba62e87309d1398431de7f4a8e1",
+      "tokenizer.json": "8f9f37ca37fdc4f5fd36d5cf4d3b0e8392edb4e894fd10cc0d70b4957c8633cf",
+      "tokenizer_config.json": "6ac8c8dc065ed118161d02dd532749ae3f52c243deac27872134fae2f50d8547"
+    },
+    "baseline": "successful same-deployment C12 / 64-session run",
+    "normalized_argv_differences": {
+      "attention-0": [],
+      "ffn-0": []
+    },
+    "errors": [],
+    "accepted_changes": "Run/recording locations and restored Pod/network identity only; model and performance configuration preserved."
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "non_ep4": {
+    "run_id": "non_ep4-c12-128sessions-1014-v1",
+    "frozen_input": {
+      "status": "passed",
+      "requests": 3725,
+      "sessions": 128,
+      "prompt_tokens": 294584470,
+      "max_prompt_tokens": 216178,
+      "request_sha256": "65e10b43838be7bdf1f7459a07d34f1a57b64d05fa75fbf2b94f46efed6e86a4",
+      "route_sha256": "4f040f7ee647c9895930a7991be65a149d761b1691a423d175af7ced08b822b0",
+      "original_priority_values": true,
+      "frozen_balanced_route_assignments": true,
+      "complete_sse_checked": 3725,
+      "client_sources": [
+        {
+          "file": "run_formal.py",
+          "sha256": "8fe43604bb15e58b0976ba9fe19b3dd534c9220f86c4dff89c978921646b8cc2"
+        },
+        {
+          "file": "agentinfer_frozen_replay.py",
+          "sha256": "46c9e3180f7004be22f8f02504eda258277b7dbb69891eb24f2befe5f3610ab3"
+        },
+        {
+          "file": "deterministic_runtime.py",
+          "sha256": "f95423d475ba3c3577c24f77c1d4919bf0a50b915b19a1092559b17550541f51"
+        },
+        {
+          "file": "random_priority_admission.py",
+          "sha256": "07ff74d911e0f7158d1e17587b87b7b65c33f7b108991568dbe4775c84c7a2a3"
+        },
+        {
+          "file": "replay_sse.py",
+          "sha256": "a54a550734941442a9b29fe1d613bc7219580d7cb13c8177f80685c2733609bd"
+        },
+        {
+          "file": "three_arm_topology.py",
+          "sha256": "4c2b91f4131d8edc6b0f693d9b372108f0eb39a7e97fe23cdcaf5fcec65bde6d"
+        }
+      ]
+    },
+    "prepressure": {
+      "status": "passed",
+      "workers": 16,
+      "capacity_files": 16,
+      "effective_worker_environments": "all 16 device workers match package parameter values before pressure",
+      "scheduler_classes": [
+        "CompressorCheckpointAsyncScheduler",
+        "CompressorCheckpointAsyncScheduler",
+        "CompressorCheckpointAsyncScheduler",
+        "CompressorCheckpointAsyncScheduler"
+      ],
+      "captured_before_pressure": true,
+      "successful_cold_reset_endpoints": 4,
+      "native_domain_baselines": 4
+    },
+    "runtime": {
+      "status": "passed",
+      "checked_workers": 16,
+      "native_maps_captured_before_pressure": true,
+      "core_python_files_checked": 2041,
+      "file_hash_verification_timing": "after formal run",
+      "distribution_versions": {
+        "torch": "2.10.0+cpu",
+        "torch_npu": "2.10.0.post4",
+        "vllm": "0.26.0+empty"
+      },
+      "vllm_module_version": "0.26.0",
+      "compressor_host_sha256": [
+        "2e0fa08edea5cb0cc1bdbd076cf06f4bf2b0bbc7feb380dcc740f444e571d612"
+      ]
+    },
+    "services_stopped": true
+  },
+  "non_ep8": {
+    "run_id": "non_ep8-c12-128sessions-1014-v1",
+    "frozen_input": {
+      "status": "passed",
+      "requests": 3725,
+      "sessions": 128,
+      "prompt_tokens": 294584470,
+      "max_prompt_tokens": 216178,
+      "request_sha256": "65e10b43838be7bdf1f7459a07d34f1a57b64d05fa75fbf2b94f46efed6e86a4",
+      "route_sha256": "4f040f7ee647c9895930a7991be65a149d761b1691a423d175af7ced08b822b0",
+      "original_priority_values": true,
+      "frozen_balanced_route_assignments": true,
+      "complete_sse_checked": 3725,
+      "client_sources": [
+        {
+          "file": "run_formal.py",
+          "sha256": "8fe43604bb15e58b0976ba9fe19b3dd534c9220f86c4dff89c978921646b8cc2"
+        },
+        {
+          "file": "agentinfer_frozen_replay.py",
+          "sha256": "46c9e3180f7004be22f8f02504eda258277b7dbb69891eb24f2befe5f3610ab3"
+        },
+        {
+          "file": "deterministic_runtime.py",
+          "sha256": "f95423d475ba3c3577c24f77c1d4919bf0a50b915b19a1092559b17550541f51"
+        },
+        {
+          "file": "random_priority_admission.py",
+          "sha256": "07ff74d911e0f7158d1e17587b87b7b65c33f7b108991568dbe4775c84c7a2a3"
+        },
+        {
+          "file": "replay_sse.py",
+          "sha256": "a54a550734941442a9b29fe1d613bc7219580d7cb13c8177f80685c2733609bd"
+        },
+        {
+          "file": "three_arm_topology.py",
+          "sha256": "4c2b91f4131d8edc6b0f693d9b372108f0eb39a7e97fe23cdcaf5fcec65bde6d"
+        }
+      ]
+    },
+    "prepressure": {
+      "status": "passed",
+      "workers": 16,
+      "capacity_files": 16,
+      "effective_worker_environments": "all 16 device workers match package parameter values before pressure",
+      "scheduler_classes": [
+        "CompressorCheckpointAsyncScheduler",
+        "CompressorCheckpointAsyncScheduler",
+        "CompressorCheckpointAsyncScheduler",
+        "CompressorCheckpointAsyncScheduler"
+      ],
+      "captured_before_pressure": true,
+      "successful_cold_reset_endpoints": 2,
+      "native_domain_baselines": 4
+    },
+    "runtime": {
+      "status": "passed",
+      "checked_workers": 16,
+      "native_maps_captured_before_pressure": true,
+      "core_python_files_checked": 2041,
+      "file_hash_verification_timing": "after formal run",
+      "distribution_versions": {
+        "torch": "2.10.0+cpu",
+        "torch_npu": "2.10.0.post4",
+        "vllm": "0.26.0+empty"
+      },
+      "vllm_module_version": "0.26.0",
+      "compressor_host_sha256": [
+        "2e0fa08edea5cb0cc1bdbd076cf06f4bf2b0bbc7feb380dcc740f444e571d612"
+      ]
+    },
+    "services_stopped": true
+  },
+  "non_ep16": {
+    "run_id": "non_ep16-c12-128sessions-1014-v1",
+    "frozen_input": {
+      "status": "passed",
+      "requests": 3725,
+      "sessions": 128,
+      "prompt_tokens": 294584470,
+      "max_prompt_tokens": 216178,
+      "request_sha256": "65e10b43838be7bdf1f7459a07d34f1a57b64d05fa75fbf2b94f46efed6e86a4",
+      "route_sha256": "4f040f7ee647c9895930a7991be65a149d761b1691a423d175af7ced08b822b0",
+      "original_priority_values": true,
+      "frozen_balanced_route_assignments": true,
+      "complete_sse_checked": 3725,
+      "client_sources": [
+        {
+          "file": "run_formal.py",
+          "sha256": "8fe43604bb15e58b0976ba9fe19b3dd534c9220f86c4dff89c978921646b8cc2"
+        },
+        {
+          "file": "agentinfer_frozen_replay.py",
+          "sha256": "46c9e3180f7004be22f8f02504eda258277b7dbb69891eb24f2befe5f3610ab3"
+        },
+        {
+          "file": "deterministic_runtime.py",
+          "sha256": "f95423d475ba3c3577c24f77c1d4919bf0a50b915b19a1092559b17550541f51"
+        },
+        {
+          "file": "random_priority_admission.py",
+          "sha256": "07ff74d911e0f7158d1e17587b87b7b65c33f7b108991568dbe4775c84c7a2a3"
+        },
+        {
+          "file": "replay_sse.py",
+          "sha256": "a54a550734941442a9b29fe1d613bc7219580d7cb13c8177f80685c2733609bd"
+        },
+        {
+          "file": "three_arm_topology.py",
+          "sha256": "4c2b91f4131d8edc6b0f693d9b372108f0eb39a7e97fe23cdcaf5fcec65bde6d"
+        }
+      ]
+    },
+    "prepressure": {
+      "status": "passed",
+      "workers": 16,
+      "capacity_files": 16,
+      "effective_worker_environments": "all 16 device workers match package parameter values before pressure",
+      "scheduler_classes": [
+        "CompressorCheckpointAsyncScheduler",
+        "CompressorCheckpointAsyncScheduler",
+        "CompressorCheckpointAsyncScheduler",
+        "CompressorCheckpointAsyncScheduler"
+      ],
+      "captured_before_pressure": true,
+      "successful_cold_reset_endpoints": 1,
+      "native_domain_baselines": 4
+    },
+    "runtime": {
+      "status": "passed",
+      "checked_workers": 16,
+      "native_maps_captured_before_pressure": true,
+      "core_python_files_checked": 2041,
+      "file_hash_verification_timing": "after formal run",
+      "distribution_versions": {
+        "torch": "2.10.0+cpu",
+        "torch_npu": "2.10.0.post4",
+        "vllm": "0.26.0+empty"
+      },
+      "vllm_module_version": "0.26.0",
+      "compressor_host_sha256": [
+        "2e0fa08edea5cb0cc1bdbd076cf06f4bf2b0bbc7feb380dcc740f444e571d612"
+      ]
+    },
+    "services_stopped": true
+  },
+  "afd_eager": {
+    "run_id": "afd_eager-c12-128sessions-1014-v2",
+    "frozen_input": {
+      "status": "passed",
+      "requests": 3725,
+      "sessions": 128,
+      "prompt_tokens": 294584470,
+      "max_prompt_tokens": 216178,
+      "request_sha256": "65e10b43838be7bdf1f7459a07d34f1a57b64d05fa75fbf2b94f46efed6e86a4",
+      "route_sha256": "c72d1f18efa56dd964640dc6a9629edb74872a8cb55058cdfe092b38d3b1365d",
+      "original_priority_values": true,
+      "frozen_balanced_route_assignments": true,
+      "complete_sse_checked": 3725,
+      "client_sources": [
+        {
+          "file": "run_formal.py",
+          "sha256": "8fe43604bb15e58b0976ba9fe19b3dd534c9220f86c4dff89c978921646b8cc2"
+        },
+        {
+          "file": "agentinfer_frozen_replay.py",
+          "sha256": "46c9e3180f7004be22f8f02504eda258277b7dbb69891eb24f2befe5f3610ab3"
+        },
+        {
+          "file": "deterministic_runtime.py",
+          "sha256": "f95423d475ba3c3577c24f77c1d4919bf0a50b915b19a1092559b17550541f51"
+        },
+        {
+          "file": "random_priority_admission.py",
+          "sha256": "07ff74d911e0f7158d1e17587b87b7b65c33f7b108991568dbe4775c84c7a2a3"
+        },
+        {
+          "file": "replay_sse.py",
+          "sha256": "a54a550734941442a9b29fe1d613bc7219580d7cb13c8177f80685c2733609bd"
+        },
+        {
+          "file": "three_arm_topology.py",
+          "sha256": "4c2b91f4131d8edc6b0f693d9b372108f0eb39a7e97fe23cdcaf5fcec65bde6d"
+        }
+      ]
+    },
+    "prepressure": {
+      "status": "passed",
+      "workers": 16,
+      "capacity_files": 12,
+      "effective_worker_environments": "all 16 device workers match package parameter values before pressure",
+      "scheduler_classes": [
+        "CompressorCheckpointAsyncScheduler",
+        "CompressorCheckpointAsyncScheduler",
+        "CompressorCheckpointAsyncScheduler"
+      ],
+      "captured_before_pressure": true,
+      "successful_cold_reset_endpoints": 1,
+      "native_domain_baselines": 3
+    },
+    "runtime": {
+      "status": "passed",
+      "checked_workers": 16,
+      "native_maps_captured_before_pressure": true,
+      "core_python_files_checked": 2041,
+      "file_hash_verification_timing": "after formal run",
+      "distribution_versions": {
+        "torch": "2.10.0+cpu",
+        "torch_npu": "2.10.0.post4",
+        "vllm": "0.26.0+empty"
+      },
+      "vllm_module_version": "0.26.0",
+      "compressor_host_sha256": [
+        "2e0fa08edea5cb0cc1bdbd076cf06f4bf2b0bbc7feb380dcc740f444e571d612",
+        "6c791b96f6f1508c84ef105d0401bb63f0a9c16bb6b7e12ed442561baf3f5978"
+      ]
+    },
+    "services_stopped": true
+  }
+}

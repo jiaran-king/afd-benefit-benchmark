@@ -1,0 +1,17 @@
+{
+  "model_starts": 5,
+  "complete_formal_runs": 4,
+  "failed_formal_requests": 0,
+  "total_start_to_cleanup_seconds": 7116.89735568,
+  "sum_model_run_windows_seconds": 6691.112385872,
+  "failed_start_window_seconds": 280.360344344,
+  "formal_seconds": {
+    "non_ep8": 1005.9154730439186,
+    "afd_eager": 940.079049827531,
+    "non_ep16": 1199.9087823508307,
+    "non_ep4": 1949.2837916556746
+  },
+  "owned_processes_stopped": true,
+  "task_and_data_retained": true,
+  "original_budget_seconds": 8100
+}

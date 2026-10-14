@@ -2,6 +2,12 @@
 
 数值复核只需标准库，不依赖这里的排版工具。已发布报告以 [Markdown](../../results/2026-10-12-ep16/REPORT.zh-CN.md) 为文本源，配有自包含 HTML 和 PDF；链接指向本仓库公开证据。
 
+新增 [128/C12 报告](../../results/2026-10-14-c12-128/REPORT.zh-CN.md)沿用相同排版，独立读取本轮指标和 64 DIE 显存。重新生成其两幅图：
+
+~~~bash
+python3 scripts/report/plot_c12_128.py --output-dir /tmp/afd-c12-128-figures
+~~~
+
 ## 重新作图
 
 可选依赖为 Python matplotlib、numpy 和中文字体。默认查找 Noto Sans CJK，也可通过 REPORT_FONT 指定本机字体文件。脚本读取五组 metrics.csv，生成三幅图和作图数据：
@@ -20,4 +26,11 @@ python3 scripts/report/plot_five_arm.py --output-dir /tmp/afd-figures
 node scripts/report/render_report.mjs /tmp/afd-report
 ~~~
 
-脚本嵌入仓库内三幅 PNG，生成 REPORT.zh-CN.html 和 REPORT.zh-CN.pdf，不访问远程页面。中文字体需由排版机器提供。Markdown 和 CSV 为可复核源，生成附件只改变展示形式。
+生成新场景的 HTML/PDF 时设置报告集合；不设置时仍生成原五组报告：
+
+~~~bash
+REPORT_RESULT_SET=2026-10-14-c12-128 \
+  node scripts/report/render_report.mjs /tmp/afd-c12-128-report
+~~~
+
+脚本嵌入所选报告的 PNG，生成 REPORT.zh-CN.html 和 REPORT.zh-CN.pdf，不访问远程页面。中文字体需由排版机器提供。Markdown 和 CSV 为可复核源，生成附件只改变展示形式。

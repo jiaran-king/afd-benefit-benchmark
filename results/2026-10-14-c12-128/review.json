@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "review_date": "2026-10-14",
+  "decision": "Eligible as a single-run same-node comparison of the four fixed deployments on prefix-on C12 / 128 complete sessions.",
+  "design": {
+    "same_physical_node": true,
+    "same_pod": true,
+    "die_per_deployment": 16,
+    "complete_runs_per_group": 1,
+    "common_payload_and_model_identity": true,
+    "complete_parent_sessions": true,
+    "selection_frozen_before_measurement": true,
+    "client_concurrency": 12,
+    "unchanged_per_deployment_performance_settings": true,
+    "cold_start_each_run": true,
+    "actual_moe_ep_sizes": [
+      4,
+      8,
+      16
+    ],
+    "observed_async_scheduler": true,
+    "postpressure_runtime_hash_checks": true
+  },
+  "evidence": {
+    "requests_per_group": 3725,
+    "total_successful_requests": 14900,
+    "admission_completion_events": 29800,
+    "per_die_rows": 64,
+    "native_domains": 15,
+    "exact_http_native_pairing": true,
+    "request_input_matches_published_parent": true,
+    "request_bytes_derived_and_verified_against_release_parent": true,
+    "preemptions": 0,
+    "recompute_tokens": 0,
+    "prepressure_workers_per_group": 16,
+    "argv_comparison_errors": 0
+  },
+  "conclusions": {
+    "observed_target_met": true,
+    "afd_ep8_ep16_cache_equal_per_request": true,
+    "ep4_extra_prefill_tokens": 30978048,
+    "component_causality_not_isolated": true
+  },
+  "findings": [
+    {
+      "kind": "documentation",
+      "issue": "Original preparation manifest retained parent selection/coverage/length-distribution descriptions.",
+      "resolution": "Preserved original evidence; public frozen-128 manifest recomputed from verified subset index and exact parent bytes.",
+      "effect_on_measurement": "none; payload hash/count/session/route audits already use the actual subset"
+    },
+    {
+      "kind": "simulation_limit",
+      "issue": "EP4 actual prefill exceeds simulation by 4,927,488 tokens (10.77% of predicted).",
+      "resolution": "Both predictions and actual results retained; no claim of exact cache/time simulation for the pressure case."
+    }
+  ],
+  "limits": [
+    "One trial per deployment; order/time/system variation not excluded by repeats.",
+    "C12, 128 complete sessions and the frozen dependency/route pattern define this result; 256/C16 is a different workload.",
+    "MBT, cache domains, topology, communication and dynamic batching vary by deployment; no isolated AFD mechanism causal estimate.",
+    "Equal cached/prefill token counts do not prove identical FLOPs, batch shapes or execution schedules.",
+    "Native RUNNING includes computation, communication, batching and execution waits; it is not pure kernel time.",
+    "No new full numerical-accuracy evaluation; inherited precision evidence and actual-loaded-runtime/output/stream integrity checked.",
+    "Public evidence is field-curated; full machine logs/environments and model/native binaries remain outside Git."
+  ]
+}

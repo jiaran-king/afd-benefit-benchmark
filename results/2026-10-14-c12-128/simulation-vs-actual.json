@@ -1,0 +1,202 @@
+{
+  "groups": [
+    {
+      "group": "non_ep8",
+      "different_cache_requests": 0,
+      "sim_prefill_tokens": 19710102,
+      "real_prefill_tokens": 19710102,
+      "extra_real_prefill_tokens": 0,
+      "sim_hit_rate": 0.9330918496823678,
+      "real_hit_rate": 0.9330918496823678,
+      "capacity_comparison": [
+        {
+          "domain": 0,
+          "sim_N": 38926,
+          "real_N": 38926,
+          "sim_B": 9731,
+          "real_B": 9731,
+          "layout_equal": true
+        },
+        {
+          "domain": 1,
+          "sim_N": 38927,
+          "real_N": 38930,
+          "sim_B": 9731,
+          "real_B": 9732,
+          "layout_equal": true
+        },
+        {
+          "domain": 2,
+          "sim_N": 38928,
+          "real_N": 38925,
+          "sim_B": 9732,
+          "real_B": 9731,
+          "layout_equal": true
+        },
+        {
+          "domain": 3,
+          "sim_N": 38927,
+          "real_N": 38924,
+          "sim_B": 9731,
+          "real_B": 9731,
+          "layout_equal": true
+        }
+      ]
+    },
+    {
+      "group": "afd_eager",
+      "different_cache_requests": 0,
+      "sim_prefill_tokens": 19710102,
+      "real_prefill_tokens": 19710102,
+      "extra_real_prefill_tokens": 0,
+      "sim_hit_rate": 0.9330918496823678,
+      "real_hit_rate": 0.9330918496823678,
+      "capacity_comparison": [
+        {
+          "domain": 0,
+          "sim_N": 57097,
+          "real_N": 57098,
+          "sim_B": 14274,
+          "real_B": 14274,
+          "layout_equal": true
+        },
+        {
+          "domain": 1,
+          "sim_N": 57100,
+          "real_N": 57098,
+          "sim_B": 14275,
+          "real_B": 14274,
+          "layout_equal": true
+        },
+        {
+          "domain": 2,
+          "sim_N": 57099,
+          "real_N": 57100,
+          "sim_B": 14274,
+          "real_B": 14275,
+          "layout_equal": true
+        }
+      ]
+    },
+    {
+      "group": "non_ep16",
+      "different_cache_requests": 0,
+      "sim_prefill_tokens": 19710102,
+      "real_prefill_tokens": 19710102,
+      "extra_real_prefill_tokens": 0,
+      "sim_hit_rate": 0.9330918496823678,
+      "real_hit_rate": 0.9330918496823678,
+      "capacity_comparison": [
+        {
+          "domain": 0,
+          "sim_N": 46719,
+          "real_N": 46718,
+          "sim_B": 11679,
+          "real_B": 11679,
+          "layout_equal": true
+        },
+        {
+          "domain": 1,
+          "sim_N": 46719,
+          "real_N": 46721,
+          "sim_B": 11679,
+          "real_B": 11680,
+          "layout_equal": true
+        },
+        {
+          "domain": 2,
+          "sim_N": 46716,
+          "real_N": 46718,
+          "sim_B": 11679,
+          "real_B": 11679,
+          "layout_equal": true
+        },
+        {
+          "domain": 3,
+          "sim_N": 46717,
+          "real_N": 46719,
+          "sim_B": 11679,
+          "real_B": 11679,
+          "layout_equal": true
+        }
+      ]
+    },
+    {
+      "group": "non_ep4",
+      "different_cache_requests": 109,
+      "sim_prefill_tokens": 45760662,
+      "real_prefill_tokens": 50688150,
+      "extra_real_prefill_tokens": 4927488,
+      "sim_hit_rate": 0.8446603040547249,
+      "real_hit_rate": 0.8279333937732698,
+      "capacity_comparison": [
+        {
+          "domain": 0,
+          "sim_N": 18876,
+          "real_N": 18877,
+          "sim_B": 4719,
+          "real_B": 4719,
+          "layout_equal": true
+        },
+        {
+          "domain": 1,
+          "sim_N": 18879,
+          "real_N": 18876,
+          "sim_B": 4719,
+          "real_B": 4719,
+          "layout_equal": true
+        },
+        {
+          "domain": 2,
+          "sim_N": 18877,
+          "real_N": 18878,
+          "sim_B": 4719,
+          "real_B": 4719,
+          "layout_equal": true
+        },
+        {
+          "domain": 3,
+          "sim_N": 18876,
+          "real_N": 18880,
+          "sim_B": 4719,
+          "real_B": 4720,
+          "layout_equal": true
+        }
+      ]
+    }
+  ],
+  "real_pairwise_vs_afd": {
+    "non_ep8": {
+      "same_input_requests": 3725,
+      "different_cache_requests": 0,
+      "more_cached_than_afd_requests": 0,
+      "less_cached_than_afd_requests": 0,
+      "cached_tokens_minus_afd": 0
+    },
+    "afd_eager": {
+      "same_input_requests": 3725,
+      "different_cache_requests": 0,
+      "more_cached_than_afd_requests": 0,
+      "less_cached_than_afd_requests": 0,
+      "cached_tokens_minus_afd": 0
+    },
+    "non_ep16": {
+      "same_input_requests": 3725,
+      "different_cache_requests": 0,
+      "more_cached_than_afd_requests": 0,
+      "less_cached_than_afd_requests": 0,
+      "cached_tokens_minus_afd": 0
+    },
+    "non_ep4": {
+      "same_input_requests": 3725,
+      "different_cache_requests": 466,
+      "more_cached_than_afd_requests": 0,
+      "less_cached_than_afd_requests": 466,
+      "cached_tokens_minus_afd": -30978048
+    }
+  },
+  "limits": [
+    "Native async scheduler class is used in CPU screen with immediate callbacks and equal per-domain step clock; it is not an emulation of actual timing.",
+    "A difference may reflect admission ordering and capacity; neither is assumed without evidence."
+  ]
+}

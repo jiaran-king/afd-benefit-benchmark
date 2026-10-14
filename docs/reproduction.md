@@ -1,10 +1,13 @@
 # 复现步骤
 
+以下设备入口针对原 256/C16 基线。新增 128/C12 的[负载派生](../datasets/frozen-128/README.md)、[实际配置与适配范围](../experiments/2026-10-14-c12-128/README.md)单独说明，不会仅因更换 run-name 自动切换。
+
 ## 先离线复核
 
 ~~~bash
 python3 scripts/recompute_results.py --output /tmp/afd-recomputed.csv
 python3 scripts/recompute_results.py --result-set 2026-10-11
+python3 scripts/recompute_results.py --result-set 2026-10-14-c12-128
 python3 -m unittest discover -s tests -v
 ~~~
 

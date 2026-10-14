@@ -136,9 +136,13 @@ def validate_five_group_tables(results,root=REPO):
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--output",type=Path)
-    p.add_argument("--result-set",choices=("2026-10-11","2026-10-12-ep16"),default="2026-10-12-ep16",
-                   help="Latest five-group table by default; the original four-group table is preserved.")
+    p.add_argument("--result-set",choices=("2026-10-11","2026-10-12-ep16","2026-10-14-c12-128"),default="2026-10-12-ep16",
+                   help="The original five-group table remains the default; select 2026-10-14-c12-128 for the new C12 workload.")
     a=p.parse_args()
+    if a.result_set=="2026-10-14-c12-128":
+        from recompute_c12_128 import validate
+        validate(REPO,a.output)
+        return
     expected={r["group"]:r for r in read_csv(REPO/"results"/a.result_set/"metrics.csv")}
     results=[]
     for group in ORIGINAL_GROUPS if a.result_set=="2026-10-11" else GROUPS:

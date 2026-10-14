@@ -1,0 +1,143 @@
+{
+  "groups": {
+    "non_ep8": {
+      "vllm:iteration_tokens_total": {
+        "sum": 19713827.0,
+        "count": 2870.0,
+        "mean": 6868.9292682926825
+      },
+      "vllm:e2e_request_latency_seconds": {
+        "sum": 11250.703635454178,
+        "count": 3725.0,
+        "mean": 3.0203231236118597
+      },
+      "vllm:request_queue_time_seconds": {
+        "sum": 504.37921572476625,
+        "count": 3725.0,
+        "mean": 0.13540381630195067
+      },
+      "vllm:request_inference_time_seconds": {
+        "sum": 8227.203142602928,
+        "count": 3725.0,
+        "mean": 2.208645138953806
+      },
+      "vllm:request_prefill_time_seconds": {
+        "sum": 8227.203142602928,
+        "count": 3725.0,
+        "mean": 2.208645138953806
+      },
+      "request_phase_means": {
+        "client_e2e": 3.174140405103614,
+        "waiting": 0.13540381630195067,
+        "running": 2.208645138953806,
+        "outside_waiting_running": 0.8300914498478575
+      }
+    },
+    "afd_eager": {
+      "vllm:iteration_tokens_total": {
+        "sum": 19713827.0,
+        "count": 2542.0,
+        "mean": 7755.242722265933
+      },
+      "vllm:e2e_request_latency_seconds": {
+        "sum": 10374.770305871964,
+        "count": 3725.0,
+        "mean": 2.785173236475695
+      },
+      "vllm:request_queue_time_seconds": {
+        "sum": 15.30021877028048,
+        "count": 3725.0,
+        "mean": 0.0041074412806122096
+      },
+      "vllm:request_inference_time_seconds": {
+        "sum": 8209.508987108245,
+        "count": 3725.0,
+        "mean": 2.2038950300961733
+      },
+      "vllm:request_prefill_time_seconds": {
+        "sum": 8209.508987108245,
+        "count": 3725.0,
+        "mean": 2.2038950300961733
+      },
+      "request_phase_means": {
+        "client_e2e": 2.9389788512445536,
+        "waiting": 0.0041074412806122096,
+        "running": 2.2038950300961733,
+        "outside_waiting_running": 0.730976379867768
+      }
+    },
+    "non_ep16": {
+      "vllm:iteration_tokens_total": {
+        "sum": 19713827.0,
+        "count": 2814.0,
+        "mean": 7005.624378109453
+      },
+      "vllm:e2e_request_latency_seconds": {
+        "sum": 13486.325527906418,
+        "count": 3725.0,
+        "mean": 3.62049007460575
+      },
+      "vllm:request_queue_time_seconds": {
+        "sum": 404.2444851733744,
+        "count": 3725.0,
+        "mean": 0.10852200944251662
+      },
+      "vllm:request_inference_time_seconds": {
+        "sum": 9611.640709706582,
+        "count": 3725.0,
+        "mean": 2.5803062307937132
+      },
+      "vllm:request_prefill_time_seconds": {
+        "sum": 9611.640709706582,
+        "count": 3725.0,
+        "mean": 2.5803062307937132
+      },
+      "request_phase_means": {
+        "client_e2e": 3.7968229948229237,
+        "waiting": 0.10852200944251662,
+        "running": 2.5803062307937132,
+        "outside_waiting_running": 1.1079947545866937
+      }
+    },
+    "non_ep4": {
+      "vllm:iteration_tokens_total": {
+        "sum": 50691875.0,
+        "count": 3134.0,
+        "mean": 16174.816528398213
+      },
+      "vllm:e2e_request_latency_seconds": {
+        "sum": 22841.76489496231,
+        "count": 3725.0,
+        "mean": 6.132017421466392
+      },
+      "vllm:request_queue_time_seconds": {
+        "sum": 7113.512823709287,
+        "count": 3725.0,
+        "mean": 1.9096678721367213
+      },
+      "vllm:request_inference_time_seconds": {
+        "sum": 14128.858221758157,
+        "count": 3725.0,
+        "mean": 3.7929820729552097
+      },
+      "vllm:request_prefill_time_seconds": {
+        "sum": 14128.858221758157,
+        "count": 3725.0,
+        "mean": 3.7929820729552097
+      },
+      "request_phase_means": {
+        "client_e2e": 6.240442328372808,
+        "waiting": 1.9096678721367213,
+        "running": 3.7929820729552097,
+        "outside_waiting_running": 0.5377923832808773
+      }
+    }
+  },
+  "source_sha256": "7682d3086bf5395f163f423677485432ee2c035aada2f370c0f82b291e53ca47",
+  "limits": [
+    "WAITING=first SCHEDULED minus QUEUED; RUNNING=last NEW_TOKEN minus first SCHEDULED. Means are disjoint only without preemption in this one-output-token workload.",
+    "RUNNING includes execution waits, batching, kernels and communication; it is not pure compute.",
+    "Client residual is not one measured component. Means do not decompose workflow makespan.",
+    "Iteration token counter mean is not batch size or chunk size."
+  ]
+}
