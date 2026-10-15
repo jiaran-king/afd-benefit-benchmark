@@ -1,5 +1,15 @@
 # AFD 收益演示稿
 
+## Agentic 场景一页版
+
+[下载一页 PPT（含 TTFT 与并行配置）](https://github.com/jiaran-king/afd-benefit-benchmark/raw/refs/heads/main/presentations/2026-10-12-afd-benefit/AFD-Agentic-128-C12-one-page-with-TTFT-v6.pptx)
+
+2026-10-15 更新，1 页，基于 [128 会话／C12 同机实测](../../results/2026-10-14-c12-128/REPORT.zh-CN.md)：展示四组完整负载耗时、AFD 耗时降幅、TTFT 均值与 P50／P95／P99，以及 EP4／EP8／EP16 的实例数与 DP／TP／EP 配置、AFD 的 A／F 两侧配置。AFD 的四项 TTFT 最优数值标红。
+
+测试为 Agentic 会话历史回放，每轮输出 1 token；各组单次冷缓存运行，结果限于既定负载和配置。该文件独立于下面的 52 页完整演示稿。
+
+文件：`AFD-Agentic-128-C12-one-page-with-TTFT-v6.pptx`（26,284 字节）；SHA256：`cab223e934401d2ce8c39283009de380f5812d0eed21fd3bb6ebe8997b810517`。
+
 [下载最新版 PPT v20](https://github.com/jiaran-king/afd-benefit-benchmark/raw/refs/heads/main/presentations/2026-10-12-afd-benefit/AFD-Plugin-TTFT-comparison-v20.pptx)
 
 2026-10-15 更新，共 **52 页**。前 38 页保留原稿；两轮 prefix-on 实验分节展示，各页顶部标明会话数、请求数与全局并发。

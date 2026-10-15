@@ -31,6 +31,7 @@
 
 - **看结论**：[最新 128/C12 报告](results/2026-10-14-c12-128/REPORT.zh-CN.md)、[PDF](results/2026-10-14-c12-128/REPORT.zh-CN.pdf)、[证据](results/2026-10-14-c12-128/README.md)；原 [256/C16 五组报告](results/2026-10-12-ep16/REPORT.zh-CN.md)、[PDF](results/2026-10-12-ep16/REPORT.zh-CN.pdf)、[完整指标](results/2026-10-12-ep16/metrics.csv)与[原四组报告](results/2026-10-11/REPORT.zh-CN.md)独立保留。
 - **看演示稿**：[AFD 收益 PPT v20](presentations/2026-10-12-afd-benefit/AFD-Plugin-TTFT-comparison-v20.pptx)、[内容与版本说明](presentations/2026-10-12-afd-benefit/README.md)。共 52 页：第 39–46 页为 256 会话／C16，第 47–52 页为 128 会话／C12；两组实验分别设置小节标题页，各页标明所属实验。
+- **一页展示**：[Agentic 128 会话／C12 收益与 TTFT](presentations/2026-10-12-afd-benefit/AFD-Agentic-128-C12-one-page-with-TTFT-v6.pptx)，含各组实例数、DP／TP／EP 配置及测试条件。
 - **复核数值**：直接运行下面的离线命令，不需要 NPU、模型或原始会话正文。
 - **获取数据**：[原始会话与正式冻结负载](datasets/README.md)、[数据集 Release](https://github.com/jiaran-king/afd-benefit-benchmark/releases/tag/datasets-20261012-v1)；[128 会话子集](datasets/frozen-128/README.md)从同一已发布文件逐字节派生，无需另一份数据源。
 - **复现实验**：[测试方法](docs/methodology.md)、[bench 并发与调度](docs/bench-method.md) → [环境与补丁](environment/README.md) → [执行步骤](docs/reproduction.md)、[EP16 入口](experiments/2026-10-12-ep16/README.md)。
