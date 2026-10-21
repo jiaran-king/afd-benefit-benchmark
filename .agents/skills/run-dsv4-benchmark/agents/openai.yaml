@@ -1,0 +1,4 @@
+interface:
+  display_name: "DeepSeek V4 性能实验"
+  short_description: "核对 DeepSeek V4 实验的源码版本、模型身份和 MoE 实际执行路径"
+  default_prompt: "使用 $run-dsv4-benchmark，先核对本次 DeepSeek V4 性能实验的版本、模型与 MoE 关键参数，再按已批准范围执行和归档。"

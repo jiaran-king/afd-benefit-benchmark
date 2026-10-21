@@ -36,6 +36,7 @@
 - **获取数据**：[原始会话与正式冻结负载](datasets/README.md)、[数据集 Release](https://github.com/jiaran-king/afd-benefit-benchmark/releases/tag/datasets-20261012-v1)；[128 会话子集](datasets/frozen-128/README.md)从同一已发布文件逐字节派生，无需另一份数据源。
 - **复现实验**：[测试方法](docs/methodology.md)、[bench 并发与调度](docs/bench-method.md) → [环境与补丁](environment/README.md) → [执行步骤](docs/reproduction.md)、[EP16 入口](experiments/2026-10-12-ep16/README.md)。
 - **扩展测试**：[新增实验与可比性规则](docs/extending.md)。
+- **执行实验的 Skill**：[$run-dsv4-benchmark](.agents/skills/run-dsv4-benchmark/SKILL.md)，核对准确源码、模型身份与 MoE 路径，并按批准范围执行、验收和归档。
 - **看 EP4 算子证据**：[历史 v0.26 Non-AFD EP4 的 MoE 实现](diagnostics/nonafd-ep4-moe-2026-10-20/README.md)、[一页 PDF](diagnostics/nonafd-ep4-moe-2026-10-20/EP4_MoE_report.pdf)及[完整原始 trace](https://github.com/jiaran-king/afd-benefit-benchmark/releases/tag/nonafd-ep4-moe-20261020-v1)。
 - **了解边界**：[材料盘点](docs/material-inventory.md)、[公开材料范围](docs/publication.md)、[历史实验](archive/README.md)、[F graph 专项诊断](diagnostics/f-graph-2026-10-12/README.md)。
 
