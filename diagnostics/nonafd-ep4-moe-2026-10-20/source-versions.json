@@ -1,0 +1,127 @@
+{
+  "historical_record": {
+    "repository": "jiaran-king/afd-benefit-benchmark",
+    "commit": "3c403869fcadd3c4c7b238f0cd67413bd1ee871b",
+    "versions_url": "https://github.com/jiaran-king/afd-benefit-benchmark/blob/3c403869fcadd3c4c7b238f0cd67413bd1ee871b/environment/versions.json"
+  },
+  "vllm": {
+    "repository": "jiaran-king/vllm",
+    "commit": "d02df748bf9efd99022f1a062597dc3cb3808485",
+    "version": "0.26.0",
+    "archive_comparison": {
+      "reference_archive_sha256": "4a17807c507769bc41581ab4cd35d2e34ec6c3bbf2b5339822a979bda4f96756",
+      "checked_python_files": 2041,
+      "differences": [],
+      "extra_python_files": [
+        "vllm/_version.py"
+      ],
+      "status": "passed"
+    }
+  },
+  "vllm_ascend": {
+    "repository": "jiaran-king/vllm-ascend",
+    "branch": "feat/compressor-checkpoint-async",
+    "commit": "5cfb1697cf570b3bae2e30f9cc76d9e4e8bb5f46",
+    "effective_source": "Pinned commit plus archived local modifications",
+    "patches": [
+      {
+        "path": "environment/patches/prefixcache-async-pr4.patch",
+        "sha256": "a70d0f0e3359cd47916ea061ad05f73e132eed39ce99b98f3873f73247a44a2c",
+        "url": "https://github.com/jiaran-king/afd-benefit-benchmark/blob/3c403869fcadd3c4c7b238f0cd67413bd1ee871b/environment/patches/prefixcache-async-pr4.patch"
+      },
+      {
+        "path": "environment/patches/ascend-local-modifications.patch",
+        "sha256": "64835379d59fa6fd9a1df5ab4eaedb0b7ddcae476621f9775f070068fcbc3c83",
+        "url": "https://github.com/jiaran-king/afd-benefit-benchmark/blob/3c403869fcadd3c4c7b238f0cd67413bd1ee871b/environment/patches/ascend-local-modifications.patch"
+      }
+    ],
+    "patch_application": "At the pinned PR head, apply_patches.py skips the already included PR patch and applies the archived local modifications."
+  },
+  "environment": {
+    "python": "3.12.13",
+    "torch": "2.10.0+cpu",
+    "torch_npu": "2.10.0.post4",
+    "cann": "9.1.0"
+  },
+  "source_files": [
+    {
+      "component": "vllm-ascend",
+      "commit": "5cfb1697cf570b3bae2e30f9cc76d9e4e8bb5f46",
+      "path": "vllm_ascend/envs.py",
+      "sha256": "e2849c3b1db96c528dc799e30eafc8b6fdc5b9807fd50179765afc6bbd8ede9f",
+      "git_blob_sha": "f597de5228624fd0d73514fe652f90ba30cc0297"
+    },
+    {
+      "component": "vllm-ascend",
+      "commit": "5cfb1697cf570b3bae2e30f9cc76d9e4e8bb5f46",
+      "path": "vllm_ascend/ascend_config.py",
+      "sha256": "5119c4da00959d2b669d72c38016d22e4553c8b0e00a4116daacc1040a05b274",
+      "git_blob_sha": "79ebac7c100e713201bbb77164190c4aaad79b7f"
+    },
+    {
+      "component": "vllm-ascend",
+      "commit": "5cfb1697cf570b3bae2e30f9cc76d9e4e8bb5f46",
+      "path": "vllm_ascend/ascend_forward_context.py",
+      "sha256": "e5846eb19fc9b9f053ee5d6ee6ccd63922637ac7564d4954cade7fd1c4218cb1",
+      "git_blob_sha": "ad94ba495c2bf57a5e06dea5268886bfe8f33dcf"
+    },
+    {
+      "component": "vllm-ascend",
+      "commit": "5cfb1697cf570b3bae2e30f9cc76d9e4e8bb5f46",
+      "path": "vllm_ascend/ops/fused_moe/moe_comm_method.py",
+      "sha256": "91669eca893e400408295c9679d95776a5db5c218c63ccdb7d00d9c89244304a",
+      "git_blob_sha": "ad80c4476ec950a8f310b32e3e38ff6a98ab7ed1"
+    },
+    {
+      "component": "vllm-ascend",
+      "commit": "5cfb1697cf570b3bae2e30f9cc76d9e4e8bb5f46",
+      "path": "vllm_ascend/quantization/methods/w4a8.py",
+      "sha256": "9365e27d40b7974ce55ce12e9f4fec8c38b25eb5355e39a144b3dae9ab4f6522",
+      "git_blob_sha": "643245f2435c3c146718f7315ab9d0468d37b0cf"
+    },
+    {
+      "component": "vllm-ascend",
+      "commit": "5cfb1697cf570b3bae2e30f9cc76d9e4e8bb5f46",
+      "path": "vllm_ascend/models/deepseek_v4.py",
+      "sha256": "437ba3191652d42645ab5be770427f53db52dc509ed645fa9eef2dbaf055fc97",
+      "git_blob_sha": "6f86d85c0371e915eff6286c871ff88882189cba"
+    }
+  ],
+  "historical_runtime_key_file_comparison": [
+    {
+      "path": "vllm_ascend/platform.py",
+      "historical_sha256": "c8b4ef28b1b00a65d25ab773fbd9dd1284eabaffafbacf9ee5fe9897b247a3d7",
+      "profile_sha256": "c8b4ef28b1b00a65d25ab773fbd9dd1284eabaffafbacf9ee5fe9897b247a3d7",
+      "equal": true
+    },
+    {
+      "path": "vllm_ascend/ascend_config.py",
+      "historical_sha256": "421d58545e6797f1107920ce50b2ca3d83f111893bf15f4b18f6f41afeee4cd4",
+      "profile_sha256": "421d58545e6797f1107920ce50b2ca3d83f111893bf15f4b18f6f41afeee4cd4",
+      "equal": true
+    },
+    {
+      "path": "vllm_ascend/worker/model_runner_v1.py",
+      "historical_sha256": "a3f19fc1622b6feb9d721c3ad0403e6480a35ca84aa4fdb008865989399c1cf0",
+      "profile_sha256": "a3f19fc1622b6feb9d721c3ad0403e6480a35ca84aa4fdb008865989399c1cf0",
+      "equal": true
+    }
+  ],
+  "loaded_runtime_file_sha256": {
+    "vllm_ascend/platform.py": "c8b4ef28b1b00a65d25ab773fbd9dd1284eabaffafbacf9ee5fe9897b247a3d7",
+    "vllm_ascend/ascend_config.py": "421d58545e6797f1107920ce50b2ca3d83f111893bf15f4b18f6f41afeee4cd4",
+    "vllm_ascend/worker/model_runner_v1.py": "a3f19fc1622b6feb9d721c3ad0403e6480a35ca84aa4fdb008865989399c1cf0",
+    "vllm_ascend/_cann_ops_custom/vendors/custom_transformer/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64/libcust_opmaster_rt2.0.so": "2e0fa08edea5cb0cc1bdbd076cf06f4bf2b0bbc7feb380dcc740f444e571d612",
+    "vllm_ascend/_cann_ops_custom/vendors/custom_transformer/op_api/lib/libcust_opapi.so": "8b555cd6188876b15a8243456fcd17e05a69dd678765db97135809534bfb8dc2",
+    "vllm_ascend/vllm_ascend_C.cpython-312-aarch64-linux-gnu.so": "93d7e87210918f4e9996ddc21b2a9fea4863c2c2874f3182052e859d04bd683a",
+    "vllm_ascend/libvllm_ascend_kernels.so": "20f4856b123113f2645233ce19d9d8938306b04b424fd7ca3b3e90d51aa4ba40",
+    "vllm_ascend/_cann_ops_custom/vendors/custom_transformer/op_impl/ai_core/tbe/kernel/ascend910_93/compressor/Compressor_5d0f45757e9591d6e00196bb7912baa5.o": "ac96a866542d1230e1a212453048deb77231e1c0acb6e6fa3d8c8c15d9fb7927"
+  },
+  "historical_test_configuration": {
+    "url": "https://github.com/jiaran-king/afd-benefit-benchmark/blob/3c403869fcadd3c4c7b238f0cd67413bd1ee871b/experiments/2026-10-11-async/recorded-configuration.json",
+    "historical_prefix_cache_enabled": true,
+    "this_profile_prefix_cache_enabled": false,
+    "relationship": "Historical source/runtime reused for a later operator capture; this is not the trace of the original pressure test."
+  },
+  "native_note": "Native binaries and their build tree are not included. Their recorded identities are retained; source checkout alone is not a recovered performance environment."
+}

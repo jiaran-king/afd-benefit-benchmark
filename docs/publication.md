@@ -9,3 +9,7 @@
 scripts/check_publication.py 检查 Git 中的整理材料：文本与压缩 CSV 的高风险凭据格式、内网地址、原工作区路径、文件类型、链接和来源哈希。Release 原始数据单独按其文件身份和上述测试内容核对；该脚本不把已审阅的数据正文按“无私钥标记”的规则扫描，也不把哈希核对描述为全面内容审计。
 
 所有新脚本保持不覆盖旧 run、不自动重试、不静默修改参数。完整环境证据可在私有复现目录保存；未经筛选的复现输出不要直接 git add。
+
+## Non-AFD EP4 MoE 算子证据
+
+新增[历史 v0.26 EP4 算子分析](../diagnostics/nonafd-ep4-moe-2026-10-20/README.md)、一页 PDF、实际配置、固定源码及补丁身份、CPU/NPU 关联样例和四 rank 算子表摘录。完整原始 rank0 trace 与已审核转发包通过[独立 Release](https://github.com/jiaran-king/afd-benefit-benchmark/releases/tag/nonafd-ep4-moe-20261020-v1) 保存，保留原字节和 SHA256。trace 已按仓库现有高风险凭据、内网地址和原工作区路径规则核查；未纳入模型权重、完整环境或集群控制日志。本次为历史环境的后续采样，prefix cache 条件与旧正式压测不同，不替换旧性能结果。

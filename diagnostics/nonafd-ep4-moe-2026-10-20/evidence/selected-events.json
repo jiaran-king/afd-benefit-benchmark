@@ -1,0 +1,73 @@
+{
+  "trace_filename": "rank0.trace.json",
+  "trace_sha256": "c7b911cdf42b7199cc62b3c0ce3eb67959aa59b9dbea4f1715850fa6440a2331",
+  "json_root": "array",
+  "index_origin": 0,
+  "selected_events": {
+    "1223": {
+      "ph": "X",
+      "name": "cann_ops_transformer::npu_mega_moe",
+      "pid": 3258,
+      "tid": 3258,
+      "ts": "1792501197962856.910",
+      "dur": 437.69,
+      "cat": "cpu_op",
+      "args": {
+        "Sequence number": -1,
+        "Fwd thread id": 0
+      }
+    },
+    "241664": {
+      "ph": "s",
+      "bp": "e",
+      "name": "torch_to_npu",
+      "id": 1792501197968488973,
+      "pid": 3258,
+      "tid": 3258,
+      "ts": "1792501197963218.460",
+      "cat": "async_npu"
+    },
+    "241665": {
+      "ph": "f",
+      "bp": "e",
+      "name": "torch_to_npu",
+      "id": 1792501197968488973,
+      "pid": 3336640,
+      "tid": 47,
+      "ts": "1792501197968488.973",
+      "cat": "async_npu"
+    },
+    "137025": {
+      "name": "MegaMoe",
+      "pid": 3336640,
+      "tid": 47,
+      "ts": "1792501197968488.973",
+      "dur": 4342.173,
+      "ph": "X",
+      "args": {
+        "Model Id": 4294967295,
+        "Task Type": "MIX_AIC",
+        "Physic Stream Id": 47,
+        "Task Id": 16857,
+        "Batch Id": 0,
+        "Subtask Id": 0,
+        "connection_id": 21011
+      }
+    }
+  },
+  "source_commit": "5cfb1697cf570b3bae2e30f9cc76d9e4e8bb5f46",
+  "source_blob": "ad80c4476ec950a8f310b32e3e38ff6a98ab7ed1",
+  "source_lines": {
+    "moe_comm_method.py:458-460": [
+      "        if get_ascend_config().enable_fused_mc2 == 1:",
+      "            if _MEGA_MOE_SUPPORTED:",
+      "                out, expert_tokens = self._apply_cann_mega_moe(fused_experts_input, topk_ids)"
+    ],
+    "ascend_forward_context.py:43": "_MEGA_MOE_SUPPORTED = importlib.util.find_spec(\"cann_ops_transformer\") is not None"
+  },
+  "public_sources": [
+    "https://github.com/jiaran-king/afd-benefit-benchmark/blob/3c403869fcadd3c4c7b238f0cd67413bd1ee871b/environment/versions.json",
+    "https://github.com/jiaran-king/vllm-ascend/blob/5cfb1697cf570b3bae2e30f9cc76d9e4e8bb5f46/vllm_ascend/ops/fused_moe/moe_comm_method.py#L458-L460",
+    "https://github.com/jiaran-king/vllm-ascend/blob/5cfb1697cf570b3bae2e30f9cc76d9e4e8bb5f46/vllm_ascend/ascend_forward_context.py#L43"
+  ]
+}

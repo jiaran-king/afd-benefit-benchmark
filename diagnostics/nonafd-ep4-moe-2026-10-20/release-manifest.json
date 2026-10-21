@@ -1,0 +1,26 @@
+{
+  "repository": "jiaran-king/afd-benefit-benchmark",
+  "tag": "nonafd-ep4-moe-20261020-v1",
+  "diagnostic_path": "diagnostics/nonafd-ep4-moe-2026-10-20",
+  "trace_modified": false,
+  "assets": [
+    {
+      "filename": "rank0.trace.json",
+      "bytes": 59087061,
+      "sha256": "c7b911cdf42b7199cc62b3c0ce3eb67959aa59b9dbea4f1715850fa6440a2331",
+      "url": "https://github.com/jiaran-king/afd-benefit-benchmark/releases/download/nonafd-ep4-moe-20261020-v1/rank0.trace.json"
+    },
+    {
+      "filename": "EP4_MoE_report.pdf",
+      "bytes": 94670,
+      "sha256": "be4509be3c7b537c4c9ddc3fac3116457a7f66ae148b1169d87b07e559e157c9",
+      "url": "https://github.com/jiaran-king/afd-benefit-benchmark/releases/download/nonafd-ep4-moe-20261020-v1/EP4_MoE_report.pdf"
+    },
+    {
+      "filename": "NonAFD_EP4_MoE_evidence.zip",
+      "bytes": 3810293,
+      "sha256": "eb576ff174721d79f0f2c4f4b6d90d939895ea4b9de1a4334d97ffa7e377e366",
+      "url": "https://github.com/jiaran-king/afd-benefit-benchmark/releases/download/nonafd-ep4-moe-20261020-v1/NonAFD_EP4_MoE_evidence.zip"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "scope": "Existing accepted offline validation; no device experiment was repeated for publication.",
+  "trace_sha256": "c7b911cdf42b7199cc62b3c0ce3eb67959aa59b9dbea4f1715850fa6440a2331",
+  "published_trace_unchanged": true,
+  "rank0_complete_events_retained_by_official_parser": true,
+  "rank0_csv_crosscheck_count": 7065,
+  "rank0_max_kernel_start_delta_us": 0.0,
+  "rank0_max_kernel_duration_delta_us": 0.0005000000019208528,
+  "rank0_parser_stats": [
+    {
+      "name": "slice_spill_overlapping_complete_event",
+      "value": 11456,
+      "severity": "error",
+      "source": "analysis"
+    },
+    {
+      "name": "flow_end_without_start",
+      "value": 34,
+      "severity": "info",
+      "source": "trace"
+    },
+    {
+      "name": "guess_trace_type_duration_ns",
+      "value": 1000000,
+      "severity": "info",
+      "source": "analysis"
+    },
+    {
+      "name": "parse_trace_duration_ns",
+      "value": 178000000,
+      "severity": "info",
+      "source": "analysis"
+    }
+  ],
+  "scope_note": "Overlap-layout and peripheral flow warnings remain; all 129 MegaMoE kernels in rank0 have the cited CPU-to-NPU association. No claim of zero parser warnings is made."
+}

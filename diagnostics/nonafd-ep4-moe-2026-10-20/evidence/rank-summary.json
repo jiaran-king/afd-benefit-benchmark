@@ -1,0 +1,76 @@
+{
+  "ranks": [
+    {
+      "rank": 0,
+      "original_sha256": "c7b911cdf42b7199cc62b3c0ce3eb67959aa59b9dbea4f1715850fa6440a2331",
+      "complete_event_count": 203198,
+      "physical_kernel_count": 7065,
+      "csv_kernel_crosscheck_count": 7065,
+      "csv_max_start_delta_us": 0.0,
+      "csv_max_duration_delta_us": 0.0005000000019208528,
+      "all_physical_kernels_within_captured_request": true,
+      "mega_cpu_count": 129,
+      "mega_device_count": 129,
+      "mega_unique_linked_kernels": 129,
+      "mega_source_categories": {
+        "HostToDevice": 129,
+        "async_npu": 129
+      }
+    },
+    {
+      "rank": 1,
+      "original_sha256": "23b4ca41e2981cfc8d023a838b8c3c785e65a1136a4168741501011d782c1880",
+      "complete_event_count": 203211,
+      "physical_kernel_count": 7065,
+      "csv_kernel_crosscheck_count": 7065,
+      "csv_max_start_delta_us": 0.0,
+      "csv_max_duration_delta_us": 0.0005000000019208528,
+      "all_physical_kernels_within_captured_request": true,
+      "mega_cpu_count": 129,
+      "mega_device_count": 129,
+      "mega_unique_linked_kernels": 129,
+      "mega_source_categories": {
+        "HostToDevice": 129,
+        "async_npu": 129
+      }
+    },
+    {
+      "rank": 2,
+      "original_sha256": "bdb00cfb548a1a9ddd885d81be166c1527099d0b53e442f76846f67672f1df6e",
+      "complete_event_count": 203199,
+      "physical_kernel_count": 7065,
+      "csv_kernel_crosscheck_count": 7065,
+      "csv_max_start_delta_us": 0.0,
+      "csv_max_duration_delta_us": 0.0005000000019208528,
+      "all_physical_kernels_within_captured_request": true,
+      "mega_cpu_count": 129,
+      "mega_device_count": 129,
+      "mega_unique_linked_kernels": 129,
+      "mega_source_categories": {
+        "HostToDevice": 129,
+        "async_npu": 129
+      }
+    },
+    {
+      "rank": 3,
+      "original_sha256": "59d4d4cfaeef6234c450ea1484427119b2c79cabe40bde9773ab79cdac18497b",
+      "complete_event_count": 203199,
+      "physical_kernel_count": 7065,
+      "csv_kernel_crosscheck_count": 7065,
+      "csv_max_start_delta_us": 0.0,
+      "csv_max_duration_delta_us": 0.0005000000019208528,
+      "all_physical_kernels_within_captured_request": true,
+      "mega_cpu_count": 129,
+      "mega_device_count": 129,
+      "mega_unique_linked_kernels": 129,
+      "mega_source_categories": {
+        "HostToDevice": 129,
+        "async_npu": 129
+      }
+    }
+  ],
+  "published_full_trace_ranks": [
+    0
+  ],
+  "note": "Four ranks were analyzed; the reviewed forwarding package contains the unchanged representative rank0 trace."
+}
